@@ -1,0 +1,683 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.1 (Debian 15.1-1.pgdg110+1)
+-- Dumped by pg_dump version 15.1 (Debian 15.1-1.pgdg110+1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: add_coin(character varying, double precision, character varying, character varying, character varying, integer, integer, integer, integer, boolean); Type: FUNCTION; Schema: public; Owner: jb
+--
+
+CREATE FUNCTION public.add_coin(country character varying, value double precision, coin character varying, continent character varying DEFAULT NULL::character varying, currency character varying DEFAULT NULL::character varying, beginning integer DEFAULT NULL::integer, ending integer DEFAULT NULL::integer, coin_beginning integer DEFAULT NULL::integer, coin_ending integer DEFAULT NULL::integer, lowest boolean DEFAULT false) RETURNS integer
+    LANGUAGE sql
+    AS $$
+select inc_coin(
+               insert_coin_if_not_exists(
+                       insert_currency_if_not_exists(
+                               insert_country_if_not_exists(country, continent),
+                               currency,
+                               beginning,
+                               ending
+                           ),
+                       value,
+                       coin,
+                       coin_beginning,
+                       coin_ending,
+                       lowest
+                   )
+           )
+$$;
+
+
+ALTER FUNCTION public.add_coin(country character varying, value double precision, coin character varying, continent character varying, currency character varying, beginning integer, ending integer, coin_beginning integer, coin_ending integer, lowest boolean) OWNER TO jb;
+
+--
+-- Name: get_country_id(character varying); Type: FUNCTION; Schema: public; Owner: jb
+--
+
+CREATE FUNCTION public.get_country_id(country character varying) RETURNS bigint
+    LANGUAGE sql
+    AS $$
+    select coalesce(
+                   (select id from countries where name = country and parent is not null),
+                   (select id from countries where name = country)
+               )
+    $$;
+
+
+ALTER FUNCTION public.get_country_id(country character varying) OWNER TO jb;
+
+--
+-- Name: inc_coin(bigint); Type: FUNCTION; Schema: public; Owner: jb
+--
+
+CREATE FUNCTION public.inc_coin(coin_id bigint) RETURNS integer
+    LANGUAGE sql
+    AS $$
+update coins
+set count = count + 1
+where id = coin_id
+returning count;
+$$;
+
+
+ALTER FUNCTION public.inc_coin(coin_id bigint) OWNER TO jb;
+
+--
+-- Name: insert_coin(bigint, double precision, character varying, integer, integer, boolean); Type: FUNCTION; Schema: public; Owner: jb
+--
+
+CREATE FUNCTION public.insert_coin(currency bigint, coin_value double precision, coin character varying, coin_beginning integer DEFAULT NULL::integer, coin_ending integer DEFAULT NULL::integer, is_lowest boolean DEFAULT false) RETURNS bigint
+    LANGUAGE sql
+    AS $$
+insert into coins (id, value, name, beginning, ending, lowest, currency_id)
+values (nextval('coin_seq'), coin_value, coin, coin_beginning, coin_ending, is_lowest, currency)
+returning id
+$$;
+
+
+ALTER FUNCTION public.insert_coin(currency bigint, coin_value double precision, coin character varying, coin_beginning integer, coin_ending integer, is_lowest boolean) OWNER TO jb;
+
+--
+-- Name: insert_coin_if_not_exists(bigint, double precision, character varying, integer, integer, boolean); Type: FUNCTION; Schema: public; Owner: jb
+--
+
+CREATE FUNCTION public.insert_coin_if_not_exists(currency bigint, coin_value double precision, coin character varying, coin_beginning integer DEFAULT NULL::integer, coin_ending integer DEFAULT NULL::integer, lowest boolean DEFAULT false) RETURNS bigint
+    LANGUAGE sql
+    AS $$
+select case
+           when not exists(select *
+                           from coins co
+                           where (co.currency_id, co.value, co.name) =
+                                 (currency, coin_value, coin))
+               then insert_coin(currency, coin_value, coin, coin_beginning, coin_ending, lowest)
+           else (select id
+                 from coins co
+                 where (co.currency_id, co.value, co.name) =
+                       (currency, coin_value, coin))
+           end
+$$;
+
+
+ALTER FUNCTION public.insert_coin_if_not_exists(currency bigint, coin_value double precision, coin character varying, coin_beginning integer, coin_ending integer, lowest boolean) OWNER TO jb;
+
+--
+-- Name: insert_country(character varying, character varying); Type: FUNCTION; Schema: public; Owner: jb
+--
+
+CREATE FUNCTION public.insert_country(country character varying, continent_name character varying) RETURNS bigint
+    LANGUAGE sql
+    AS $$
+insert into countries (id, name, continent)
+values (nextval('country_seq'), country, continent_name)
+returning id;
+$$;
+
+
+ALTER FUNCTION public.insert_country(country character varying, continent_name character varying) OWNER TO jb;
+
+--
+-- Name: insert_country_if_not_exists(character varying, character varying); Type: FUNCTION; Schema: public; Owner: jb
+--
+
+CREATE FUNCTION public.insert_country_if_not_exists(country character varying, continent character varying) RETURNS bigint
+    LANGUAGE sql
+    AS $$
+select case
+           when not exists(select * from countries where name = country) then insert_country(country, continent)
+           else get_country_id(country)
+           end
+$$;
+
+
+ALTER FUNCTION public.insert_country_if_not_exists(country character varying, continent character varying) OWNER TO jb;
+
+--
+-- Name: insert_currency(bigint, character varying, integer, integer); Type: FUNCTION; Schema: public; Owner: jb
+--
+
+CREATE FUNCTION public.insert_currency(country bigint, currency character varying DEFAULT NULL::character varying, beginning_year integer DEFAULT NULL::integer, ending_year integer DEFAULT NULL::integer) RETURNS bigint
+    LANGUAGE sql
+    AS $$
+insert into currencies (id, name, country_id, beginning, ending)
+values (nextval('currency_seq'), currency, country, beginning_year, ending_year)
+returning id
+$$;
+
+
+ALTER FUNCTION public.insert_currency(country bigint, currency character varying, beginning_year integer, ending_year integer) OWNER TO jb;
+
+--
+-- Name: insert_currency_if_not_exists(bigint, character varying, integer, integer); Type: FUNCTION; Schema: public; Owner: jb
+--
+
+CREATE FUNCTION public.insert_currency_if_not_exists(country bigint, currency character varying DEFAULT NULL::character varying, beginning_year integer DEFAULT NULL::integer, ending_year integer DEFAULT NULL::integer) RETURNS bigint
+    LANGUAGE sql
+    AS $$
+select case
+           when not exists(select *
+                           from currencies cu
+                           where cu.name = currency
+                             and country_id = country)
+               then insert_currency(country, currency, beginning_year, ending_year)
+           else (select id
+                 from currencies cu
+                 where cu.name = currency
+                   and country_id = country)
+           end
+$$;
+
+
+ALTER FUNCTION public.insert_currency_if_not_exists(country bigint, currency character varying, beginning_year integer, ending_year integer) OWNER TO jb;
+
+--
+-- Name: coin_seq; Type: SEQUENCE; Schema: public; Owner: jb
+--
+
+CREATE SEQUENCE public.coin_seq
+    START WITH 132
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.coin_seq OWNER TO jb;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: coins; Type: TABLE; Schema: public; Owner: jb
+--
+
+CREATE TABLE public.coins (
+    id bigint NOT NULL,
+    value double precision NOT NULL,
+    name character varying NOT NULL,
+    beginning integer NOT NULL,
+    ending integer,
+    currency_id bigint NOT NULL,
+    lowest boolean DEFAULT false,
+    count integer DEFAULT 0 NOT NULL,
+    description character varying
+);
+
+
+ALTER TABLE public.coins OWNER TO jb;
+
+--
+-- Name: countries; Type: TABLE; Schema: public; Owner: jb
+--
+
+CREATE TABLE public.countries (
+    id bigint NOT NULL,
+    name character varying NOT NULL,
+    continent character varying NOT NULL,
+    parent bigint
+);
+
+
+ALTER TABLE public.countries OWNER TO jb;
+
+--
+-- Name: country_seq; Type: SEQUENCE; Schema: public; Owner: jb
+--
+
+CREATE SEQUENCE public.country_seq
+    START WITH 49
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.country_seq OWNER TO jb;
+
+--
+-- Name: currencies; Type: TABLE; Schema: public; Owner: jb
+--
+
+CREATE TABLE public.currencies (
+    id bigint NOT NULL,
+    name character varying NOT NULL,
+    country_id bigint NOT NULL,
+    beginning integer NOT NULL,
+    ending integer
+);
+
+
+ALTER TABLE public.currencies OWNER TO jb;
+
+--
+-- Name: currency_seq; Type: SEQUENCE; Schema: public; Owner: jb
+--
+
+CREATE SEQUENCE public.currency_seq
+    START WITH 90
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.currency_seq OWNER TO jb;
+
+--
+-- Data for Name: coins; Type: TABLE DATA; Schema: public; Owner: jb
+--
+
+COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, count, description) FROM stdin;
+1	1	peso	1939	2021	1	f	1	\N
+2	1	centavo	1937	1987	1	t	0	\N
+3	1	dirham	1973	2022	2	f	1	\N
+4	1	fils	1973	2018	2	t	0	\N
+5	1	dirham	1975	1979	3	t	0	\N
+6	100	dirham	1975	2014	3	f	1	\N
+7	10	para	1965	1981	4	f	1	\N
+8	5	para	1965	1981	4	t	0	\N
+9	5	fils	1959	1982	5	f	1	\N
+10	1	fils	1930	1959	5	t	0	\N
+11	10	haleru	1993	2003	6	t	0	\N
+12	20	haleru	1993	2003	6	f	1	\N
+13	1	ban	1952	1954	7	t	0	\N
+14	15	bani	1960	1975	7	f	1	\N
+15	2	denari	1993	2022	8	f	1	\N
+16	50	deni	1993	1993	8	t	0	\N
+17	1	haler	1953	1992	9	t	0	\N
+18	10	haleru	1953	1992	9	f	1	\N
+19	5	stotin	1920	1920	10	t	0	\N
+20	2	halere	1923	1925	11	t	0	\N
+21	1	haler	1922	1922	12	t	0	In usage in 1945
+22	5	para	1920	1920	13	t	0	\N
+23	50	para	1945	1953	14	t	0	\N
+24	10	para	1990	1991	15	t	0	\N
+25	1	dinar	1992	1992	16	t	0	\N
+26	1	dinar	1993	1993	17	t	0	\N
+27	1	dinar	1994	1994	18	t	0	\N
+28	1	para	1994	1994	19	t	0	\N
+29	1	millieme	1952	1965	20	t	0	\N
+30	10	haleru	1940	1944	21	t	0	\N
+31	1	ban	1867	1900	22	t	0	Also called banu (1867)
+32	50	bani	1947	1947	23	t	0	\N
+33	1	ban	2005	2022	24	t	0	\N
+34	1	centas	1925	1936	25	t	0	\N
+35	1	centas	1991	1991	26	t	1	\N
+36	1	denar	1993	2014	8	f	1	\N
+37	2	kune	1941	1941	27	t	0	There are lower, but in gold
+38	1	lipa	1994	2022	28	t	1	\N
+39	1	mil	1862	1866	29	t	0	Also 1 cash
+40	10	cent	1862	2017	29	f	1	\N
+41	1	dinar	1965	1986	4	f	3	\N
+42	20	filler	1922	1922	30	t	0	\N
+43	1	filler	1926	1939	31	t	0	\N
+44	2	filler	1946	1989	32	t	0	\N
+46	1	centavo	1917	1922	33	t	0	\N
+47	2.5	escudos	1932	1983	33	f	2	\N
+48	1	centimo	1870	1913	34	t	0	\N
+49	10	centimos	1870	1959	34	f	1	\N
+52	2	dinari	1970	1986	4	f	1	\N
+53	1	penny	1716	1970	35	f	1	\N
+54	0.25	farthing	1839	1853	35	t	0	\N
+55	0.5	new penny	1971	1984	36	t	0	\N
+56	1	new penny	1971	2022	36	f	1	\N
+57	1	centime	1832	1914	37	t	0	\N
+58	1	franc	1833	2001	37	f	1	\N
+59	1	cent	1858	2012	38	t	3	\N
+60	5	feninga	2005	2021	39	t	0	\N
+61	1	konvrtibilna marka	2000	2021	39	f	1	\N
+62	0.5	centavo	1903	1908	40	t	0	\N
+63	1	sentimo	1967	2019	41	t	0	\N
+64	5	sentimo	1967	2019	41	f	1	\N
+65	1	pfennig	1873	1918	42	t	0	\N
+66	1	kopeck	1916	1916	43	t	0	\N
+67	1	rentenpfennig	1923	1929	44	t	0	\N
+68	1	reichspfennig	1924	1946	45	t	1	Bad shape
+69	1	pfennig	1948	1990	46	t	1	\N
+70	1	pfennig	1948	2001	47	t	1	\N
+71	0.5	centavo	1884	1909	48	t	0	\N
+72	1	sucre	1884	1990	48	f	1	\N
+73	1	centavo	2000	2004	49	t	0	\N
+74	1	rappen	1850	2006	50	t	1	\N
+75	5	cents	1966	1991	51	t	0	\N
+76	10	cents	1966	1995	51	f	1	\N
+77	10	hwan	1959	1961	52	t	0	\N
+78	1	won	1966	2019	53	t	0	\N
+79	100	won	1970	2019	53	f	1	\N
+80	0.5	cent	1955	1958	54	t	0	\N
+81	1	cent	1981	2013	55	t	0	\N
+82	25	cents	1981	2020	55	f	1	\N
+83	1	polushka	1701	1916	56	t	0	Also ¼ kopecs
+84	10	kopecks (RSFSR)	1921	1923	57	t	0	\N
+85	0.5	kopeck	1925	1928	58	t	0	\N
+86	1	kopeck	1961	1991	59	t	1	\N
+87	10	kopecks	1991	1991	60	t	0	\N
+88	1	ruble	1992	1992	61	t	0	\N
+89	1	kopeck	1997	2017	62	t	1	\N
+90	1	centime	1796	1920	63	t	0	\N
+91	1	centime	1960	1992	64	t	0	\N
+93	1	santim	1974	1987	65	t	1	\N
+94	1	kopiika	1992	2018	66	t	0	\N
+45	10	filler	1946	1996	32	f	2	\N
+50	50	centimos	1869	1980	34	f	3	\N
+51	1	peseta	1869	2001	34	f	5	\N
+95	5	kopiikas	1992	2018	66	f	1	\N
+96	10	kopiikas	1992	2022	66	f	1	\N
+97	1	centavo	1863	1973	67	t	0	\N
+98	5	centavos	1992	2002	68	t	0	\N
+100	10	para	1940	1942	69	t	0	\N
+101	1	kurus	2005	2022	70	t	0	\N
+102	10	kurus	2005	2022	70	f	1	\N
+103	1	lepton	1832	1879	71	t	0	\N
+104	5	lepta	1954	1971	72	t	0	\N
+105	1	drachma	1954	2000	72	f	1	\N
+106	0.5	cent	1818	1940	73	t	0	\N
+107	5	cents	1818	2001	73	f	1	\N
+108	1	cent	1970	2009	74	t	1	\N
+109	0.5	cent	1793	1857	75	t	0	\N
+110	1	cent	1787	2023	75	f	1	\N
+111	1	mil	1927	1947	76	t	0	\N
+112	1	pruta	1949	1949	77	t	0	\N
+113	1	pruta	1949	1949	78	t	0	\N
+114	1	agora	1960	1980	79	t	0	Also agorah
+115	1	new agora	1980	1985	80	t	0	\N
+116	1	agora	1985	1991	81	t	0	\N
+117	10	agora	1984	2017	81	f	1	\N
+118	1	ore	1874	1972	82	t	0	\N
+119	25	ore	1874	2008	82	f	1	\N
+120	0.5	satang	1937	1937	83	t	0	\N
+122	1	centesimo	1861	1918	84	t	0	\N
+123	5	centesimi	1861	1943	84	f	1	\N
+124	1	ore	1874	1971	85	t	0	\N
+125	10	ore	1874	1991	85	f	1	\N
+126	1	groschen	1925	1938	86	t	0	\N
+127	1	groschen	1947	1950	87	t	0	\N
+128	1	rin	1869	1892	88	t	0	\N
+129	1	yen	1870	2022	88	f	1	\N
+130	5	cents	1993	2015	89	t	0	\N
+131	1	dollar	1993	2018	89	f	1	\N
+121	1	baht	1908	2021	83	f	2	\N
+166	5	pesetas	1869	2001	34	f	6	\N
+133	500	won	1982	2019	53	f	1	\N
+143	10	forint	1946	2022	32	f	3	\N
+155	5	piso	1975	2021	41	f	2	\N
+144	20	forint	1948	2022	32	f	3	\N
+92	5	centimes	1959	2001	64	f	6	\N
+145	50	forint	1992	2022	32	f	1	\N
+134	10	centimes	1992	2001	64	f	3	\N
+146	100	forint	1992	2022	32	f	2	\N
+136	0.5	franc	1964	2001	64	f	1	\N
+163	1	kuna	1993	2022	28	f	3	\N
+156	10	piso	1975	2021	41	f	2	\N
+147	1	koruna	1993	2022	6	f	3	\N
+148	2	koruny	1993	2022	6	f	1	\N
+138	5	francs	1959	2001	64	f	2	\N
+149	5	korun	1993	2022	6	f	2	\N
+139	10	francs	1964	2001	64	f	4	\N
+132	2	francs	1959	2001	64	f	5	\N
+137	1	franc	1959	2001	64	f	5	\N
+135	20	centimes	1992	2001	64	f	4	\N
+140	50	filler	1948	1999	32	f	1	\N
+141	1	forint	1946	2008	32	f	2	\N
+142	5	forint	1946	2022	32	f	1	\N
+157	20	piso	2019	2020	41	f	1	\N
+99	10	centavos	1992	2019	68	f	2	\N
+150	10	korun	1993	2022	6	f	2	\N
+151	20	korun	1993	2022	6	f	2	\N
+152	10	sentimo	1967	2017	41	f	1	\N
+158	20	centavos	1992	2021	68	f	1	\N
+153	25	sentimo	1967	2019	41	f	1	\N
+154	1	piso	1966	2019	41	f	3	\N
+159	50	centavos	1992	2022	68	f	2	\N
+160	1	peso	1992	2022	68	f	3	\N
+161	5	lipa	1993	2022	28	f	1	\N
+162	20	lipa	1993	2022	28	f	1	\N
+168	50	pesetas	1958	2000	34	f	2	\N
+165	50	kopiiok	1992	2021	66	f	2	\N
+164	25	kopiiok	1992	2021	66	f	1	\N
+169	100	pesetas	1897	2001	34	f	2	\N
+167	25	pesetas	1871	2001	34	f	5	\N
+170	500	pesetas	1987	2001	34	f	2	\N
+171	10	fils	1931	1982	5	f	1	\N
+\.
+
+
+--
+-- Data for Name: countries; Type: TABLE DATA; Schema: public; Owner: jb
+--
+
+COPY public.countries (id, name, continent, parent) FROM stdin;
+1	Dominican Republic	North America	\N
+2	United Arab Emirates	Asia	\N
+3	Libya	Africa	\N
+4	Yugoslavia	Europe	\N
+5	Iraq	Asia	\N
+6	Czech Republic	Europe	\N
+7	Bohemia and Moravia	Europe	6
+8	Czech Republic	Europe	6
+9	Romania	Europe	\N
+10	North Macedonia	Europe	\N
+11	Czechoslovakia	Europe	\N
+12	Lithuania	Europe	\N
+13	Croatia	Europe	\N
+14	Hong Kong	Asia	\N
+15	Hungary	Europe	\N
+16	Portugal	Europe	\N
+17	Spain	Europe	\N
+18	United Kingdom	Europe	\N
+19	Belgium	Europe	\N
+20	Canada	North America	\N
+21	Bosnia and Herzegovina	Europe	\N
+23	Germany	Europe	\N
+24	Ecuador	South America	\N
+25	Switzerland	Europe	\N
+26	Kanya	Africa	\N
+27	South Korea	Asia	\N
+28	Eastern Caribbean States	South America	\N
+29	Russia	Asia	\N
+30	France	Europe	\N
+31	Morocco	Africa	\N
+32	Ukraine	Europe	\N
+33	Mexico	North America	\N
+34	Turkey	Asia	\N
+35	Greece	Europe	\N
+36	Netherlands	Europe	\N
+37	Bermuda	North America	\N
+38	United States	North America	\N
+39	Israel	Asia	\N
+40	Israel	Asia	39
+41	British Palestine	Asia	39
+42	Denmark	Europe	\N
+43	Thailand	Asia	\N
+44	Italy	Europe	\N
+45	Sweden	Europe	\N
+46	Austria	Europe	\N
+47	Japan	Asia	\N
+48	Namibia	Africa	\N
+22	Philippines	Asia	\N
+\.
+
+
+--
+-- Data for Name: currencies; Type: TABLE DATA; Schema: public; Owner: jb
+--
+
+COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
+1	peso oro	1	1937	\N
+2	dirham	2	1973	\N
+3	dinar	3	1971	\N
+4	hard dinar	4	1966	1989
+5	dinar	5	1931	\N
+6	koruna	8	1993	\N
+7	third leu	9	1952	2005
+8	second denar	10	1993	\N
+9	koruna	11	1953	1992
+10	sokol	11	1920	\N
+11	koruna	11	1919	1939
+12	koruna	11	1945	1953
+13	dinar	4	1918	1941
+14	federation dinar	4	1944	1965
+15	convertible dinar	4	1990	1992
+16	reformed dinar	4	1992	1993
+17	october dinar	4	1993	1993
+18	january dinar	4	1994	1994
+19	novi dinar	4	1994	2003
+20	pound	3	1951	1971
+21	koruna	7	1939	1945
+22	first leu	9	1867	1947
+23	second leu	9	1947	1952
+24	fourth leu	9	2005	\N
+25	old litas	12	1922	1941
+26	new litas	12	1992	2014
+27	(old) kuna	13	1941	1945
+28	kuna	13	1994	2022
+29	dollar	14	1863	\N
+30	korona	15	1919	1926
+31	pengo	15	1927	1946
+32	forint	15	1946	\N
+33	escudo	16	1911	2001
+34	peseta	17	1868	2001
+35	pound sterling	18	1158	1970
+36	pound sterling (decimalized)	18	1971	\N
+37	franc	19	1832	2001
+38	dollar	20	1858	\N
+39	convertible mark	21	1998	\N
+40	peso	22	1857	1967
+41	piso	22	1967	\N
+42	mark	23	1873	1923
+43	ruble	23	1916	1916
+44	rentenmark	23	1923	1924
+45	reichsmark	23	1924	1948
+46	mark	23	1948	1990
+47	deutsche mark	23	1948	2001
+48	sucre	24	1884	2000
+49	US dollar	24	2000	\N
+50	franc	25	1850	\N
+51	shilling	26	1966	\N
+52	hwan	27	1953	1962
+53	won	27	1962	\N
+54	british west indies dollar	28	1935	1965
+55	dollar	28	1965	\N
+56	rouble	29	1700	1921
+57	ruble	29	1921	1924
+58	ruble	29	1924	1958
+59	ruble	29	1961	1991
+60	government bank issue – ruble	29	1991	1991
+61	ruble	29	1991	1997
+62	ruble	29	1998	\N
+63	franc	30	1795	1959
+64	new franc	30	1960	2001
+65	dirham	31	1960	\N
+66	hryvnia	32	1996	\N
+67	peso	33	1863	1992
+68	new peso	33	1992	\N
+69	old lira	34	1923	2005
+70	new lira	34	2005	\N
+71	first modern drachma	35	1832	1944
+72	third modern drachma	35	1954	2001
+73	gulden (decimalized)	36	1817	2001
+74	dollar	37	1970	\N
+75	dollar	38	1785	\N
+76	pound	41	1927	1948
+77	palestine pound	40	1948	1949
+78	pound	40	1949	1960
+79	pound	40	1960	1980
+80	old shekel	40	1980	1985
+81	new shekel	40	1986	\N
+82	krone	42	1873	\N
+83	baht	43	1897	\N
+84	lira	44	1861	2001
+85	krona	45	1873	\N
+86	first shilling	46	1925	1938
+87	second shilling	46	1945	2001
+88	yen	47	1871	\N
+89	dollar	48	1993	\N
+\.
+
+
+--
+-- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
+--
+
+SELECT pg_catalog.setval('public.coin_seq', 171, true);
+
+
+--
+-- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
+--
+
+SELECT pg_catalog.setval('public.country_seq', 49, false);
+
+
+--
+-- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
+--
+
+SELECT pg_catalog.setval('public.currency_seq', 92, true);
+
+
+--
+-- Name: coins coins_pkey; Type: CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.coins
+    ADD CONSTRAINT coins_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: countries countries_pkey; Type: CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.countries
+    ADD CONSTRAINT countries_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: currencies currencies_pkey; Type: CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.currencies
+    ADD CONSTRAINT currencies_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: coins coins_currency_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.coins
+    ADD CONSTRAINT coins_currency_id_fkey FOREIGN KEY (currency_id) REFERENCES public.currencies(id);
+
+
+--
+-- Name: countries countries_parent_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.countries
+    ADD CONSTRAINT countries_parent_fkey FOREIGN KEY (parent) REFERENCES public.countries(id);
+
+
+--
+-- Name: currencies currencies_country_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.currencies
+    ADD CONSTRAINT currencies_country_id_fkey FOREIGN KEY (country_id) REFERENCES public.countries(id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

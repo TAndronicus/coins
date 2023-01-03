@@ -1,0 +1,1 @@
+docker exec ac3046785db1 pg_dump -U jb postgres > backup
