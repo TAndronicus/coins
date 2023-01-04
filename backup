@@ -330,12 +330,9 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 48	1	centimo	1870	1913	34	t	0	\N
 49	10	centimos	1870	1959	34	f	1	\N
 52	2	dinari	1970	1986	4	f	1	\N
-53	1	penny	1716	1970	35	f	1	\N
 54	0.25	farthing	1839	1853	35	t	0	\N
 55	0.5	new penny	1971	1984	36	t	0	\N
-56	1	new penny	1971	2022	36	f	1	\N
 57	1	centime	1832	1914	37	t	0	\N
-58	1	franc	1833	2001	37	f	1	\N
 59	1	cent	1858	2012	38	t	3	\N
 60	5	feninga	2005	2021	39	t	0	\N
 61	1	konvrtibilna marka	2000	2021	39	f	1	\N
@@ -347,11 +344,9 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 67	1	rentenpfennig	1923	1929	44	t	0	\N
 68	1	reichspfennig	1924	1946	45	t	1	Bad shape
 69	1	pfennig	1948	1990	46	t	1	\N
-70	1	pfennig	1948	2001	47	t	1	\N
 71	0.5	centavo	1884	1909	48	t	0	\N
 72	1	sucre	1884	1990	48	f	1	\N
 73	1	centavo	2000	2004	49	t	0	\N
-74	1	rappen	1850	2006	50	t	1	\N
 75	5	cents	1966	1991	51	t	0	\N
 76	10	cents	1966	1995	51	f	1	\N
 77	10	hwan	1959	1961	52	t	0	\N
@@ -374,6 +369,11 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 45	10	filler	1946	1996	32	f	2	\N
 50	50	centimos	1869	1980	34	f	3	\N
 51	1	peseta	1869	2001	34	f	5	\N
+53	1	penny	1716	1970	35	f	2	\N
+70	1	pfennig	1948	2001	47	t	3	\N
+58	1	franc	1833	2001	37	f	3	\N
+56	1	new penny	1971	2022	36	f	4	\N
+74	1	rappen	1850	2006	50	t	5	\N
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -402,7 +402,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 122	1	centesimo	1861	1918	84	t	0	\N
 123	5	centesimi	1861	1943	84	f	1	\N
 124	1	ore	1874	1971	85	t	0	\N
-125	10	ore	1874	1991	85	f	1	\N
 126	1	groschen	1925	1938	86	t	0	\N
 127	1	groschen	1947	1950	87	t	0	\N
 128	1	rin	1869	1892	88	t	0	\N
@@ -442,6 +441,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 153	25	sentimo	1967	2019	41	f	1	\N
 154	1	piso	1966	2019	41	f	3	\N
 159	50	centavos	1992	2022	68	f	2	\N
+173	10	lire	1861	2001	84	f	2	\N
 160	1	peso	1992	2022	68	f	3	\N
 161	5	lipa	1993	2022	28	f	1	\N
 162	20	lipa	1993	2022	28	f	1	\N
@@ -451,7 +451,52 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 169	100	pesetas	1897	2001	34	f	2	\N
 167	25	pesetas	1871	2001	34	f	5	\N
 170	500	pesetas	1987	2001	34	f	2	\N
+172	5	lire	1861	2001	84	f	3	\N
 171	10	fils	1931	1982	5	f	1	\N
+177	200	lire	1977	2001	84	f	3	\N
+174	20	lire	1861	2001	84	f	1	\N
+175	50	lire	1861	2001	84	f	2	\N
+176	100	lire	1861	2001	84	f	2	\N
+178	500	lire	1957	2001	84	f	2	\N
+179	5	pfennig	1948	1990	46	f	1	\N
+180	1	deutsche mark	1956	1990	46	f	1	\N
+181	10	reichspfennig	1924	1948	45	f	1	\N
+182	2	pfennig	1950	2001	47	f	3	\N
+183	5	pfennig	1949	2001	47	f	2	\N
+184	10	pfennig	1949	2001	47	f	2	\N
+125	10	ore	1874	1991	85	f	3	\N
+185	50	pfennig	1949	2001	47	f	1	\N
+186	1	deutsche mark	1950	2001	47	f	1	\N
+187	5	deutsche mark	1951	2001	47	f	1	\N
+214	20	rappen	1850	2022	50	f	2	\N
+188	25	ore	1874	1984	85	f	3	\N
+215	0.5	franc	1850	2022	50	f	2	\N
+216	1	franc	1850	2022	50	f	1	\N
+190	1	krona	1875	2016	85	f	3	\N
+189	50	ore	1875	2009	85	f	3	\N
+191	2	kronor	1876	2020	85	f	1	\N
+192	5	francs	1832	2001	37	f	4	\N
+193	20	francs	1835	2001	37	f	2	\N
+194	50	francs	1935	2001	37	f	1	\N
+195	2	pence	1971	2022	36	f	3	\N
+196	5	pence	1968	2022	36	f	1	\N
+198	20	pence	1982	2022	36	f	2	\N
+197	10	pence	1968	2022	36	f	4	\N
+199	10	kopecks	1924	1958	58	f	1	\N
+200	2	kopecks	1961	1991	59	f	2	\N
+201	5	kopecks	1961	1991	59	f	1	\N
+202	10	kopecks	1961	1991	59	f	4	\N
+203	20	kopecks	1961	1991	59	f	1	\N
+204	5	rubles	1992	1992	61	f	1	\N
+205	10	rubles	1992	1993	61	f	1	\N
+206	20	rubles	1992	1993	61	f	1	\N
+207	50	rubles	1992	1993	61	f	1	\N
+208	1	ruble	1997	2022	62	f	1	\N
+209	2	rubles	1997	2022	62	f	1	\N
+210	5	pesos	1997	2021	1	f	1	\N
+211	2	rappen	1850	1974	50	f	4	\N
+212	5	rappen	1850	2022	50	f	1	\N
+213	10	rappen	1850	2022	50	f	3	\N
 \.
 
 
@@ -612,7 +657,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 171, true);
+SELECT pg_catalog.setval('public.coin_seq', 216, true);
 
 
 --
