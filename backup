@@ -470,6 +470,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 187	5	deutsche mark	1951	2001	47	f	1	\N
 214	20	rappen	1850	2022	50	f	2	\N
 188	25	ore	1874	1984	85	f	3	\N
+274	1	centavo	1994	2004	135	t	0	\N
 215	0.5	franc	1850	2022	50	f	2	\N
 216	1	franc	1850	2022	50	f	1	\N
 190	1	krona	1875	2016	85	f	3	\N
@@ -486,11 +487,14 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 232	10	schilling	1957	2001	87	f	2	\N
 220	2	baht	1979	2020	83	f	2	\N
 198	20	pence	1982	2022	36	f	2	\N
+233	5	qindar leku	1926	1926	93	t	0	\N
 197	10	pence	1968	2022	36	f	4	\N
 199	10	kopecks	1924	1958	58	f	1	\N
 221	5	baht	1972	2021	83	f	2	\N
 200	2	kopecks	1961	1991	59	f	2	\N
 201	5	kopecks	1961	1991	59	f	1	\N
+234	5	qindarka	1964	1988	94	t	0	\N
+235	20	francs	1949	1956	95	t	0	\N
 202	10	kopecks	1961	1991	59	f	4	\N
 203	20	kopecks	1961	1991	59	f	1	\N
 204	5	rubles	1992	1992	61	f	1	\N
@@ -501,18 +505,92 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 209	2	rubles	1997	2022	62	f	1	\N
 210	5	pesos	1997	2021	1	f	1	\N
 222	10	baht	1971	2021	83	f	3	\N
+236	1	centime	1964	1964	96	t	0	\N
+237	1	centavo	1921	1921	97	t	0	\N
 211	2	rappen	1850	1974	50	f	4	\N
 212	5	rappen	1850	2022	50	f	1	\N
+238	10	centavos	1948	1949	98	t	0	\N
+239	10	centavos	1974	1974	99	t	0	\N
 213	10	rappen	1850	2022	50	f	3	\N
 223	10	cents	1818	2001	73	f	5	\N
+240	50	lwei	1977	1979	100	t	0	\N
+241	50	kwanzas	1992	1992	101	t	0	\N
 224	25	cents	1817	2001	73	f	2	\N
 225	50	dinara	1955	1955	14	f	1	\N
+242	10	centimos	1999	1999	102	t	0	\N
 226	2	dinara	1970	1986	4	f	2	\N
+243	1	centavo	1882	1948	103	t	0	\N
+244	1	centavo	1970	1975	104	t	0	\N
+245	1	centavo	1983	1983	105	t	0	\N
 227	5	dinara	1970	1986	4	f	4	\N
+246	0.5	centavo	1985	1985	106	t	0	\N
+247	1	centavo	1992	2000	107	t	0	\N
+248	10	luma	1994	1994	108	t	0	\N
+249	5	cents	1986	2020	109	t	0	\N
 228	10	groschen	1947	2001	87	f	5	\N
+250	0.5	sovereign	1901	1918	110	t	0	\N
 229	50	groschen	1946	2001	87	f	2	\N
+251	0.5	penny	1911	1964	111	t	0	\N
 230	1	schilling	1946	2001	87	f	2	\N
 231	5	schilling	1952	2001	87	f	1	\N
+252	1	cent	1966	1991	112	t	0	\N
+253	5	qepik	1992	1993	113	t	0	\N
+254	1	qepik	2006	2011	114	t	0	\N
+255	1	cent	1966	2015	115	t	0	\N
+256	1	fils	1965	1966	116	t	0	\N
+257	1	poisha	1974	1974	117	t	0	\N
+258	1	cent	1973	2012	118	t	0	\N
+259	1	kopek	2009	2009	119	t	0	\N
+260	1	cent	1885	2018	120	t	0	\N
+261	0.5	rupee	1780	1927	121	t	0	\N
+262	1	pice	1928	1954	122	t	0	\N
+263	3	rupees	1966	1966	123	t	0	\N
+264	5	chetrums	1974	1979	124	t	0	\N
+265	5	centavos	1965	1970	126	t	0	\N
+266	2	centavos	1987	1987	127	t	0	\N
+267	1	thebe	1976	1991	128	t	0	\N
+268	10	centavos	1941	1961	129	t	0	\N
+269	1	centavo	1967	1983	130	t	0	\N
+270	1	centavo	1986	1988	131	t	0	\N
+271	1	centavo	1989	1990	132	t	0	\N
+272	1	cruzeiro	1990	1990	133	t	0	\N
+273	5	cruzeiros reais	1993	1994	134	t	0	\N
+275	0.1	penny	1902	1957	136	t	0	\N
+276	1	sen	1967	2020	137	t	0	\N
+277	1	stotinka	1901	1912	138	t	0	\N
+278	1	stotinka	1951	1951	139	t	0	\N
+279	1	stotinka	1962	1990	140	t	0	\N
+280	1	stotinka	1999	2002	141	t	0	\N
+281	1	franc	1965	2003	142	t	0	\N
+282	0.25	piastre	1879	1926	143	t	0	\N
+283	1	mil	1963	1972	144	t	0	\N
+284	0.5	cent	1983	1983	145	t	0	\N
+285	1	centavo	1915	2020	146	t	0	\N
+286	1	centavo	1988	1988	147	t	0	\N
+287	1	centavo	2000	2019	148	t	0	\N
+288	2	centimos	1903	1903	149	t	0	\N
+289	1	cent	1972	2003	150	t	0	\N
+290	100	francs CFA (essai)	1975	1975	151	t	0	\N
+291	50	centimes	1954	1955	152	t	0	\N
+292	1	centime	1887	1919	153	t	0	\N
+293	10	sengi	1967	1967	154	t	0	\N
+294	1	franc	1964	1964	155	t	0	\N
+295	5	francs	1984	2017	156	t	0	\N
+296	1	centavo	1918	1978	157	t	0	\N
+297	0.5	decimo de real	1847	1848	157	t	0	Used before 1880
+298	0.5	centavo	1835	1894	158	t	0	\N
+299	0.5	centesimo	1962	1963	159	t	0	\N
+300	1	centavo	1975	1975	160	t	0	\N
+301	10	francs	1975	1991	161	t	0	\N
+302	1	franc	1973	2006	162	t	0	\N
+303	100	francs	1973	1998	163	t	0	\N
+304	1	cent	1972	2019	164	t	0	\N
+305	5	centavos	1930	1930	165	t	0	\N
+306	10	francs	1975	1986	166	t	0	\N
+307	1	centime	1875	1904	167	t	0	\N
+308	10	centimes	1953	1959	168	t	0	Also 10 sen
+309	5	sen	1979	1979	169	t	0	\N
+310	1	franc	1977	1999	170	t	0	\N
 \.
 
 
@@ -569,6 +647,45 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 47	Japan	Asia	\N
 48	Namibia	Africa	\N
 22	Philippines	Asia	\N
+49	Albania	Europe	\N
+50	Algeria	Africa	\N
+52	Angola	Africa	\N
+53	Argentina	South America	\N
+54	Armenia	Asia	\N
+55	Aruba	South America	\N
+56	Australia	Australia	\N
+57	Azerbaijan	Asia	\N
+58	Bahamas	North America	\N
+59	Bahrain	Asia	\N
+60	Bangladesh	Asia	\N
+61	Barbados	North America	\N
+62	Belarus	Europe	\N
+63	Belize	North America	\N
+64	Bhutan	Asia	\N
+65	Bolivia	South America	\N
+66	Botswana	Africa	\N
+67	Brazil	South America	\N
+68	British West Africa	Africa	\N
+69	Brunei	Asia	\N
+70	Bulgaria	Europe	\N
+71	Burundi	Africa	\N
+72	Cyprus	Europe	\N
+73	Cuba	North America	\N
+74	Costa Rica	North America	\N
+75	Cook islands	Oceania	\N
+76	Republic of the Congo	Africa	\N
+77	Democratic Republic of the Congo	Africa	\N
+78	Comoro Islands	Africa	\N
+79	Colombia	South America	\N
+80	Chile	South America	\N
+81	Chad	Africa	\N
+82	Central African States	Africa	\N
+83	Central African Republic	Africa	\N
+84	Cayman Islands	North America	\N
+85	Cape Verde	Africa	\N
+86	Cameroon	Africa	\N
+87	Cambodia	Asia	\N
+88	Djibouti	Africa	\N
 \.
 
 
@@ -666,6 +783,83 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 87	second shilling	46	1945	2001
 88	yen	47	1871	\N
 89	dollar	48	1993	\N
+93	Old lek	49	1926	1965
+94	New lek	49	1965	\N
+95	Franc	50	1848	1959
+96	Dinar	50	1964	\N
+97	Escudo	52	1914	1928
+98	Angolar	52	1928	1958
+99	Escudo	52	1958	1977
+100	Kwanza	52	1977	1990
+101	Novo kwanza	52	1990	1995
+102	Second kwanza	52	1999	\N
+103	Peso moneda nacional	53	1881	1969
+104	Peso ley	53	1970	1983
+105	Peso argentino	53	1983	1985
+106	Austral	53	1985	1991
+107	Peso convertible	53	1992	\N
+108	Dram	54	1993	\N
+109	Florin	55	1986	\N
+110	Pound sterling	56	1788	1929
+111	Pound	56	1910	1966
+112	Dollar	56	1966	\N
+113	Second manat	57	1992	2006
+114	Third manat	57	2006	\N
+115	Dollar	58	1966	\N
+116	Dinar	59	1965	\N
+117	Taka	60	1972	\N
+118	Dollar	61	1973	\N
+119	Third ruble	62	2016	\N
+120	Dollar	63	1885	\N
+121	Hammered coinage	64	1789	1927
+122	Milled coinage	64	1927	1957
+123	Rupee	64	1957	1974
+124	Ngultrum	64	1974	\N
+126	Peso boliviano	65	1963	1986
+127	Second boliviano	65	1986	\N
+128	Pula	66	1976	\N
+129	Cruzeiro	67	1942	1967
+130	Cruzeiro novo	67	1967	1986
+131	Cruzado	67	1986	1989
+132	Cruzado novo	67	1989	1990
+133	Cruzeiro	67	1990	1993
+134	Cruzeiro real	67	1993	1994
+135	Real	67	1994	\N
+136	Pound	68	1907	1968
+137	Ringgit / Dollar	69	1967	\N
+138	First lev	70	1881	1952
+139	Second lev	70	1952	1962
+140	Third lev	70	1962	1999
+141	Fourth lev	70	1999	\N
+142	Franc	71	1962	\N
+143	Pound	72	1879	1955
+144	Pound (decimalized)	72	1955	1982
+145	Pound (decimalized)	72	1983	2007
+146	Cuban peso (moneda nacional)	73	1914	\N
+147	INTUR (visitor's coinage)	73	1981	1989
+148	Convertible peso	73	1994	2020
+149	Colon	74	1896	\N
+150	Dollar	75	1972	\N
+151	Frappes d'essai	76	1973	\N
+152	Franc (Belgian)	77	1887	1967
+153	Franc	77	1887	1967
+154	Zaire	77	1967	1993
+155	CFA Franc	78	1945	1975
+156	Franc	78	1976	\N
+157	Peso decimalized	79	1847	\N
+158	Old peso	80	1835	1980
+159	Escudo	80	1960	1975
+160	New peso	80	1975	\N
+161	CFA Franc	81	1973	\N
+162	CFA Franc	82	1973	\N
+163	CFA Franc	83	1973	\N
+164	Dollar	84	1972	\N
+165	Escudo	85	1914	\N
+166	CFA Franc	86	1973	\N
+167	Franc	87	1860	1953
+168	First riel	87	1953	1975
+169	Second riel	87	1979	\N
+170	Franc	88	1977	\N
 \.
 
 
@@ -673,21 +867,21 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 232, true);
+SELECT pg_catalog.setval('public.coin_seq', 310, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 49, false);
+SELECT pg_catalog.setval('public.country_seq', 88, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 92, true);
+SELECT pg_catalog.setval('public.currency_seq', 170, true);
 
 
 --
