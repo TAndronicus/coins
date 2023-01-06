@@ -591,6 +591,55 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 308	10	centimes	1953	1959	168	t	0	Also 10 sen
 309	5	sen	1979	1979	169	t	0	\N
 310	1	franc	1977	1999	170	t	0	\N
+311	1	matona	1931	1931	171	t	0	\N
+312	1	santeem	1944	2005	172	t	0	\N
+313	1	cent	1974	1995	173	t	0	\N
+314	1	mark	1922	1926	174	t	0	\N
+315	1	sent	1929	1939	175	t	0	\N
+316	5	senti	1991	1995	176	t	0	\N
+317	1	cent	1997	1997	177	t	0	\N
+318	1	peseta guineana	1969	1969	178	t	0	\N
+319	1	ekwele	1975	1980	179	t	0	Also ekuele
+320	5	francos CFA	1985	1985	180	t	0	\N
+321	100	francos CFA	1985	1985	181	t	0	\N
+322	5	francs	1958	1958	182	t	0	\N
+323	1	franc CFA	1969	1971	183	t	0	\N
+324	1	centavo	1889	1936	184	t	0	\N
+325	1	centavo	1940	1995	185	t	0	\N
+326	0.5	millieme	1917	1938	186	t	0	\N
+327	50	centimes	1944	1944	187	t	0	\N
+328	50	centimes	1948	1965	188	t	0	\N
+329	2	sapeque	1887	1904	189	t	0	\N
+330	0.5	tael	1943	1944	190	t	0	\N
+331	50	centimes	1942	1943	191	t	0	\N
+333	1	franc	1948	1948	192	t	0	\N
+334	1	penni	1863	1924	193	t	0	\N
+335	1	penni	1963	1979	194	t	0	\N
+336	0.5	penny	1934	1954	195	t	0	\N
+337	1	cent	1969	2006	196	t	0	\N
+338	0.5	penny	1974	1983	197	t	0	\N
+339	4	pence	1891	1945	198	t	0	\N
+340	1	cent	1967	1992	199	t	0	\N
+341	5	centavos	1933	1933	200	t	0	\N
+342	50	centavos	1977	1977	201	t	0	\N
+343	1	franc guineen	1962	1962	202	t	0	\N
+344	50	cauris	1971	1971	203	t	0	\N
+345	1	franc guineen	1985	1985	204	t	0	\N
+346	1	double	1830	1938	205	t	0	\N
+347	0.5	penny	1971	1979	206	t	0	\N
+348	0.5	centavo	1932	1946	207	t	0	\N
+349	1	penny	1988	2020	208	t	0	\N
+350	0.5	penny	1958	1958	209	t	0	\N
+351	5	pesewas	1965	1965	210	t	0	\N
+352	0.5	pesewa	1967	1967	211	t	0	\N
+353	1	pesewa	2007	2007	212	t	0	\N
+354	1	tetri	1993	1993	213	t	0	\N
+356	1	butut	1971	1998	215	t	0	\N
+355	1	penny	1966	1966	214	t	0	\N
+357	100	francs	1971	1975	216	t	0	\N
+358	100	francs	1975	1985	217	t	0	\N
+359	1	centavo	1935	1998	218	t	0	\N
+360	1	centime	1881	1889	219	t	0	\N
 \.
 
 
@@ -686,6 +735,33 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 86	Cameroon	Africa	\N
 87	Cambodia	Asia	\N
 88	Djibouti	Africa	\N
+89	Ethiopia	Africa	\N
+90	Eswatini	Africa	\N
+91	Estonia	Europe	\N
+92	Eritrea	Africa	\N
+93	Equatorial Guinea	Africa	\N
+94	Equatorial African States	Africa	\N
+95	El Salvador	North America	\N
+96	Egypt	Africa	\N
+97	French West Africa	Africa	\N
+98	French Polynesia	Oceania	\N
+99	French Indochina	Asia	\N
+100	French Equatorial Africa	Africa	\N
+101	Finland	Europe	\N
+102	Fiji	Oceania	\N
+103	Falkland Islands	South America	\N
+104	Guyana	South America	\N
+105	Guinea-Bissau	Africa	\N
+106	Guinea	Africa	\N
+107	Guernsey	Europe	18
+108	Guatemala	North America	\N
+109	Gibraltar	Europe	18
+110	Ghana	Africa	\N
+111	Georgia	Asia	\N
+112	Gambia	Africa	\N
+113	Gabon	Africa	\N
+114	Honduras	North America	\N
+115	Haiti	North America	\N
 \.
 
 
@@ -860,6 +936,55 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 168	First riel	87	1953	1975
 169	Second riel	87	1979	\N
 170	Franc	88	1977	\N
+171	Birr (decimalized)	89	1931	1936
+172	Birr	89	1944	\N
+173	Lilangeni	90	1974	\N
+174	Mark	91	1918	1927
+175	Old kroon	91	1928	1940
+176	New kroon	91	1992	2011
+177	Nakfa	92	1997	\N
+178	Peseta	93	1969	1975
+179	Ekwele	93	1975	1985
+180	CFA Franc	93	1984	\N
+181	New Franc	93	1985	\N
+182	CFA Franc	94	1945	1960
+183	CFA Franc	94	1961	1973
+184	Peso	95	1877	1919
+185	Colon	95	1919	2001
+186	Pound	96	1916	\N
+187	CFA Franc	97	1944	1958
+188	CFP Franc	98	1945	\N
+189	Piastre	99	1880	1952
+190	Tael	99	1943	1944
+191	Franc	100	1917	1945
+192	CFA Franc	100	1945	1960
+193	Markka	101	1860	1963
+194	New markka	101	1963	2001
+195	Pound	102	1873	1969
+196	Dollar	102	1969	\N
+197	Pound (decimalized)	103	1971	\N
+198	Pound sterling	104	1840	1954
+199	Dollar (decimalized)	104	1965	\N
+200	Escudo	105	1914	1975
+201	Peso	105	1975	1997
+202	Old franc	106	1959	1971
+203	Syli	106	1971	1985
+204	New franc	106	1985	\N
+205	Pound	107	1827	1971
+206	Pound (decimalized)	107	1971	\N
+207	Quetzal	108	1925	\N
+208	Pound (decimalized)	109	1971	\N
+209	Pound	110	1958	1965
+210	First cedi	110	1965	1967
+211	Second cedi	110	1967	2007
+212	Third cedi	110	2007	\N
+213	Lari	111	1995	\N
+214	Pound	112	1966	1971
+215	Dalaso	112	1971	\N
+216	CFA franc	113	1961	1973
+217	CFA franc	113	1973	\N
+218	Lempira	114	1931	\N
+219	Third gourde	115	1872	\N
 \.
 
 
@@ -867,21 +992,21 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 310, true);
+SELECT pg_catalog.setval('public.coin_seq', 360, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 88, true);
+SELECT pg_catalog.setval('public.country_seq', 115, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 170, true);
+SELECT pg_catalog.setval('public.currency_seq', 219, true);
 
 
 --
