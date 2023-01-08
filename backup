@@ -680,6 +680,28 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 398	1	santims	1992	2008	257	t	0	\N
 399	10	cents	1952	1952	258	t	0	\N
 400	10	att	1980	1980	259	t	0	\N
+401	50	centimes	1943	1943	260	t	0	\N
+402	1	franc	1948	1958	261	t	0	\N
+403	1	franc	1965	2002	262	t	0	\N
+404	1	ariary	2004	2018	263	t	0	\N
+405	1	penny	1967	1968	264	t	0	\N
+406	1	tambala	1971	2003	265	t	0	\N
+407	1	sen	1967	2008	266	t	0	\N
+408	1	laari	1967	2012	267	t	0	\N
+409	5	francs maliens	1961	1961	268	t	0	\N
+410	2	mils	1972	2007	269	t	0	\N
+411	0.2	ouguiya	1973	1973	270	t	0	\N
+412	0.2	ouguiya	2017	2018	271	t	0	\N
+413	1	cent	1877	1987	272	t	0	\N
+414	1	ban	1993	2017	273	t	0	\N
+415	1	centime	1976	1995	275	t	0	\N
+416	1	mongo	1925	1981	276	t	0	\N
+417	1	para	1906	1915	277	t	0	\N
+418	10	centavos	1936	1961	278	t	0	\N
+419	50	centavos	1980	1994	280	t	0	\N
+420	1	centavo	2006	2006	281	t	0	\N
+421	2	pyas	1949	1949	282	t	0	\N
+422	1	pya	1952	1966	283	t	0	\N
 \.
 
 
@@ -826,6 +848,20 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 137	Lebanon	Asia	\N
 138	Latvia	Europe	\N
 139	Laos	Asia	\N
+140	Madagascar	Africa	\N
+141	Malawi	Africa	\N
+142	Malaysia	Africa	\N
+143	Maldives	Asia	\N
+144	Mali	Africa	\N
+145	Malta	Europe	\N
+146	Mauritania	Africa	\N
+147	Mauritius	Africa	\N
+148	Moldova	Europe	\N
+149	Monaco	Europe	\N
+150	Mongolia	Asia	\N
+151	Montenegro	Europe	\N
+153	Mozambique	Africa	\N
+154	Myanmar	Asia	\N
 \.
 
 
@@ -1089,6 +1125,28 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 257	New lats	138	1993	2013
 258	Piastre	139	1952	1952
 259	Lao PDR Kip	139	1979	\N
+260	Franc	140	1925	1945
+261	CFA Franc	140	1945	1963
+262	Franc	140	1963	2004
+263	Ariary	140	2003	\N
+264	Pound	141	1964	1971
+265	Kwacha	141	1971	\N
+266	Ringgit	142	1967	\N
+267	Rufiyaa	143	1947	\N
+268	Franc	144	1962	1774
+269	Lira	145	1972	2007
+270	Old Ouguiya	146	1973	2018
+271	New Ouguiya	146	2018	\N
+272	Rupee	147	1877	\N
+273	Leu	148	1993	\N
+275	Nouveau franc	149	1960	2001
+276	Togrog	150	1925	\N
+277	Perper	151	1906	1918
+278	Escudo	153	1911	1974
+280	Old metical	153	1980	2006
+281	New metical	153	2006	\N
+282	Second rupee	154	1945	1952
+283	Third kyat	154	1952	\N
 \.
 
 
@@ -1096,21 +1154,21 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 400, true);
+SELECT pg_catalog.setval('public.coin_seq', 422, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 139, true);
+SELECT pg_catalog.setval('public.country_seq', 154, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 259, true);
+SELECT pg_catalog.setval('public.currency_seq', 283, true);
 
 
 --
