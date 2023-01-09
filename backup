@@ -702,6 +702,21 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 420	1	centavo	2006	2006	281	t	0	\N
 421	2	pyas	1949	1949	282	t	0	\N
 422	1	pya	1952	1966	283	t	0	\N
+423	0.25	paisa	1943	1947	284	t	0	\N
+424	1	cent	1942	1947	285	t	0	\N
+425	1	cent	1952	2016	286	t	0	\N
+426	50	centimes	1948	1949	287	t	0	\N
+427	0.5	penny	1940	1965	288	t	0	\N
+428	1	cent	1966	1988	289	t	0	\N
+429	0.5	centavo	1912	1937	290	t	0	\N
+430	5	centavos	1987	1987	291	t	0	\N
+431	5	centavos	1994	2002	292	t	0	\N
+432	0.5	kobo	1973	1973	293	t	0	\N
+433	3	pence	1969	1969	294	t	0	\N
+434	0.5	chon	2002	2002	295	t	0	\N
+435	1	chon	2008	2008	296	t	0	\N
+436	1	ore	1876	1972	297	t	0	\N
+437	5	baisa	1975	1998	298	t	0	\N
 \.
 
 
@@ -862,6 +877,17 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 151	Montenegro	Europe	\N
 153	Mozambique	Africa	\N
 154	Myanmar	Asia	\N
+155	Nepal	Asia	\N
+156	Curaçao	South America	36
+157	Netherlands Antilles	South America	36
+158	New Caledonia	Oceania	30
+159	New Zealand	Oceania	\N
+160	Nicaragua	North America	\N
+161	Nigeria	Africa	\N
+162	Biafra	Africa	161
+163	North Korea	Asia	\N
+164	Norway	Europe	\N
+165	Oman	Asia	\N
 \.
 
 
@@ -1147,6 +1173,21 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 281	New metical	153	2006	\N
 282	Second rupee	154	1945	1952
 283	Third kyat	154	1952	\N
+284	Rupee	155	1932	\N
+285	Gulden	156	1828	\N
+286	Gulden	157	1828	\N
+287	CFP Franc	158	1945	\N
+288	Pound	159	1840	1967
+289	Dollar	159	1967	\N
+290	First Cordoba	160	1912	1987
+291	Second Cordoba	160	1988	1990
+292	Third Córdoba "Oro"	160	1991	\N
+293	Naira	161	1973	\N
+294	Pound	162	1967	1970
+295	Second Won	163	1959	2009
+296	Third Won	163	2009	\N
+297	Krone	164	1875	\N
+298	Rial	165	1972	\N
 \.
 
 
@@ -1154,21 +1195,21 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 422, true);
+SELECT pg_catalog.setval('public.coin_seq', 437, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 154, true);
+SELECT pg_catalog.setval('public.country_seq', 165, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 283, true);
+SELECT pg_catalog.setval('public.currency_seq', 298, true);
 
 
 --
