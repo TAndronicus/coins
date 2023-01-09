@@ -716,7 +716,106 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 434	0.5	chon	2002	2002	295	t	0	\N
 435	1	chon	2008	2008	296	t	0	\N
 436	1	ore	1876	1972	297	t	0	\N
-437	5	baisa	1975	1998	298	t	0	\N
+437	5	baisa	1975	2020	298	t	0	\N
+438	1	centimo	1985	1985	299	t	0	\N
+439	1	centimo	1991	2011	300	t	0	\N
+440	1	centimo	1944	1950	301	t	0	\N
+441	1	toea	1975	2004	302	t	0	\N
+442	0.5	centesimo	1907	1907	303	t	0	\N
+443	1	pice	1948	1959	304	t	0	Also pie
+444	1	franc	1960	1964	305	t	0	\N
+445	0.5	franc	1970	1970	306	t	0	\N
+446	0.5	penny	1955	1964	307	t	0	\N
+447	1	dirham	1966	1966	308	t	0	\N
+448	1	dirham	1973	2016	309	t	0	\N
+449	0.5	qirsh / piastre	1921	1941	310	t	0	Also ghirsh
+450	2.5	qirsh	1960	1960	311	t	0	\N
+451	1	cent	1942	2021	312	t	0	\N
+452	10	cents	2021	2021	313	t	0	\N
+453	1	millieme	1956	1971	314	t	0	\N
+454	1	dinar	1994	1994	315	t	0	\N
+455	1	piastre / qirsh	2006	2006	316	t	0	\N
+456	1	pound	2011	2011	317	t	0	\N
+457	0.25	cent	1870	1904	318	t	0	\N
+458	1	cent	1975	1994	319	t	0	\N
+459	10	piastres	2015	2015	320	t	0	\N
+460	0.25	penny	1923	1960	321	t	0	\N
+461	0.5	cent	1961	1983	322	t	0	\N
+462	5	centesimi	1967	1976	323	t	0	Also senti
+463	1	besa	1909	1921	324	t	0	\N
+464	5	lire	1925	1925	325	t	0	\N
+465	1	centesimo	1950	1950	326	t	0	\N
+466	1	cent	1977	2010	327	t	0	\N
+467	10	stotinov	1992	2006	328	t	0	\N
+468	5	halierov	1942	1942	329	t	0	\N
+469	10	halierov	1993	2003	330	t	0	\N
+470	1	cent	1967	2002	331	t	0	\N
+471	0.5	cent	1964	1980	332	t	0	\N
+472	1	cent	2022	2022	333	t	0	\N
+473	1	cent	1948	2016	334	t	0	\N
+474	50	para	1942	1942	335	t	0	\N
+475	1	dinar	2003	2021	336	t	0	\N
+476	0.25	qirsh	1925	1946	337	t	0	\N
+477	1	halalah	1963	2013	338	t	0	\N
+478	10	centavos	1929	1971	339	t	0	\N
+479	50	centimos	1977	1977	340	t	0	\N
+480	10	centimos	2017	2017	341	t	0	\N
+481	5	centesimi	1864	1938	342	t	0	\N
+482	1	sene	1967	1996	343	t	0	\N
+483	1	penny	1984	2006	344	t	0	\N
+484	50	luma	2004	2004	345	t	0	\N
+485	1	shilling	1994	1994	346	t	0	\N
+486	1	kopeck	2000	2000	347	t	0	\N
+487	1	peseta	1992	1992	348	t	0	\N
+488	1	cent	1976	1994	349	t	0	\N
+489	0.25	crown	1981	1981	350	t	0	\N
+490	1	tenne	1993	1993	351	t	0	\N
+491	1	tenne	2009	2009	352	t	0	\N
+492	1	millieme	1960	2000	353	t	0	Also millim
+493	1	cent	1966	2016	354	t	0	\N
+494	1	seniti	1967	2005	355	t	0	\N
+495	50	centimes	1924	1926	356	t	0	\N
+496	10	avos	1945	1951	357	t	0	\N
+497	10	centavos	1958	1958	358	t	0	\N
+498	10	centavos	2003	2012	359	t	0	\N
+499	5	senti	1966	1984	360	t	0	\N
+500	1	diram	2011	2019	361	t	0	\N
+501	1	tiyin	1994	1994	362	t	0	\N
+502	1	centesimo	1869	1953	363	t	0	\N
+503	1	centesimo	1977	1977	364	t	0	\N
+504	10	centesimos	1994	1994	365	t	0	\N
+505	5	cents	1966	1976	366	t	0	\N
+506	1	shilling	1987	1987	367	t	0	\N
+507	1	hao	1976	1976	368	t	0	\N
+508	200	đồng	2003	2003	369	t	0	\N
+509	5	centimos	1896	1986	370	t	0	\N
+510	1	centimo	2007	2009	371	t	0	\N
+511	50	centimos	2018	2018	372	t	0	\N
+512	25	centimos	2021	2021	373	t	0	\N
+513	5	centesimi	1929	1946	374	t	0	\N
+514	1	franc	1970	1982	375	t	0	\N
+515	1	vatu	1983	2002	376	t	0	\N
+516	1	cent	1980	1999	377	t	0	\N
+517	1	cent	2014	2014	378	t	0	\N
+518	3	pence	1968	1968	379	t	0	\N
+519	0.5	cent	1970	1977	380	t	0	\N
+520	0.5	penny	1934	1954	381	t	0	\N
+521	1	penny	1966	1966	382	t	0	\N
+522	1	ngwee	1968	1983	383	t	0	\N
+523	5	ngwee	2012	2017	384	t	0	\N
+524	1	rial	1993	1993	385	t	0	\N
+525	1	franc CFA	1961	2011	386	t	0	\N
+526	1	heller	1892	1916	387	t	0	\N
+527	1	cash	1908	1909	388	t	0	\N
+528	1	fen	1932	1932	389	t	0	\N
+529	1	cash	1912	1912	390	t	0	\N
+530	5	li	1916	1916	391	t	0	\N
+531	1	fen	1955	2018	393	t	0	\N
+532	5	cents / fen	1909	1909	394	t	0	\N
+533	5	avos	1952	1967	395	t	0	\N
+534	1	tangka	1763	1953	396	t	0	\N
+535	0.5	skar	1910	1910	397	t	0	\N
+536	0.25	rupee	1904	1912	398	t	0	\N
 \.
 
 
@@ -888,6 +987,70 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 163	North Korea	Asia	\N
 164	Norway	Europe	\N
 165	Oman	Asia	\N
+166	Peru	South America	\N
+167	Paraguay	South America	\N
+168	Papua New Guinea	Oceania	\N
+169	Panama	North America	\N
+170	Pakistan	Asia	\N
+171	Rwanda-Burundi	Africa	19
+172	Rwanda	Africa	\N
+173	Rhodesia and Nyasaland	Africa	\N
+174	Qatar and Dubai	Asia	\N
+175	Qatar	Asia	\N
+176	Syria	Asia	\N
+177	Suriname	South America	\N
+178	Sudan	Africa	\N
+179	Sri Lanka	Asia	\N
+180	South Sudan	Africa	\N
+181	South Africa	Africa	\N
+182	Somalia	Africa	\N
+183	Somalia	Africa	182
+184	Italian Somaliland	Africa	182
+185	Solomon Islands	Oceania	\N
+186	Slovenia	Europe	\N
+187	Slovakia	Europe	\N
+188	Singapore	Asia	\N
+189	Sierra Leone	Africa	\N
+190	Seychelles	Africa	\N
+191	Serbia	Europe	\N
+192	Saudi Arabia	Asia	\N
+193	São Tomé and Príncipe	Africa	\N
+194	San Marino	Europe	\N
+195	Samoa	Oceania	\N
+196	Saint Helena, Ascension and Tristan da Cunha	Africa	18
+197	Artsakh	Asia	57
+198	Somaliland	Africa	182
+199	Transnistria	Europe	148
+200	Western Sahara	Africa	31
+201	Tuvalu	Oceania	18
+202	Turks and Caicos Islands	North America	18
+203	Turkmenistan	Asia	\N
+204	Tunisia	Africa	\N
+205	Trinidad and Tobago	South America	\N
+206	Tonga	Oceania	\N
+207	Togo	Africa	\N
+208	Timor-Leste	Asia	\N
+209	Tanzania	Africa	\N
+210	Tajikistan	Asia	\N
+211	Uzbekistan	Asia	\N
+212	Uruguay	South America	\N
+213	Uganda	Africa	\N
+214	Vietnam	Asia	\N
+215	Venezuela	South America	\N
+216	Vatican City	Europe	\N
+217	Vanuatu	Oceania	\N
+218	Zimbabwe	Africa	\N
+219	Zimbabwe	Africa	218
+220	Rhodesia	Africa	218
+221	Southern Rhodesia	Africa	218
+222	Zambia	Africa	\N
+223	Yemen	Asia	\N
+224	Western African States	Africa	\N
+225	Austrian empire	Europe	46
+226	China	Asia	\N
+227	Kiau Chau	Asia	226
+228	Macau	Asia	226
+229	Tibet	Asia	226
 \.
 
 
@@ -1188,6 +1351,105 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 296	Third Won	163	2009	\N
 297	Krone	164	1875	\N
 298	Rial	165	1972	\N
+299	Inti	166	1985	1991
+300	Nuevo sol	166	1991	\N
+301	Guarani	167	1944	\N
+302	Kina	168	1975	\N
+303	Balboa	169	1904	\N
+304	Rupee	170	1948	1960
+305	Franc	171	1960	1964
+306	Franc	172	1964	\N
+307	Pound	173	1955	1964
+308	Riyal	174	1966	1973
+309	Riyal	175	1973	\N
+310	Pound	176	1919	\N
+311	United Arab Republic Pound	176	1958	1961
+312	Gulden	177	1826	2003
+313	Dollar	177	2004	\N
+314	First pound	178	1956	1992
+315	Dinar	178	1992	2007
+316	Second pound	178	2007	2011
+317	Third pound	178	2011	\N
+318	Rupee	179	1871	1972
+319	Rupee	179	1972	\N
+320	Pound	180	2011	\N
+321	Pound	181	1925	1961
+322	Rand	181	1961	\N
+323	Shilling	183	1962	\N
+324	Rupia	184	1909	1925
+325	Lira	184	1925	1938
+326	Somalo	184	1950	1962
+327	Dollar	185	1977	\N
+328	Tolar	186	1991	2006
+329	WWII koruna	187	1939	1945
+330	Koruna	187	1993	2008
+331	Dollar	188	1967	\N
+332	Leone	189	1964	2022
+333	New Leone	189	2022	\N
+334	Rupee	190	1914	\N
+335	WWII dinar	191	1941	1944
+336	Dinar	191	2003	\N
+337	Riyal	192	1925	1960
+338	Riyal	192	1960	\N
+339	Escudo	193	1914	1974
+340	First Dobra	193	1977	2017
+341	Second Dobra	193	2018	\N
+342	Lira	194	1864	2001
+343	Tala	195	1967	\N
+344	Pound	196	1976	\N
+345	Dram	197	2003	\N
+346	Shilling	198	1994	\N
+347	Third ruble	199	2000	\N
+348	Peseta	200	1975	\N
+349	Dollar	201	1976	\N
+350	Crown	202	1969	\N
+351	Manat	203	1993	2009
+352	New manat	203	2009	\N
+353	Dinar	204	1958	\N
+354	Dollar	205	1964	\N
+355	Paʻanga	206	1967	\N
+356	Franc	207	1924	1956
+357	Pataca	208	1894	1959
+358	Escudo	208	1958	1976
+359	US Dollar	208	2003	\N
+360	Shilling	209	1966	\N
+361	Somoni	210	2000	\N
+362	Second soʻm	211	1994	\N
+363	Peso	212	1863	1975
+364	Nuevo peso	212	1975	1993
+365	Peso uruguayo	212	1993	\N
+366	Shilling	213	1966	1987
+367	New shilling	213	1987	\N
+368	First new đồng	214	1978	1985
+369	Second new đồng	214	1985	\N
+370	Bolívar	215	1879	2007
+371	Bolívar Fuerte	215	2008	2018
+372	Bolívar Soberano	215	2018	2021
+373	Bolívar Digital	215	2021	\N
+374	Lira	216	1929	2001
+375	Franc	217	1921	1982
+376	Vatu	217	1982	\N
+377	First Dollar	219	1980	2006
+378	Fifth Dollar (RTGS Dollar)	219	2016	\N
+379	Pound	220	1964	1970
+380	Dollar	220	1970	1980
+381	Pound	221	1932	1955
+382	Pound	222	1964	1968
+383	Kwacha	222	1968	2012
+384	Kwacha	222	2013	\N
+385	Rial	223	1990	\N
+386	CFA Franc	224	1958	\N
+387	Austro-Hungarian krone	225	1892	1912
+388	Yuan	226	1903	1912
+389	Soviet Hubei-Honan-Anhui	226	1931	1936
+390	Cash	226	1912	1912
+391	Yuan	226	1912	1948
+393	Second Rénmínbì	226	1955	\N
+394	Dollar	227	1907	1914
+395	Pataca	228	1894	\N
+396	Tangka	229	1640	1959
+397	Srang	229	1792	1959
+398	Rupee	229	1902	1942
 \.
 
 
@@ -1195,21 +1457,21 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 437, true);
+SELECT pg_catalog.setval('public.coin_seq', 536, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 165, true);
+SELECT pg_catalog.setval('public.country_seq', 229, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 298, true);
+SELECT pg_catalog.setval('public.currency_seq', 398, true);
 
 
 --
