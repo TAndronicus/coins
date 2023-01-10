@@ -816,6 +816,22 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 534	1	tangka	1763	1953	396	t	0	\N
 535	0.5	skar	1910	1910	397	t	0	\N
 536	0.25	rupee	1904	1912	398	t	0	\N
+537	1	jiao	1949	1974	399	t	0	\N
+538	1	fenig	1917	1918	400	t	0	\N
+539	1	grosz	1923	1944	401	t	0	\N
+540	1	grosz	1949	1953	402	t	0	\N
+541	1	grosz	1990	2022	403	t	0	\N
+542	5	pfennig	1942	1942	404	t	0	\N
+543	1	schilling	1801	1801	405	t	0	\N
+544	1	schilling	1808	1812	406	t	0	\N
+545	3	grosze	1835	1835	407	t	0	\N
+546	1	grosz	1810	1814	408	t	0	\N
+548	1	groschen	1816	1817	410	t	0	\N
+547	1	grossus	1794	1794	409	t	0	\N
+549	1	solidus	1796	1797	411	t	0	\N
+550	6	groszy	1813	1813	412	t	0	\N
+551	1	grosz	1816	1841	413	t	0	\N
+552	3	grosze polskie	1831	1831	414	t	0	\N
 \.
 
 
@@ -878,7 +894,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 53	Argentina	South America	\N
 54	Armenia	Asia	\N
 55	Aruba	South America	\N
-56	Australia	Australia	\N
 57	Azerbaijan	Asia	\N
 58	Bahamas	North America	\N
 59	Bahrain	Asia	\N
@@ -897,7 +912,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 72	Cyprus	Europe	\N
 73	Cuba	North America	\N
 74	Costa Rica	North America	\N
-75	Cook islands	Oceania	\N
 76	Republic of the Congo	Africa	\N
 77	Democratic Republic of the Congo	Africa	\N
 78	Comoro Islands	Africa	\N
@@ -920,11 +934,9 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 95	El Salvador	North America	\N
 96	Egypt	Africa	\N
 97	French West Africa	Africa	\N
-98	French Polynesia	Oceania	\N
 99	French Indochina	Asia	\N
 100	French Equatorial Africa	Africa	\N
 101	Finland	Europe	\N
-102	Fiji	Oceania	\N
 103	Falkland Islands	South America	\N
 104	Guyana	South America	\N
 105	Guinea-Bissau	Africa	\N
@@ -952,7 +964,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 127	Kyrgyzstan	Asia	\N
 128	Kuwait	Asia	\N
 129	Korea	Asia	\N
-130	Kiribati	Oceania	\N
 131	Kazakhstan	Asia	\N
 132	Luxembourg	Europe	\N
 133	Liechtenstein	Europe	\N
@@ -979,8 +990,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 155	Nepal	Asia	\N
 156	Curaçao	South America	36
 157	Netherlands Antilles	South America	36
-158	New Caledonia	Oceania	30
-159	New Zealand	Oceania	\N
 160	Nicaragua	North America	\N
 161	Nigeria	Africa	\N
 162	Biafra	Africa	161
@@ -989,7 +998,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 165	Oman	Asia	\N
 166	Peru	South America	\N
 167	Paraguay	South America	\N
-168	Papua New Guinea	Oceania	\N
 169	Panama	North America	\N
 170	Pakistan	Asia	\N
 171	Rwanda-Burundi	Africa	19
@@ -1006,7 +1014,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 182	Somalia	Africa	\N
 183	Somalia	Africa	182
 184	Italian Somaliland	Africa	182
-185	Solomon Islands	Oceania	\N
 186	Slovenia	Europe	\N
 187	Slovakia	Europe	\N
 188	Singapore	Asia	\N
@@ -1016,18 +1023,15 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 192	Saudi Arabia	Asia	\N
 193	São Tomé and Príncipe	Africa	\N
 194	San Marino	Europe	\N
-195	Samoa	Oceania	\N
 196	Saint Helena, Ascension and Tristan da Cunha	Africa	18
 197	Artsakh	Asia	57
 198	Somaliland	Africa	182
 199	Transnistria	Europe	148
 200	Western Sahara	Africa	31
-201	Tuvalu	Oceania	18
 202	Turks and Caicos Islands	North America	18
 203	Turkmenistan	Asia	\N
 204	Tunisia	Africa	\N
 205	Trinidad and Tobago	South America	\N
-206	Tonga	Oceania	\N
 207	Togo	Africa	\N
 208	Timor-Leste	Asia	\N
 209	Tanzania	Africa	\N
@@ -1038,7 +1042,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 214	Vietnam	Asia	\N
 215	Venezuela	South America	\N
 216	Vatican City	Europe	\N
-217	Vanuatu	Oceania	\N
 218	Zimbabwe	Africa	\N
 219	Zimbabwe	Africa	218
 220	Rhodesia	Africa	218
@@ -1051,6 +1054,29 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 227	Kiau Chau	Asia	226
 228	Macau	Asia	226
 229	Tibet	Asia	226
+230	Taiwan	Asia	226
+231	Poland	Europe	\N
+232	Poland	Europe	231
+233	Łódź Ghetto	Europe	231
+234	Free city of Danzig	Europe	231
+235	Free city of Kraków	Europe	231
+236	Warszawa Duchy	Europe	231
+237	Austrian partition of Poland	Europe	231
+238	Prussian partition of Poland	Europe	231
+239	Russian partition of Poland	Europe	231
+56	Australia	Australia and Oceania	\N
+75	Cook islands	Australia and Oceania	\N
+98	French Polynesia	Australia and Oceania	\N
+102	Fiji	Australia and Oceania	\N
+130	Kiribati	Australia and Oceania	\N
+158	New Caledonia	Australia and Oceania	30
+159	New Zealand	Australia and Oceania	\N
+168	Papua New Guinea	Australia and Oceania	\N
+185	Solomon Islands	Australia and Oceania	\N
+195	Samoa	Australia and Oceania	\N
+201	Tuvalu	Australia and Oceania	18
+206	Tonga	Australia and Oceania	\N
+217	Vanuatu	Australia and Oceania	\N
 \.
 
 
@@ -1450,6 +1476,22 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 396	Tangka	229	1640	1959
 397	Srang	229	1792	1959
 398	Rupee	229	1902	1942
+399	New dollar	230	1949	\N
+400	Marka	232	1917	1924
+401	Second złoty	232	1924	1949
+402	Third złoty	232	1949	1994
+403	Fourth złoty	232	1995	\N
+404	Reichsmark	233	1939	1944
+405	Prussian Danzig	234	1801	1801
+406	Napoleonic	234	1808	1812
+407	Złoty	235	1835	1846
+408	Złoty	236	1807	1815
+409	Austrian Kronethaler	237	1772	1815
+410	Posen-Thaler	238	1783	1817
+411	South Prussia - First Złoty	238	1793	1807
+412	Zamość - Złoty (siege coinage)	238	1813	1813
+413	Złoty	239	1815	1841
+414	Revolutionary Coinage (November Uprising) - Złoty	239	1831	1831
 \.
 
 
@@ -1457,21 +1499,21 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 536, true);
+SELECT pg_catalog.setval('public.coin_seq', 552, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 229, true);
+SELECT pg_catalog.setval('public.country_seq', 239, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 398, true);
+SELECT pg_catalog.setval('public.currency_seq', 414, true);
 
 
 --
