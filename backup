@@ -832,6 +832,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 550	6	groszy	1813	1813	412	t	0	\N
 551	1	grosz	1816	1841	413	t	0	\N
 552	3	grosze polskie	1831	1831	414	t	0	\N
+553	1	filler	1892	1914	415	t	0	\N
 \.
 
 
@@ -1492,6 +1493,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 412	Zamość - Złoty (siege coinage)	238	1813	1813
 413	Złoty	239	1815	1841
 414	Revolutionary Coinage (November Uprising) - Złoty	239	1831	1831
+415	Austro-Hungarian korona	15	1892	1918
 \.
 
 
@@ -1499,7 +1501,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 552, true);
+SELECT pg_catalog.setval('public.coin_seq', 553, true);
 
 
 --
@@ -1513,7 +1515,7 @@ SELECT pg_catalog.setval('public.country_seq', 239, true);
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 414, true);
+SELECT pg_catalog.setval('public.currency_seq', 415, true);
 
 
 --
