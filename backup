@@ -343,7 +343,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 71	0.5	centavo	1884	1909	48	t	0	\N
 72	1	sucre	1884	1990	48	f	1	\N
 73	1	centavo	2000	2004	49	t	0	\N
-76	10	cents	1966	1995	51	f	1	\N
 77	10	hwan	1959	1961	52	t	0	\N
 78	1	won	1966	2019	53	t	0	\N
 79	100	won	1970	2019	53	f	1	\N
@@ -362,6 +361,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 50	50	centimos	1869	1980	34	f	3	\N
 51	1	peseta	1869	2001	34	f	5	\N
 53	1	penny	1716	1970	35	f	2	\N
+76	10	cents	1966	1995	51	f	2	\N
 58	1	franc	1833	2001	37	f	3	\N
 56	1	new penny	1971	2022	36	f	4	\N
 70	1	pfennig	1948	2001	47	t	4	\N
@@ -429,11 +429,10 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 141	1	forint	1946	2008	32	f	2	\N
 142	5	forint	1946	2022	32	f	1	\N
 157	20	piso	2019	2020	41	f	1	\N
-99	10	centavos	1992	2019	68	f	2	\N
+158	20	centavos	1992	2021	68	f	2	\N
 150	10	korun	1993	2022	6	f	2	\N
 151	20	korun	1993	2022	6	f	2	\N
 152	10	sentimo	1967	2017	41	f	3	\N
-158	20	centavos	1992	2021	68	f	1	\N
 154	1	piso	1966	2019	41	f	4	\N
 155	5	piso	1975	2021	41	f	3	\N
 159	50	centavos	1992	2022	68	f	2	\N
@@ -460,6 +459,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 182	2	pfennig	1950	2001	47	f	3	\N
 121	1	baht	1908	2021	83	f	3	\N
 183	5	pfennig	1949	2001	47	f	2	\N
+99	10	centavos	1992	2019	68	f	3	\N
 125	10	ore	1874	1991	85	f	3	\N
 114	1	agora	1960	1980	79	t	1	Also agorah
 111	1	mil	1927	1947	76	t	1	\N
@@ -857,6 +857,12 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 576	1	shilling	1966	2018	51	f	2	\N
 577	5	dollar	1993	2015	89	f	1	\N
 186	1	deutsche mark	1950	2001	47	f	2	\N
+578	10	centu	1991	2014	26	f	1	\N
+579	1	litas	1991	2014	26	f	1	\N
+580	2	litai	1998	2014	26	f	1	\N
+581	5	cents	1792	2003	75	f	2	\N
+582	1	dime	1796	2023	75	f	1	\N
+583	0.25	dollar	1796	2023	75	f	1	\N
 \.
 
 
@@ -1526,7 +1532,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 577, true);
+SELECT pg_catalog.setval('public.coin_seq', 583, true);
 
 
 --
