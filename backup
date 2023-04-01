@@ -335,8 +335,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 63	1	sentimo	1967	2019	41	t	0	\N
 64	5	sentimo	1967	2019	41	f	1	\N
 66	1	kopeck	1916	1916	43	t	0	\N
-67	1	rentenpfennig	1923	1929	44	t	0	\N
-68	1	reichspfennig	1924	1946	45	t	1	Bad shape
 69	1	pfennig	1948	1990	46	t	1	\N
 71	0.5	centavo	1884	1909	48	t	0	\N
 72	1	sucre	1884	1990	48	f	1	\N
@@ -374,6 +372,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 55	0.5	new penny	1971	1984	36	t	2	\N
 3	1	dirham	1973	2022	2	f	2	\N
 12	20	haleru	1993	2003	6	f	2	\N
+67	1	rentenpfennig	1923	1929	44	t	1	\N
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -405,6 +404,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 130	5	cents	1993	2015	89	t	0	\N
 131	1	dollar	1993	2018	89	f	1	\N
 107	5	cents	1818	2001	73	f	6	\N
+181	10	reichspfennig	1924	1948	45	f	2	\N
 133	500	won	1982	2019	53	f	1	\N
 143	10	forint	1946	2022	32	f	3	\N
 136	0.5	franc	1964	2001	64	f	2	\N
@@ -455,7 +455,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 178	500	lire	1957	2001	84	f	2	\N
 179	5	pfennig	1948	1990	46	f	1	\N
 180	1	deutsche mark	1956	1990	46	f	1	\N
-181	10	reichspfennig	1924	1948	45	f	1	\N
 182	2	pfennig	1950	2001	47	f	3	\N
 121	1	baht	1908	2021	83	f	3	\N
 183	5	pfennig	1949	2001	47	f	2	\N
@@ -816,13 +815,10 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 543	1	schilling	1801	1801	405	t	0	\N
 544	1	schilling	1808	1812	406	t	0	\N
 545	3	grosze	1835	1835	407	t	0	\N
-546	1	grosz	1810	1814	408	t	0	\N
 548	1	groschen	1816	1817	410	t	0	\N
 547	1	grossus	1794	1794	409	t	0	\N
 549	1	solidus	1796	1797	411	t	0	\N
 550	6	groszy	1813	1813	412	t	0	\N
-551	1	grosz	1816	1841	413	t	0	\N
-552	3	grosze polskie	1831	1831	414	t	0	\N
 553	1	filler	1892	1914	415	t	0	\N
 335	1	penni	1963	1979	194	t	1	\N
 498	1	centavos	2003	2012	359	t	1	\N
@@ -836,6 +832,9 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 557	20	mark	1943	1943	404	f	1	\N
 540	1	grosz	1949	1953	402	t	1	\N
 541	1	grosz	1990	2022	403	t	1	\N
+551	1	grosz	1816	1841	413	t	3	\N
+552	3	grosze polskie	1831	1831	414	t	1	\N
+546	1	grosz	1810	1814	408	t	1	\N
 559	10	yen	1870	2023	88	f	6	\N
 560	500	yen	1982	2021	88	f	1	\N
 561	100	yen	1957	2023	88	f	1	\N
@@ -870,6 +869,11 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 589	10	pesos	2005	2022	1	f	1	\N
 590	10	denari	2008	2017	8	f	1	\N
 558	5	yen	1870	2023	88	f	4	\N
+68	1	reichspfennig	1924	1946	45	t	3	\N
+591	2	reichspfennig	1923	1937	45	f	1	\N
+592	5	reichspfennig	1924	1948	45	f	2	\N
+594	50	reichspfennig	1924	1944	45	f	1	\N
+595	1	kopeck	1704	1917	56	f	1	\N
 \.
 
 
@@ -1539,7 +1543,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 590, true);
+SELECT pg_catalog.setval('public.coin_seq', 595, true);
 
 
 --
