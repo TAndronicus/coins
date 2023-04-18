@@ -201,6 +201,19 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
+-- Name: coin_tables; Type: TABLE; Schema: public; Owner: jb
+--
+
+CREATE TABLE public.coin_tables (
+    id integer NOT NULL,
+    name character varying NOT NULL,
+    description character varying NOT NULL
+);
+
+
+ALTER TABLE public.coin_tables OWNER TO jb;
+
+--
 -- Name: coins; Type: TABLE; Schema: public; Owner: jb
 --
 
@@ -277,11 +290,55 @@ CREATE SEQUENCE public.currency_seq
 ALTER TABLE public.currency_seq OWNER TO jb;
 
 --
+-- Name: rubles; Type: TABLE; Schema: public; Owner: jb
+--
+
+CREATE TABLE public.rubles (
+    id integer NOT NULL,
+    description character varying NOT NULL,
+    beginning integer NOT NULL,
+    ending integer NOT NULL,
+    count integer DEFAULT 0 NOT NULL
+);
+
+
+ALTER TABLE public.rubles OWNER TO jb;
+
+--
+-- Name: third_zloty; Type: TABLE; Schema: public; Owner: jb
+--
+
+CREATE TABLE public.third_zloty (
+    id integer NOT NULL,
+    value integer NOT NULL,
+    name character varying NOT NULL,
+    material character varying NOT NULL,
+    diameter double precision NOT NULL,
+    description character varying,
+    beginning integer NOT NULL,
+    ending integer NOT NULL,
+    count integer DEFAULT 0
+);
+
+
+ALTER TABLE public.third_zloty OWNER TO jb;
+
+--
+-- Data for Name: coin_tables; Type: TABLE DATA; Schema: public; Owner: jb
+--
+
+COPY public.coin_tables (id, name, description) FROM stdin;
+1	coins	Main collection, for tracking coins of the lowest value
+2	third_zloty	Collection of coins of third zloty (PRL, 1949 - 1994)
+3	rubles	Collection of 1 ruble coins from soviet republic (1961 - 1991)
+\.
+
+
+--
 -- Data for Name: coins; Type: TABLE DATA; Schema: public; Owner: jb
 --
 
 COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, count, description) FROM stdin;
-1	1	peso	1939	2021	1	f	1	\N
 2	1	centavo	1937	1987	1	t	0	\N
 4	1	fils	1973	2018	2	t	0	\N
 5	1	dirham	1975	1979	3	t	0	\N
@@ -373,6 +430,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 3	1	dirham	1973	2022	2	f	2	\N
 12	20	haleru	1993	2003	6	f	2	\N
 67	1	rentenpfennig	1923	1929	44	t	1	\N
+1	1	peso	1939	2021	1	f	3	\N
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -466,6 +524,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 153	25	sentimo	1967	2019	41	f	2	\N
 185	50	pfennig	1949	2001	47	f	1	\N
 187	5	deutsche mark	1951	2001	47	f	2	\N
+210	5	pesos	1997	2021	1	f	2	\N
 214	20	rappen	1850	2022	50	f	2	\N
 188	25	ore	1874	1984	85	f	3	\N
 274	1	centavo	1994	2004	135	t	0	\N
@@ -500,7 +559,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 207	50	rubles	1992	1993	61	f	1	\N
 208	1	ruble	1997	2022	62	f	1	\N
 209	2	rubles	1997	2022	62	f	1	\N
-210	5	pesos	1997	2021	1	f	1	\N
 222	10	baht	1971	2021	83	f	3	\N
 236	1	centime	1964	1964	96	t	0	\N
 237	1	centavo	1921	1921	97	t	0	\N
@@ -866,7 +924,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 586	1	koruna	1957	1992	9	f	3	\N
 587	20	filler	1946	1996	32	f	1	\N
 588	2	dollars	1996	2023	38	f	1	\N
-589	10	pesos	2005	2022	1	f	1	\N
 590	10	denari	2008	2017	8	f	1	\N
 558	5	yen	1870	2023	88	f	4	\N
 68	1	reichspfennig	1924	1946	45	t	3	\N
@@ -874,6 +931,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 592	5	reichspfennig	1924	1948	45	f	2	\N
 594	50	reichspfennig	1924	1944	45	f	1	\N
 595	1	kopeck	1704	1917	56	f	1	\N
+589	10	pesos	2005	2022	1	f	2	\N
+596	1	hryvnia	1992	2022	66	f	2	\N
 \.
 
 
@@ -1540,10 +1599,183 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 
 
 --
+-- Data for Name: rubles; Type: TABLE DATA; Schema: public; Owner: jb
+--
+
+COPY public.rubles (id, description, beginning, ending, count) FROM stdin;
+1	1 ruble	1961	1991	0
+2	20th Anniversary of the Victory in Great Patriotic War	1965	1965	1
+3	October Revolution	1967	1968	1
+4	100th Anniversary of the Birth of Vladimir Lenin	1970	1970	0
+5	30th Anniversary of Victory in the Great Patriotic War	1975	1988	0
+6	XXII Summer Olympic Games, Moscow 1980 - Emblem	1977	1977	0
+7	October Revolution 60th Anniversary	1977	1988	1
+8	XXII Summer Olympic Games, Moscow 1980 - Kremlin	1978	1978	1
+9	XXII Summer Olympic Games, Moscow 1980 - University	1979	1979	0
+10	XXII Summer Olympic Games, Moscow 1980 - Sputnik and Soyuz Monument	1979	1979	1
+11	XXII Summer Olympic Games, Moscow 1980 - Yury Dolgoruky Monument	1980	1980	1
+12	XXII Summer Olympic Games, Moscow 1980 - Olympic Flame	1980	1980	0
+13	Gagarin's Spaceflight	1981	1988	0
+14	Soviet-Bulgarian Friendship	1981	1988	0
+15	Soviet Union	1982	1988	0
+16	Friedrich Engels	1983	1985	0
+17	Karl Marx	1983	1988	0
+18	First Woman in Space	1983	1988	0
+19	Ivan Fyodorov	1983	1988	1
+20	Dmitri Mendeleyev	1984	1988	0
+21	Aleksandr Popov	1984	1988	0
+22	Aleksandr Pushkin	1984	1988	0
+23	40th Anniversary of the End of World War II	1985	1985	0
+24	Vladimir Lenin	1985	1988	1
+25	12th World Youth Festival	1985	1988	0
+26	International Year of Peace	1986	1988	1
+27	Mikhail Lomonosov	1986	1988	1
+28	175th Anniversary of the Battle of Borodino - Soldiers	1987	1987	1
+29	175th Anniversary of the Battle of Borodino - Monument	1987	1987	0
+30	Konstantin Tsiolkovsky	1987	1987	0
+31	October Revolution 70th Anniversary	1987	1987	0
+32	Maxim Gorki	1988	1988	0
+33	Leo Tolstoy	1988	1988	1
+34	Modest Mussorgsky	1989	1989	0
+35	Mikhail Lermontov	1989	1989	0
+36	Hamza Hakim-zade Niyazi	1989	1989	0
+37	Mikhail Eminescu	1989	1989	0
+38	Taras Shevchenko	1989	1989	0
+39	Pyotr Tchaikovsky	1990	1990	0
+40	Marshal Zhukov	1990	1990	0
+41	Anton Chekhov	1990	1990	0
+42	Janis Rainis	1990	1990	0
+43	Francisk Scorina	1990	1990	0
+44	Alisher Navoi	1990	1991	0
+45	Pyotr Lebedev	1990	1991	1
+46	Sergej Prokofiev	1991	1991	0
+47	Konstantin Ivanov	1991	1991	0
+48	Magtymguly Pyragy	1991	1991	0
+49	Nizami Gyanzhevi	1991	1991	0
+50	Wrestling	1991	1991	0
+51	Javelin	1991	1991	0
+52	Cycling	1991	1991	0
+53	Weight Lifting	1991	1991	0
+54	Broad Jumping	1991	1991	0
+55	Running	1991	1991	0
+\.
+
+
+--
+-- Data for Name: third_zloty; Type: TABLE DATA; Schema: public; Owner: jb
+--
+
+COPY public.third_zloty (id, value, name, material, diameter, description, beginning, ending, count) FROM stdin;
+1	1	grosz	aluminium	14.7	\N	1949	1953	2
+2	2	grosze	aluminium	16	\N	1949	1949	0
+3	5	groszy	bronze	20	\N	1949	1949	0
+4	5	groszy	aluminium	20	\N	1949	1949	0
+5	5	groszy	aluminium	16	\N	1958	1972	5
+6	10	groszy	copper-nickel	17.6	\N	1949	1949	0
+7	10	groszy	aluminium	17.6	\N	1949	1949	0
+8	10	groszy	aluminium	17.6	\N	1961	1985	9
+9	20	groszy	copper-nickel	20	\N	1949	1949	0
+10	20	groszy	aluminium	20	\N	1949	1949	0
+11	20	groszy	aluminium	20	\N	1957	1985	1
+12	50	groszy	copper-nickel	23	\N	1949	1949	0
+13	50	groszy	aluminium	23	\N	1949	1949	0
+14	50	groszy	aluminium	23	\N	1957	1985	3
+15	50	groszy	aluminium	23	Small date	1986	1987	1
+16	1	zloty	copper-nickel	25	\N	1949	1949	0
+17	1	zloty	aluminium	25	\N	1949	1949	0
+18	1	zloty	aluminium	25	Large type, large date	1957	1985	6
+19	1	zloty	aluminium	25	Large type, small date	1986	1988	5
+20	1	zloty	aluminium	16	Small type	1989	1990	5
+21	2	zlote	aluminium	27	\N	1958	1974	2
+22	2	zlote	brass	21	1st eagle design	1975	1985	2
+23	2	zlote	brass	21	2nd eagle design	1986	1988	1
+24	2	zlote	aluminium	18	\N	1989	1990	9
+25	5	zlotych	aluminium	29	\N	1958	1974	1
+26	5	zlotych	brass	24	1st eagle design	1975	1985	4
+27	5	zlotych	brass	24	2nd eagle design	1986	1988	6
+28	5	zlotych	aluminium	20	\N	1989	1990	0
+29	10	zlotych	copper-nickel	31	Mikołaj Kopernik, large type	1959	1965	0
+30	10	zlotych	copper-nickel	31	Tadeusz Kościuszko, large type	1959	1966	0
+31	10	zlotych	copper-nickel	31	Kazimierz Wielki Legends raised	1964	1964	1
+32	10	zlotych	copper-nickel	31	Kazimierz Wielki Legends incuse	1964	1964	0
+33	10	zlotych	copper-nickel	31	700th Anniversary of Warsaw - Nike	1965	1965	0
+34	10	zlotych	copper-nickel	31	700th Anniversary of Warsaw	1965	1965	0
+35	10	zlotych	copper-nickel	28	200th Anniversary of Warsaw Mint	1966	1966	0
+36	10	zlotych	copper-nickel	28	Generał Karol Świerczewski	1967	1967	1
+37	10	zlotych	copper-nickel	28	Generał Karol Świerczewski	1967	1967	1
+38	10	zlotych	copper-nickel	28	Maria Skłodowska-Curie	1967	1967	1
+39	10	zlotych	copper-nickel	28	Mikołaj Kopernik, small type	1967	1969	1
+40	10	zlotych	copper-nickel	28	25th Anniversary of Polish Army	1968	1968	0
+41	10	zlotych	copper-nickel	28	25 Years of People's Republic of Poland	1969	1969	1
+42	10	zlotych	copper-nickel	28	Tadeusz Kościuszko, small type	1969	1973	0
+43	10	zlotych	copper-nickel	28	Anniversary of Provincial Annexations	1970	1970	1
+44	10	zlotych	copper-nickel	28	FAO	1971	1971	2
+45	10	zlotych	copper-nickel	28	50th Anniversary of Third Silesian Uprising	1971	1971	1
+46	10	zlotych	copper-nickel	28	Gdynia Seaport	1972	1972	1
+47	10	zlotych	copper-nickel	25	Adam Mickiewicz	1975	1977	4
+48	10	zlotych	copper-nickel	25	Bolesław Prus	1975	1984	8
+49	10	zlotych	copper-nickel	25	\N	1984	1988	13
+50	10	zlotych	brass	22	\N	1989	1990	7
+51	20	zlotych	copper-nickel	29	\N	1973	1976	3
+52	20	zlotych	copper-nickel	29	COMECON Anniversary	1974	1974	1
+53	20	zlotych	copper-nickel	29	Marceli Nowotko	1974	1983	5
+54	20	zlotych	copper-nickel	29	International Women's Year	1975	1975	1
+55	20	zlotych	copper-nickel	29	Maria Konopnicka	1978	1978	1
+56	20	zlotych	copper-nickel	29	Interkosmos '78	1978	1978	0
+57	20	zlotych	copper-nickel	29	International Year of the Child	1979	1979	1
+58	20	zlotych	copper-nickel	29	1980 Summer Olympics	1980	1980	0
+59	20	zlotych	copper-nickel	29	Dar Pomorza	1980	1980	1
+60	20	zlotych	copper-nickel	26.5	Large type	1984	1988	4
+61	20	zlotych	copper-nickel	24	Large type	1989	1990	9
+62	50	zlotych	copper-nickel	30.5	Duke Mieszko I	1979	1979	0
+63	50	zlotych	copper-nickel	30.5	Bolesław I Chrobry	1980	1980	1
+64	50	zlotych	copper-nickel	30.5	Kazimierz I Odnowiciel	1980	1980	1
+65	50	zlotych	copper-nickel	30.5	Generał Władysław Sikorski	1981	1981	0
+66	50	zlotych	copper-nickel	30.5	Bolesław II Śmiały	1981	1981	0
+67	50	zlotych	copper-nickel	30.5	FAO - World Food Day	1981	1981	2
+68	50	zlotych	copper-nickel	30.5	Władysław I Herman	1981	1981	1
+69	50	zlotych	copper-nickel	30.5	Bolesław III Krzywousty	1982	1982	1
+70	50	zlotych	copper-nickel	30.5	Great Theatre	1983	1983	0
+71	50	zlotych	copper-nickel	30.5	Jan III Sobieski	1983	1983	0
+72	50	zlotych	copper-nickel	30.5	Ignacy Łukasiewicz	1983	1983	0
+73	50	zlotych	copper-nickel	26	\N	1990	1990	4
+74	100	zlotych	silver	35	Polish Millennium	1966	1966	0
+75	100	zlotych	copper-nickel	29.5	Wincenty Witos	1984	1984	1
+76	100	zlotych	copper-nickel	29.5	40 Years of Peoples Republic of Poland	1984	1984	1
+77	100	zlotych	copper-nickel	29.5	Przemysław II	1985	1985	1
+78	100	zlotych	copper-nickel	29.5	Polish Women's Memorial Hospital Center	1985	1985	2
+79	100	zlotych	copper-nickel	29.5	Władysław I Łokietek	1986	1986	0
+80	100	zlotych	copper-nickel	29.5	Kazimierz III Wielki	1987	1987	2
+81	100	zlotych	copper-nickel	29.5	Greater Poland Uprising	1988	1988	1
+82	100	zlotych	copper-nickel	29.5	Jadwiga	1988	1988	1
+83	100	zlotych	copper-nickel	28	\N	1990	1990	5
+84	200	zlotych	copper-nickel	31	People's Republic	1974	1974	1
+85	200	zlotych	silver	31	Victory Over Fascism	1975	1975	0
+86	200	zlotych	silver	31	XXI Summer Olympics	1976	1976	0
+87	500	zlotych	copper-nickel	29.5	Defensive War of Poland	1989	1989	2
+88	500	zlotych	copper-nickel	29.5	Władysław II Jagiełło	1989	1989	2
+89	1000	zlotych	silver	31	Pope John Paul II	1982	1983	0
+90	10000	zlotych	silver	35	Pope John Paul II	1987	1987	0
+91	10000	zlotych	copper-nickel	29	Solidarity	1990	1990	4
+92	10000	zlotych	nickel-plated steel	29.5	Constitution of 3 May 1791	1991	1991	1
+93	20000	zlotych	copper-nickel	29.5	Władysław III Warneńczyk	1992	1992	0
+94	20000	zlotych	copper-nickel	29.5	Jaskółki (Hirundinidae)	1993	1993	0
+95	20000	zlotych	copper-nickel	29.5	Zamek w Łańcucie	1993	1993	0
+96	20000	zlotych	copper-nickel	29.5	Kazimierz IV Jagiellończyk	1993	1993	0
+97	20000	zlotych	copper-nickel	29.5	Lillehammer 1994	1993	1993	0
+98	20000	zlotych	copper-nickel	29.5	Disabled Association	1994	1994	0
+99	20000	zlotych	copper-nickel	29.5	New Mint building	1994	1994	0
+100	20000	zlotych	copper-nickel	29.5	Kościuszko Insurrection	1994	1994	0
+101	20000	zlotych	copper-nickel	29.5	Zygmunt I Stary (bust)	1994	1994	0
+102	50000	zlotych	copper-nickel	29.5	Józef Piłsudski	1988	1988	0
+\.
+
+
+--
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 595, true);
+SELECT pg_catalog.setval('public.coin_seq', 596, true);
 
 
 --
@@ -1558,6 +1790,14 @@ SELECT pg_catalog.setval('public.country_seq', 239, true);
 --
 
 SELECT pg_catalog.setval('public.currency_seq', 416, true);
+
+
+--
+-- Name: coin_tables coin_tables_pkey; Type: CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.coin_tables
+    ADD CONSTRAINT coin_tables_pkey PRIMARY KEY (id);
 
 
 --
@@ -1582,6 +1822,22 @@ ALTER TABLE ONLY public.countries
 
 ALTER TABLE ONLY public.currencies
     ADD CONSTRAINT currencies_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: rubles rubles_pkey; Type: CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.rubles
+    ADD CONSTRAINT rubles_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: third_zloty third_zloty_pkey; Type: CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.third_zloty
+    ADD CONSTRAINT third_zloty_pkey PRIMARY KEY (id);
 
 
 --
