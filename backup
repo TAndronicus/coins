@@ -402,7 +402,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 80	0.5	cent	1955	1958	54	t	0	\N
 81	1	cent	1981	2013	55	t	0	\N
 82	25	cents	1981	2020	55	f	1	\N
-83	1	polushka	1701	1916	56	t	0	Also ¼ kopecs
 84	10	kopecks (RSFSR)	1921	1923	57	t	0	\N
 85	0.5	kopeck	1925	1928	58	t	0	\N
 86	1	kopeck	1961	1991	59	t	1	\N
@@ -430,6 +429,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 3	1	dirham	1973	2022	2	f	2	\N
 12	20	haleru	1993	2003	6	f	2	\N
 67	1	rentenpfennig	1923	1929	44	t	1	\N
+83	1	polushka	1701	1916	56	t	0	Also ¼ kopecs(10, 10, 18, 20, 61)
 1	1	peso	1939	2021	1	f	3	\N
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
@@ -934,6 +934,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 589	10	pesos	2005	2022	1	f	2	\N
 596	1	hryvnia	1992	2022	66	f	2	\N
 597	1	dinar	1969	2020	353	f	1	\N
+598	0.5	kreuzer	1858	1891	417	t	0	(10, 15, 20)
 \.
 
 
@@ -1596,6 +1597,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 415	Austro-Hungarian korona	15	1892	1918
 416	Franc	31	1921	1974
 10	sokol	11	1920	1920
+417	Austro-Hungarian gulden (decimalized)	225	1857	1892
 \.
 
 
@@ -1776,7 +1778,7 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 597, true);
+SELECT pg_catalog.setval('public.coin_seq', 598, true);
 
 
 --
@@ -1790,7 +1792,7 @@ SELECT pg_catalog.setval('public.country_seq', 239, true);
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 416, true);
+SELECT pg_catalog.setval('public.currency_seq', 417, true);
 
 
 --
