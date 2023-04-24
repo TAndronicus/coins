@@ -933,6 +933,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 595	1	kopeck	1704	1917	56	f	1	\N
 589	10	pesos	2005	2022	1	f	2	\N
 596	1	hryvnia	1992	2022	66	f	2	\N
+597	1	dinar	1969	2020	353	f	1	\N
 \.
 
 
@@ -1775,7 +1776,7 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 596, true);
+SELECT pg_catalog.setval('public.coin_seq', 597, true);
 
 
 --
