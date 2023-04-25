@@ -934,7 +934,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 589	10	pesos	2005	2022	1	f	2	\N
 596	1	hryvnia	1992	2022	66	f	2	\N
 597	1	dinar	1969	2020	353	f	1	\N
-598	0.5	kreuzer	1858	1891	417	t	0	(10, 15, 20)
+598	0.5	kreuzer	1858	1891	417	t	0	(7.02, 10, 15, 20)
+599	0.5	ore	1853	1867	418	t	0	(14.38)
 \.
 
 
@@ -1598,6 +1599,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 416	Franc	31	1921	1974
 10	sokol	11	1920	1920
 417	Austro-Hungarian gulden (decimalized)	225	1857	1892
+418	Riksdaler riksmynt	45	1855	1873
 \.
 
 
@@ -1778,7 +1780,7 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 598, true);
+SELECT pg_catalog.setval('public.coin_seq', 599, true);
 
 
 --
@@ -1792,7 +1794,7 @@ SELECT pg_catalog.setval('public.country_seq', 239, true);
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 417, true);
+SELECT pg_catalog.setval('public.currency_seq', 418, true);
 
 
 --
