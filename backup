@@ -353,9 +353,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 16	50	deni	1993	1993	8	t	0	\N
 17	1	haler	1953	1992	9	t	0	\N
 18	10	haleru	1953	1992	9	f	1	\N
-19	5	stotin	1920	1920	10	t	0	\N
 20	2	halere	1923	1925	11	t	0	\N
-21	1	haler	1922	1922	12	t	0	In usage in 1945
 22	5	para	1920	1920	13	t	0	\N
 23	50	para	1945	1953	14	t	0	\N
 24	10	para	1990	1991	15	t	0	\N
@@ -380,7 +378,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 47	2.5	escudos	1932	1983	33	f	2	\N
 49	10	centimos	1870	1959	34	f	1	\N
 52	2	dinari	1970	1986	4	f	1	\N
-54	0.25	farthing	1839	1853	35	t	0	\N
 59	1	cent	1858	2012	38	t	3	\N
 60	5	feninga	2005	2021	39	t	0	\N
 61	1	konvrtibilna marka	2000	2021	39	f	1	\N
@@ -430,6 +427,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 83	1	polushka	1701	1916	56	t	0	Also ¼ kopecs(4.01, 10, 10, 12, 18, 20, 20.10, 61)
 48	1	centimo	1870	1913	34	t	0	(3.50, 6.61, 26, 30, 40, 50)
 10	1	fils	1930	1959	5	t	0	(1, 5)
+54	0.5	farthing	1839	1853	35	t	0	\N
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -936,6 +934,9 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 57	1	centime	1832	1914	37	t	0	(1, 1, 1.50, 1.50, 1.50, 1.51, 2.50, 2.50, 3.05, 3.50, 4.70, 5.59, 6.50, 9.50, 15.50, 25, 25)
 388	2.5	centimes	1854	1908	247	t	0	(6.10, 6.55, 9.50, 12.34, 14.20, 18.50, 20, 30, 30, 40)
 334	1	penni	1863	1924	193	t	0	(6, 8.38, 9, 9.38, 10, 11, 11.50, 12.50, 12.50, 15.50, 15.50, 15.88, 16, 16.88, 20, 22, 22.10, 22.50, 24, 24, 33)
+601	1	fen	1940	1940	420	t	0	\N
+602	1	fen	1941	1943	419	t	0	\N
+603	20	haleru	1947	1950	12	t	0	\N
 \.
 
 
@@ -1181,6 +1182,7 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 201	Tuvalu	Australia and Oceania	18
 206	Tonga	Australia and Oceania	\N
 217	Vanuatu	Australia and Oceania	\N
+240	Japanese puppet states in China	Asia	226
 \.
 
 
@@ -1597,9 +1599,10 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 414	Revolutionary Coinage (November Uprising) - Złoty	239	1831	1831
 415	Austro-Hungarian korona	15	1892	1918
 416	Franc	31	1921	1974
-10	sokol	11	1920	1920
 417	Austro-Hungarian gulden (decimalized)	225	1857	1892
 418	Riksdaler riksmynt	45	1855	1873
+419	Yen (Provisional Government of the Republic of China)	240	1937	1945
+420	Yen (Reformed Government of the Republic of China)	240	1938	1941
 \.
 
 
@@ -1780,21 +1783,21 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 600, true);
+SELECT pg_catalog.setval('public.coin_seq', 603, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 239, true);
+SELECT pg_catalog.setval('public.country_seq', 240, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 418, true);
+SELECT pg_catalog.setval('public.currency_seq', 420, true);
 
 
 --
