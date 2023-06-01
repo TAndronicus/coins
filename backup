@@ -372,7 +372,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 38	1	lipa	1994	2022	28	t	1	\N
 39	1	mil	1862	1866	29	t	0	Also 1 cash
 41	1	dinar	1965	1986	4	f	3	\N
-42	20	filler	1922	1922	30	t	0	\N
 43	1	filler	1926	1939	31	t	0	\N
 44	2	filler	1946	1989	32	t	0	\N
 47	2.5	escudos	1932	1983	33	f	2	\N
@@ -428,6 +427,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 48	1	centimo	1870	1913	34	t	0	(3.50, 6.61, 26, 30, 40, 50)
 10	1	fils	1930	1959	5	t	0	(1, 5)
 54	0.5	farthing	1839	1853	35	t	0	\N
+42	20	filler	1922	1922	30	t	0	Also 10 filler according to wikipedia
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -713,7 +713,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 381	1	fils	1961	1988	240	t	0	\N
 382	5	fun	1898	1902	241	t	0	\N
 383	10	chon	1906	1910	242	t	0	\N
-384	1	chon	1902	1902	243	t	0	\N
 385	0.5	chon	1906	1910	244	t	0	\N
 386	1	cent	1979	1992	245	t	0	\N
 389	1	krone	1898	1915	248	t	0	\N
@@ -794,6 +793,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 398	1	santims	1992	2008	257	t	1	\N
 436	1	ore	1876	1972	297	t	1	\N
 387	2	tyin	1993	1993	246	t	0	(2.50, 2.50)
+384	1	chon	1902	1902	243	t	0	Extremely rare, most of them destroyer during japanese occupation
 466	1	cent	1977	2010	327	t	0	\N
 467	10	stotinov	1992	2006	328	t	0	\N
 468	5	halierov	1942	1942	329	t	0	\N
@@ -937,6 +937,10 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 601	1	fen	1940	1940	420	t	0	\N
 602	1	fen	1941	1943	419	t	0	\N
 603	20	haleru	1947	1950	12	t	0	\N
+604	10	filler	1919	1922	30	t	0	Also 20 filler according to numista
+605	1	lepton	1900	1901	421	t	0	\N
+606	1	lepton	1821	1862	422	t	0	\N
+607	1	para	1868	1868	423	t	0	\N
 \.
 
 
@@ -1183,6 +1187,8 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 206	Tonga	Australia and Oceania	\N
 217	Vanuatu	Australia and Oceania	\N
 240	Japanese puppet states in China	Asia	226
+241	Crete	Europe	35
+242	Ionian Islands	Europe	35
 \.
 
 
@@ -1603,6 +1609,9 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 418	Riksdaler riksmynt	45	1855	1873
 419	Yen (Provisional Government of the Republic of China)	240	1937	1945
 420	Yen (Reformed Government of the Republic of China)	240	1938	1941
+421	Drachme	241	1900	1929
+422	Obol	242	1819	1863
+423	Dinar	191	1868	1918
 \.
 
 
@@ -1783,21 +1792,21 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 603, true);
+SELECT pg_catalog.setval('public.coin_seq', 607, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 240, true);
+SELECT pg_catalog.setval('public.country_seq', 242, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 420, true);
+SELECT pg_catalog.setval('public.currency_seq', 423, true);
 
 
 --
