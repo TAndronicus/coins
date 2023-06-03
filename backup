@@ -645,16 +645,12 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 318	1	peseta guineana	1969	1969	178	t	0	\N
 319	1	ekwele	1975	1980	179	t	0	Also ekuele
 320	5	francos CFA	1985	1985	180	t	0	\N
-321	100	francos CFA	1985	1985	181	t	0	\N
-322	5	francs	1958	1958	182	t	0	\N
-323	1	franc CFA	1969	1971	183	t	0	\N
 324	1	centavo	1889	1936	184	t	0	\N
 325	1	centavo	1940	1995	185	t	0	\N
 326	0.5	millieme	1917	1938	186	t	0	\N
 327	50	centimes	1944	1944	187	t	0	\N
 328	50	centimes	1948	1965	188	t	0	\N
 329	2	sapeque	1887	1904	189	t	0	\N
-330	0.5	tael	1943	1944	190	t	0	\N
 331	50	centimes	1942	1943	191	t	0	\N
 333	1	franc	1948	1948	192	t	0	\N
 336	0.5	penny	1934	1954	195	t	0	\N
@@ -948,6 +944,17 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 615	100	francs	1971	1972	431	t	0	\N
 616	100	francs	1971	1972	432	t	0	\N
 617	1	pfennig	1923	1937	433	t	0	\N
+618	0.5	cent	1905	1905	434	t	0	Also 2 1/2 bit
+619	1	franc	1948	1965	435	t	0	\N
+620	1	franc	1969	1975	436	t	0	\N
+621	0.5	cent	1908	1909	437	t	0	\N
+622	1	cent	1920	1921	438	t	0	\N
+623	1	cent	1922	1962	439	t	0	\N
+624	5	francs CFP	2021	2021	440	t	0	\N
+625	50	centimes	1903	1921	441	t	0	\N
+626	50	centimes	1897	1922	442	t	0	\N
+627	1	franc	1948	1973	443	t	0	\N
+628	1	franc	1948	1948	444	t	0	\N
 \.
 
 
@@ -1045,7 +1052,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 91	Estonia	Europe	\N
 92	Eritrea	Africa	\N
 93	Equatorial Guinea	Africa	\N
-94	Equatorial African States	Africa	\N
 95	El Salvador	North America	\N
 96	Egypt	Africa	\N
 97	French West Africa	Africa	\N
@@ -1200,6 +1206,15 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 244	Belgian Congo	Africa	19
 245	Belgian Rwanda-Burundi	Africa	19
 246	French Cameroon	Africa	86
+247	Danish West Indies	Asia	\N
+248	French Somaliland	Africa	88
+249	French Afars and Issas	Africa	88
+250	East Africa	Africa	\N
+251	French Pacific Territories	Australia and Oceania	30
+252	Guadeloupe	South America	30
+253	Martinique	South America	30
+254	Reunion	Africa	30
+255	Saint-Pierre and Miquelon	North America	30
 \.
 
 
@@ -1380,16 +1395,12 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 178	Peseta	93	1969	1975
 179	Ekwele	93	1975	1985
 180	CFA Franc	93	1984	\N
-181	New Franc	93	1985	\N
-182	CFA Franc	94	1945	1960
-183	CFA Franc	94	1961	1973
 184	Peso	95	1877	1919
 185	Colon	95	1919	2001
 186	Pound	96	1916	\N
 187	CFA Franc	97	1944	1958
 188	CFP Franc	98	1945	\N
 189	Piastre	99	1880	1952
-190	Tael	99	1943	1944
 191	Franc	100	1917	1945
 192	CFA Franc	100	1945	1960
 193	Markka	101	1860	1963
@@ -1630,6 +1641,17 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 431	CFA Franc	83	1961	1973
 432	CFA Franc	81	1961	1973
 433	Gulden	234	1923	1939
+434	Daler	247	1849	1905
+435	Djiboutian franc	248	1948	1967
+436	Djiboutian franc	249	1967	1977
+437	Rupee	250	1906	1920
+438	Florin	250	1920	1921
+439	Shilling	250	1921	1967
+440	CFP Franc	251	1985	\N
+441	Franc	252	1795	1959
+442	Franc	253	1795	1959
+443	CFP Franc	254	1945	\N
+444	Franc	255	1945	1960
 \.
 
 
@@ -1810,21 +1832,21 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 617, true);
+SELECT pg_catalog.setval('public.coin_seq', 628, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 246, true);
+SELECT pg_catalog.setval('public.country_seq', 255, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 433, true);
+SELECT pg_catalog.setval('public.currency_seq', 444, true);
 
 
 --
