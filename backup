@@ -368,7 +368,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 34	1	centas	1925	1936	25	t	0	\N
 35	1	centas	1991	1991	26	t	1	\N
 36	1	denar	1993	2014	8	f	1	\N
-37	2	kune	1941	1941	27	t	0	There are lower, but in gold
 38	1	lipa	1994	2022	28	t	1	\N
 39	1	mil	1862	1866	29	t	0	Also 1 cash
 41	1	dinar	1965	1986	4	f	3	\N
@@ -428,6 +427,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 10	1	fils	1930	1959	5	t	0	(1, 5)
 54	0.5	farthing	1839	1853	35	t	0	\N
 42	20	filler	1922	1922	30	t	0	Also 10 filler according to wikipedia
+37	2	kune	1941	1941	27	t	0	\N
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -579,7 +579,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 248	10	luma	1994	1994	108	t	0	\N
 249	5	cents	1986	2020	109	t	0	\N
 228	10	groschen	1947	2001	87	f	5	\N
-250	0.5	sovereign	1901	1918	110	t	0	\N
 229	50	groschen	1946	2001	87	f	2	\N
 251	0.5	penny	1911	1964	111	t	0	\N
 230	1	schilling	1946	2001	87	f	2	\N
@@ -594,7 +593,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 260	1	cent	1885	2018	120	t	0	\N
 261	0.5	rupee	1780	1927	121	t	0	\N
 262	1	pice	1928	1954	122	t	0	\N
-263	3	rupees	1966	1966	123	t	0	\N
 264	5	chetrums	1974	1979	124	t	0	\N
 265	5	centavos	1965	1970	126	t	0	\N
 266	2	centavos	1987	1987	127	t	0	\N
@@ -630,14 +628,11 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 298	0.5	centavo	1835	1894	158	t	0	\N
 299	0.5	centesimo	1962	1963	159	t	0	\N
 300	1	centavo	1975	1975	160	t	0	\N
-301	10	francs	1975	1991	161	t	0	\N
 302	1	franc	1973	2006	162	t	0	\N
 303	100	francs	1973	1998	163	t	0	\N
 304	1	cent	1972	2019	164	t	0	\N
 305	5	centavos	1930	1930	165	t	0	\N
 306	10	francs	1975	1986	166	t	0	\N
-307	1	centime	1875	1904	167	t	0	\N
-308	10	centimes	1953	1959	168	t	0	Also 10 sen
 309	5	sen	1979	1979	169	t	0	\N
 310	1	franc	1977	1999	170	t	0	\N
 311	1	matona	1931	1931	171	t	0	\N
@@ -701,6 +696,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 279	1	stotinka	1962	1990	140	t	1	\N
 283	1	mil	1963	1972	144	t	0	(3.13, 5, 5)
 284	0.5	cent	1983	1983	145	t	0	(2, 4.5)
+301	100	francs	1975	1991	161	t	0	\N
+308	10	sen	1953	1959	168	t	0	Also 10 centimes
 372	1	pice	1950	1955	231	t	0	\N
 373	1	paisa	1957	1981	232	t	0	Also naya paisa
 374	1	eyrir	1926	1966	233	t	0	\N
@@ -941,6 +938,16 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 605	1	lepton	1900	1901	421	t	0	\N
 606	1	lepton	1821	1862	422	t	0	\N
 607	1	para	1868	1868	423	t	0	\N
+608	1	pul	1931	1931	424	t	0	\N
+609	1	afghani	2004	2005	425	t	0	\N
+610	1	centime	1887	1919	426	t	0	\N
+611	1	franc	1960	1964	427	t	0	\N
+612	1	franc	1948	1948	428	t	0	\N
+613	50	francs	1960	1960	429	t	0	\N
+614	50	centimes	1924	1943	430	t	0	\N
+615	100	francs	1971	1972	431	t	0	\N
+616	100	francs	1971	1972	432	t	0	\N
+617	1	pfennig	1923	1937	433	t	0	\N
 \.
 
 
@@ -1189,6 +1196,10 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 240	Japanese puppet states in China	Asia	226
 241	Crete	Europe	35
 242	Ionian Islands	Europe	35
+243	Afghanistan	Asia	\N
+244	Belgian Congo	Africa	19
+245	Belgian Rwanda-Burundi	Africa	19
+246	French Cameroon	Africa	86
 \.
 
 
@@ -1302,7 +1313,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 107	Peso convertible	53	1992	\N
 108	Dram	54	1993	\N
 109	Florin	55	1986	\N
-110	Pound sterling	56	1788	1929
 111	Pound	56	1910	1966
 112	Dollar	56	1966	\N
 113	Second manat	57	1992	2006
@@ -1315,7 +1325,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 120	Dollar	63	1885	\N
 121	Hammered coinage	64	1789	1927
 122	Milled coinage	64	1927	1957
-123	Rupee	64	1957	1974
 124	Ngultrum	64	1974	\N
 126	Peso boliviano	65	1963	1986
 127	Second boliviano	65	1986	\N
@@ -1358,7 +1367,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 164	Dollar	84	1972	\N
 165	Escudo	85	1914	\N
 166	CFA Franc	86	1973	\N
-167	Franc	87	1860	1953
 168	First riel	87	1953	1975
 169	Second riel	87	1979	\N
 170	Franc	88	1977	\N
@@ -1612,6 +1620,16 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 421	Drachme	241	1900	1929
 422	Obol	242	1819	1863
 423	Dinar	191	1868	1918
+424	First afghani	243	1925	2003
+425	Second afghani	243	2003	\N
+426	Franc	244	1887	1967
+427	Franc	245	1960	1964
+428	CFA Franc	86	1945	1960
+429	CFA Franc	86	1961	1973
+430	Franc	246	1922	1945
+431	CFA Franc	83	1961	1973
+432	CFA Franc	81	1961	1973
+433	Gulden	234	1923	1939
 \.
 
 
@@ -1792,21 +1810,21 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 607, true);
+SELECT pg_catalog.setval('public.coin_seq', 617, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 242, true);
+SELECT pg_catalog.setval('public.country_seq', 246, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 423, true);
+SELECT pg_catalog.setval('public.currency_seq', 433, true);
 
 
 --
