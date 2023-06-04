@@ -680,20 +680,19 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 360	1	centime	1881	1889	219	t	0	\N
 361	1	farthing	1839	1864	220	t	0	\N
 362	0.5	penny	1971	1985	221	t	0	\N
-363	0.25	pining	1928	1937	222	t	0	\N
 364	0.5	penny	1971	1986	223	t	0	\N
 365	1	dinar	1931	1931	224	t	0	\N
 366	1	sen	1952	1952	225	t	0	\N
 367	1	rupiah	1970	1970	226	t	0	\N
 368	0.08333333333333333	anna	1862	1942	227	t	0	\N
 369	0.08333333333333333	tanga	1901	1903	228	t	0	\N
-370	1	tanga	1934	1952	229	t	0	\N
 371	10	centavos	1958	1961	230	t	0	\N
 279	1	stotinka	1962	1990	140	t	1	\N
 283	1	mil	1963	1972	144	t	0	(3.13, 5, 5)
 284	0.5	cent	1983	1983	145	t	0	(2, 4.5)
 301	100	francs	1975	1991	161	t	0	\N
 308	10	sen	1953	1959	168	t	0	Also 10 centimes
+363	0.25	pining	1928	1937	222	t	0	Also feoirling
 372	1	pice	1950	1955	231	t	0	\N
 373	1	paisa	1957	1981	232	t	0	Also naya paisa
 374	1	eyrir	1926	1966	233	t	0	\N
@@ -957,6 +956,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 627	1	franc	1948	1973	443	t	0	\N
 628	1	franc	1948	1948	444	t	0	\N
 630	10	franken	1954	1954	446	t	0	\N
+631	0.5	krajczar	1882	1882	447	t	0	\N
 \.
 
 
@@ -1443,7 +1443,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 226	Rupiah	119	1965	\N
 227	Rupee	121	1862	1947
 228	Rupia	122	1880	1958
-229	Rupia	122	1911	1957
 230	Escudo	122	1958	1961
 231	Rupee	120	1950	1957
 232	Rupee (decimalized)	120	1957	\N
@@ -1658,6 +1657,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 444	Franc	255	1945	1960
 445	Decimalized rupie	256	1904	1916
 446	Franc	257	1947	1956
+447	Austro-hungarian forint (decimalized)	15	1857	1892
 \.
 
 
@@ -1838,7 +1838,7 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 630, true);
+SELECT pg_catalog.setval('public.coin_seq', 631, true);
 
 
 --
@@ -1852,7 +1852,7 @@ SELECT pg_catalog.setval('public.country_seq', 257, true);
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 446, true);
+SELECT pg_catalog.setval('public.currency_seq', 447, true);
 
 
 --
