@@ -918,6 +918,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 589	10	pesos	2005	2022	1	f	2	\N
 596	1	hryvnia	1992	2022	66	f	2	\N
 597	1	dinar	1969	2020	353	f	1	\N
+629	0.5	heller	1904	1906	445	t	0	\N
 599	0.5	ore	1853	1867	418	t	0	(14.38)
 598	0.5	kreuzer	1858	1891	417	t	0	(7.02, 8.50, 10, 15, 20)
 562	5	sanimat	1974	2002	65	f	1	\N
@@ -955,6 +956,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 626	50	centimes	1897	1922	442	t	0	\N
 627	1	franc	1948	1973	443	t	0	\N
 628	1	franc	1948	1948	444	t	0	\N
+630	10	franken	1954	1954	446	t	0	\N
 \.
 
 
@@ -1215,6 +1217,8 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 253	Martinique	South America	30
 254	Reunion	Africa	30
 255	Saint-Pierre and Miquelon	North America	30
+256	German East Africa	Africa	23
+257	Saar	Europe	23
 \.
 
 
@@ -1652,6 +1656,8 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 442	Franc	253	1795	1959
 443	CFP Franc	254	1945	\N
 444	Franc	255	1945	1960
+445	Decimalized rupie	256	1904	1916
+446	Franc	257	1947	1956
 \.
 
 
@@ -1832,21 +1838,21 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 628, true);
+SELECT pg_catalog.setval('public.coin_seq', 630, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 255, true);
+SELECT pg_catalog.setval('public.country_seq', 257, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 444, true);
+SELECT pg_catalog.setval('public.currency_seq', 446, true);
 
 
 --
