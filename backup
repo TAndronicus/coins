@@ -341,8 +341,6 @@ COPY public.coin_tables (id, name, description) FROM stdin;
 COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, count, description) FROM stdin;
 2	1	centavo	1937	1987	1	t	0	\N
 4	1	fils	1973	2018	2	t	0	\N
-5	1	dirham	1975	1979	3	t	0	\N
-6	100	dirham	1975	2014	3	f	1	\N
 7	10	para	1965	1981	4	f	1	\N
 8	5	para	1965	1981	4	t	0	\N
 9	5	fils	1959	1982	5	f	1	\N
@@ -361,7 +359,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 26	1	dinar	1993	1993	17	t	0	\N
 27	1	dinar	1994	1994	18	t	0	\N
 28	1	para	1994	1994	19	t	0	\N
-29	1	millieme	1952	1965	20	t	0	\N
 31	1	ban	1867	1900	22	t	0	Also called banu (1867)
 32	50	bani	1947	1947	23	t	0	\N
 33	1	ban	2005	2022	24	t	0	\N
@@ -701,7 +698,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 377	0.5	penny	1971	1981	236	t	0	Also new penny
 378	1	farthing	1880	1952	237	t	0	\N
 379	1	cent	1969	2002	238	t	0	\N
-380	10	tyiyn	2008	2008	239	t	0	\N
 381	1	fils	1961	1988	240	t	0	\N
 382	5	fun	1898	1902	241	t	0	\N
 383	10	chon	1906	1910	242	t	0	\N
@@ -710,11 +706,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 389	1	krone	1898	1915	248	t	0	\N
 390	1	millieme	1952	1965	249	t	0	\N
 391	1	dirham	1975	1979	250	t	0	\N
-392	1	cent	1833	1906	251	t	0	\N
 393	0.5	cent	1937	1941	252	t	0	\N
 394	1	sente	1979	1992	253	t	0	\N
-395	0.5	ghirsh	1934	1936	254	t	0	\N
-396	0.5	ghirsh	1941	1941	255	t	0	\N
 397	1	santims	1922	1939	256	t	0	\N
 399	10	cents	1952	1952	258	t	0	\N
 400	10	att	1980	1980	259	t	0	\N
@@ -786,6 +779,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 436	1	ore	1876	1972	297	t	1	\N
 387	2	tyin	1993	1993	246	t	0	(2.50, 2.50)
 384	1	chon	1902	1902	243	t	0	Extremely rare, most of them destroyer during japanese occupation
+380	1	tyiyn	2008	2008	239	t	0	\N
 466	1	cent	1977	2010	327	t	0	\N
 467	10	stotinov	1992	2006	328	t	0	\N
 468	5	halierov	1942	1942	329	t	0	\N
@@ -957,6 +951,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 628	1	franc	1948	1948	444	t	0	\N
 630	10	franken	1954	1954	446	t	0	\N
 631	0.5	krajczar	1882	1882	447	t	0	\N
+395	0.5	ghirsh	1934	1936	254	t	0	Also 1/2 piastre
+396	0.5	ghirsh	1941	1941	255	t	0	Also 1/2 piastre
 \.
 
 
@@ -967,7 +963,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 COPY public.countries (id, name, continent, parent) FROM stdin;
 1	Dominican Republic	North America	\N
 2	United Arab Emirates	Asia	\N
-3	Libya	Africa	\N
 4	Yugoslavia	Europe	\N
 5	Iraq	Asia	\N
 6	Czech Republic	Europe	\N
@@ -1229,7 +1224,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 1	peso oro	1	1937	\N
 2	dirham	2	1973	\N
-3	dinar	3	1971	\N
 4	hard dinar	4	1966	1989
 5	dinar	5	1931	\N
 6	koruna	8	1993	\N
@@ -1245,7 +1239,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 17	october dinar	4	1993	1993
 18	january dinar	4	1994	1994
 19	novi dinar	4	1994	2003
-20	pound	3	1951	1971
 21	koruna	7	1939	1945
 22	first leu	9	1867	1947
 23	second leu	9	1947	1952
@@ -1464,7 +1457,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 248	Krone	133	1898	1921
 249	Pound	134	1951	1971
 250	Dinar	134	1971	\N
-251	Dollar	135	1833	1906
 252	Dollar	135	1943	\N
 253	Loti	136	1980	\N
 254	Syrian pound	137	1920	1939
