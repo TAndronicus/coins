@@ -368,7 +368,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 38	1	lipa	1994	2022	28	t	1	\N
 39	1	mil	1862	1866	29	t	0	Also 1 cash
 41	1	dinar	1965	1986	4	f	3	\N
-43	1	filler	1926	1939	31	t	0	\N
 44	2	filler	1946	1989	32	t	0	\N
 47	2.5	escudos	1932	1983	33	f	2	\N
 49	10	centimos	1870	1959	34	f	1	\N
@@ -425,6 +424,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 54	0.5	farthing	1839	1853	35	t	0	\N
 42	20	filler	1922	1922	30	t	0	Also 10 filler according to wikipedia
 37	2	kune	1941	1941	27	t	0	\N
+43	1	filler	1926	1939	31	t	0	(3, 5, 5, 10, 11.09, 16.10, 28.50)
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -615,8 +615,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 288	2	centimos	1903	1903	149	t	0	\N
 289	1	cent	1972	2003	150	t	0	\N
 290	100	francs CFA (essai)	1975	1975	151	t	0	\N
-291	50	centimes	1954	1955	152	t	0	\N
-292	1	centime	1887	1919	153	t	0	\N
 293	10	sengi	1967	1967	154	t	0	\N
 294	1	franc	1964	1964	155	t	0	\N
 295	5	francs	1984	2017	156	t	0	\N
@@ -636,7 +634,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 312	1	santeem	1944	2005	172	t	0	\N
 313	1	cent	1974	1995	173	t	0	\N
 314	1	mark	1922	1926	174	t	0	\N
-315	1	sent	1929	1939	175	t	0	\N
 316	5	senti	1991	1995	176	t	0	\N
 317	1	cent	1997	1997	177	t	0	\N
 318	1	peseta guineana	1969	1969	178	t	0	\N
@@ -690,6 +687,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 301	100	francs	1975	1991	161	t	0	\N
 308	10	sen	1953	1959	168	t	0	Also 10 centimes
 363	0.25	pining	1928	1937	222	t	0	Also feoirling
+292	10	francs	1965	1965	153	t	0	\N
+315	1	sent	1929	1939	175	t	0	(7, 7.50, 8, 9, 14.50, 107.50)
 372	1	pice	1950	1955	231	t	0	\N
 373	1	paisa	1957	1981	232	t	0	Also naya paisa
 374	1	eyrir	1926	1966	233	t	0	\N
@@ -708,7 +707,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 391	1	dirham	1975	1979	250	t	0	\N
 393	0.5	cent	1937	1941	252	t	0	\N
 394	1	sente	1979	1992	253	t	0	\N
-397	1	santims	1922	1939	256	t	0	\N
 399	10	cents	1952	1952	258	t	0	\N
 400	10	att	1980	1980	259	t	0	\N
 401	50	centimes	1943	1943	260	t	0	\N
@@ -780,6 +778,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 387	2	tyin	1993	1993	246	t	0	(2.50, 2.50)
 384	1	chon	1902	1902	243	t	0	Extremely rare, most of them destroyer during japanese occupation
 380	1	tyiyn	2008	2008	239	t	0	\N
+397	1	santims	1922	1939	256	t	0	(4.03, 10, 10, 10, 10.50, 11.50, 16, 29.77)
 466	1	cent	1977	2010	327	t	0	\N
 467	10	stotinov	1992	2006	328	t	0	\N
 468	5	halierov	1942	1942	329	t	0	\N
@@ -953,6 +952,30 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 631	0.5	krajczar	1882	1882	447	t	0	\N
 395	0.5	ghirsh	1934	1936	254	t	0	Also 1/2 piastre
 396	0.5	ghirsh	1941	1941	255	t	0	Also 1/2 piastre
+632	1	cent	1956	1962	448	t	0	\N
+633	0.5	cent	1885	1907	449	t	0	\N
+634	0.25	cent	1845	1916	450	t	0	\N
+635	0.5	cent	1940	1940	451	t	0	\N
+636	0.5	penny	1959	1959	452	t	0	\N
+638	2	baisa	1970	1970	454	t	0	\N
+639	1	paisa	1961	1979	455	t	0	Also pie
+640	1	penny	1936	1944	456	t	0	\N
+641	1	centavo	1863	1965	457	t	0	\N
+642	5	reis	1863	1901	458	t	0	\N
+643	1	ruble (armavir)	1918	1918	459	t	0	\N
+644	1	kopejek	1934	1934	460	t	0	\N
+645	0.125	qirsh	1916	1916	461	t	0	\N
+646	1	sant	1908	1908	462	t	0	\N
+647	0.0016666666666666668	piastre	1905	1905	463	t	0	\N
+648	20	xu	1945	1945	464	t	0	\N
+649	1	xu	1958	1958	465	t	0	\N
+650	10	su	1953	1953	466	t	0	\N
+651	1	xu	1975	1975	467	t	0	\N
+652	0.00625	riyal	1923	1928	468	t	0	1 / 160 rial
+653	1	fils	1974	1980	469	t	0	\N
+654	1	fils	1964	1964	470	t	0	\N
+655	2.5	fils	1973	1973	471	t	0	\N
+656	1	franc	1961	1961	472	t	0	\N
 \.
 
 
@@ -1214,6 +1237,25 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 255	Saint-Pierre and Miquelon	North America	30
 256	German East Africa	Africa	23
 257	Saar	Europe	23
+258	British Malaysia	Asia	142
+259	Malaya and British Borneo	Asia	258
+260	North Borneo	Asia	258
+261	Straits Settlements	Asia	258
+262	Malaya	Asia	142
+263	Muscat and Oman	Asia	165
+264	New Guinea	Australia and Oceania	168
+265	Azores	Europe	16
+266	Russian Caucasia	Asia	29
+267	Tannu Tuva	Asia	29
+268	Hejaz	Asia	192
+269	Zanzibar	Africa	209
+270	Tonkin	Asia	214
+271	North Vietnam	Asia	214
+272	South Vietnam	Asia	214
+273	North Yemen	Asia	223
+274	South Arabia	Asia	223
+275	People's Democratic Republic of Yemen	Asia	223
+276	Katanga	Africa	77
 \.
 
 
@@ -1364,7 +1406,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 149	Colon	74	1896	\N
 150	Dollar	75	1972	\N
 151	Frappes d'essai	76	1973	\N
-152	Franc (Belgian)	77	1887	1967
 153	Franc	77	1887	1967
 154	Zaire	77	1967	1993
 155	CFA Franc	78	1945	1975
@@ -1650,6 +1691,30 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 445	Decimalized rupie	256	1904	1916
 446	Franc	257	1947	1956
 447	Austro-hungarian forint (decimalized)	15	1857	1892
+448	Dollar	259	1953	1967
+449	Dollar	260	1882	1941
+450	Dollar	261	1845	1939
+451	Dollar	262	1939	1953
+452	Pound	161	1918	1973
+454	New Saidi rial	263	1970	1970
+455	Rupee (decimalized)	170	1961	\N
+456	Pound	264	1915	1966
+457	Sol	166	1863	1985
+458	Real (decimalized)	265	1843	1911
+459	Ruble	266	1918	1918
+460	Aksa	267	1933	1944
+461	Hashemite Kingdom - Riyal	268	1916	1925
+462	Rupee	269	1908	1935
+463	French Indochinese piastre	270	1884	1945
+464	First northern dong	271	1946	1951
+465	Second northern dong	271	1959	1978
+466	Southern dong	272	1953	1975
+467	Southern "liberation" dong	272	1975	1978
+468	Rial	273	1918	1974
+469	Rial (decimalized)	273	1974	1990
+470	Dinar	274	1965	1967
+471	Dinar	275	1967	1996
+472	Franc	276	1960	1963
 \.
 
 
@@ -1830,21 +1895,21 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 631, true);
+SELECT pg_catalog.setval('public.coin_seq', 656, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 257, true);
+SELECT pg_catalog.setval('public.country_seq', 276, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 447, true);
+SELECT pg_catalog.setval('public.currency_seq', 472, true);
 
 
 --
