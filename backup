@@ -383,7 +383,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 71	0.5	centavo	1884	1909	48	t	0	\N
 72	1	sucre	1884	1990	48	f	1	\N
 73	1	centavo	2000	2004	49	t	0	\N
-77	10	hwan	1959	1961	52	t	0	\N
 78	1	won	1966	2019	53	t	0	\N
 79	100	won	1970	2019	53	f	1	\N
 80	0.5	cent	1955	1958	54	t	0	\N
@@ -425,6 +424,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 42	20	filler	1922	1922	30	t	0	Also 10 filler according to wikipedia
 37	2	kune	1941	1941	27	t	0	\N
 43	1	filler	1926	1939	31	t	0	(3, 5, 5, 10, 11.09, 16.10, 28.50)
+77	10	hwan	1959	1961	52	t	0	(4, 4)
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -521,6 +521,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 214	20	rappen	1850	2022	50	f	2	\N
 188	25	ore	1874	1984	85	f	3	\N
 274	1	centavo	1994	2004	135	t	0	\N
+244	1	centavo	1970	1975	104	t	0	(1, 2.50)
 216	1	franc	1850	2022	50	f	1	\N
 190	1	krona	1875	2016	85	f	3	\N
 189	50	ore	1875	2009	85	f	3	\N
@@ -552,6 +553,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 207	50	rubles	1992	1993	61	f	1	\N
 208	1	ruble	1997	2022	62	f	1	\N
 209	2	rubles	1997	2022	62	f	1	\N
+248	10	luma	1994	1994	108	t	0	(2.19)
 222	10	baht	1971	2021	83	f	3	\N
 236	1	centime	1964	1964	96	t	0	\N
 237	1	centavo	1921	1921	97	t	0	\N
@@ -568,12 +570,10 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 242	10	centimos	1999	1999	102	t	0	\N
 226	2	dinara	1970	1986	4	f	2	\N
 243	1	centavo	1882	1948	103	t	0	\N
-244	1	centavo	1970	1975	104	t	0	\N
 245	1	centavo	1983	1983	105	t	0	\N
 227	5	dinara	1970	1986	4	f	4	\N
 246	0.5	centavo	1985	1985	106	t	0	\N
 247	1	centavo	1992	2000	107	t	0	\N
-248	10	luma	1994	1994	108	t	0	\N
 249	5	cents	1986	2020	109	t	0	\N
 228	10	groschen	1947	2001	87	f	5	\N
 229	50	groschen	1946	2001	87	f	2	\N
@@ -776,9 +776,9 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 398	1	santims	1992	2008	257	t	1	\N
 436	1	ore	1876	1972	297	t	1	\N
 387	2	tyin	1993	1993	246	t	0	(2.50, 2.50)
-384	1	chon	1902	1902	243	t	0	Extremely rare, most of them destroyer during japanese occupation
 380	1	tyiyn	2008	2008	239	t	0	\N
 397	1	santims	1922	1939	256	t	0	(4.03, 10, 10, 10, 10.50, 11.50, 16, 29.77)
+384	1	chon	1902	1902	243	t	0	So called "eagle" coins. Extremely rare, most of them destroyer during japanese occupation
 466	1	cent	1977	2010	327	t	0	\N
 467	10	stotinov	1992	2006	328	t	0	\N
 468	5	halierov	1942	1942	329	t	0	\N
@@ -797,7 +797,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 481	5	centesimi	1864	1938	342	t	0	\N
 482	1	sene	1967	1996	343	t	0	\N
 483	1	penny	1984	2006	344	t	0	\N
-484	50	luma	2004	2004	345	t	0	\N
 485	1	shilling	1994	1994	346	t	0	\N
 486	1	kopeck	2000	2000	347	t	0	\N
 487	1	peseta	1992	1992	348	t	0	\N
@@ -872,6 +871,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 552	3	grosze polskie	1831	1831	414	t	1	\N
 546	1	grosz	1810	1814	408	t	1	\N
 545	5	groszy	1835	1835	407	t	0	\N
+484	50	luma	2004	2004	345	t	0	(5)
 559	10	yen	1870	2023	88	f	6	\N
 560	500	yen	1982	2021	88	f	1	\N
 561	100	yen	1957	2023	88	f	1	\N
@@ -976,6 +976,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 654	1	fils	1964	1964	470	t	0	\N
 655	2.5	fils	1973	1973	471	t	0	\N
 656	1	franc	1961	1961	472	t	0	\N
+657	0.5	quart	1842	1861	473	t	0	\N
 \.
 
 
@@ -1715,6 +1716,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 470	Dinar	274	1965	1967
 471	Dinar	275	1967	1996
 472	Franc	276	1960	1963
+473	Real	109	1802	1861
 \.
 
 
@@ -1895,7 +1897,7 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 656, true);
+SELECT pg_catalog.setval('public.coin_seq', 657, true);
 
 
 --
@@ -1909,7 +1911,7 @@ SELECT pg_catalog.setval('public.country_seq', 276, true);
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 472, true);
+SELECT pg_catalog.setval('public.currency_seq', 473, true);
 
 
 --
