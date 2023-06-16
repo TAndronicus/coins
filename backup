@@ -383,7 +383,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 71	0.5	centavo	1884	1909	48	t	0	\N
 72	1	sucre	1884	1990	48	f	1	\N
 73	1	centavo	2000	2004	49	t	0	\N
-78	1	won	1966	2019	53	t	0	\N
 79	100	won	1970	2019	53	f	1	\N
 80	0.5	cent	1955	1958	54	t	0	\N
 81	1	cent	1981	2013	55	t	0	\N
@@ -425,6 +424,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 37	2	kune	1941	1941	27	t	0	\N
 43	1	filler	1926	1939	31	t	0	(3, 5, 5, 10, 11.09, 16.10, 28.50)
 77	10	hwan	1959	1961	52	t	0	(4, 4)
+78	1	won	1966	2019	53	t	0	(2, 2)
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -435,7 +435,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 103	1	lepton	1832	1879	71	t	0	\N
 104	5	lepta	1954	1971	72	t	0	\N
 105	1	drachma	1954	2000	72	f	1	\N
-106	0.5	cent	1818	1940	73	t	0	\N
 108	1	cent	1970	2009	74	t	1	\N
 109	0.5	cent	1793	1857	75	t	0	\N
 110	1	cent	1787	2023	75	f	1	\N
@@ -515,6 +514,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 129	1	yen	1870	2022	88	f	10	\N
 153	25	sentimo	1967	2019	41	f	2	\N
 127	1	groschen	1947	1950	87	t	0	(2, 5)
+106	0.5	cent	1818	1940	73	t	0	(2.16, 3, 3, 4, 4, 5, 5, 6)
 185	50	pfennig	1949	2001	47	f	1	\N
 187	5	deutsche mark	1951	2001	47	f	2	\N
 210	5	pesos	1997	2021	1	f	2	\N
@@ -543,7 +543,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 221	5	baht	1972	2021	83	f	2	\N
 200	2	kopecks	1961	1991	59	f	2	\N
 201	5	kopecks	1961	1991	59	f	1	\N
-234	5	qindarka	1964	1988	94	t	0	\N
 235	20	francs	1949	1956	95	t	0	\N
 202	10	kopecks	1961	1991	59	f	4	\N
 203	20	kopecks	1961	1991	59	f	1	\N
@@ -604,6 +603,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 276	1	sen	1967	2020	137	t	0	\N
 259	1	kopek	2009	2009	119	t	1	\N
 217	1	dollar	1863	2019	29	f	2	\N
+234	5	qindarka	1964	1988	94	t	0	(9, 10, 10)
 277	1	stotinka	1901	1912	138	t	0	\N
 278	1	stotinka	1951	1951	139	t	0	\N
 280	1	stotinka	1999	2002	141	t	0	\N
@@ -690,7 +690,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 292	10	francs	1965	1965	153	t	0	\N
 315	1	sent	1929	1939	175	t	0	(7, 7.50, 8, 9, 14.50, 107.50)
 372	1	pice	1950	1955	231	t	0	\N
-373	1	paisa	1957	1981	232	t	0	Also naya paisa
 374	1	eyrir	1926	1966	233	t	0	\N
 375	5	aurar	1981	1981	234	t	0	\N
 376	1	fils	1949	1985	235	t	0	\N
@@ -776,6 +775,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 398	1	santims	1992	2008	257	t	1	\N
 436	1	ore	1876	1972	297	t	1	\N
 387	2	tyin	1993	1993	246	t	0	(2.50, 2.50)
+373	1	paisa	1957	1981	232	t	0	Also naya paisa (1, 1.80, 2.20, 2.20, 2.59, 3)
 380	1	tyiyn	2008	2008	239	t	0	\N
 397	1	santims	1922	1939	256	t	0	(4.03, 10, 10, 10, 10.50, 11.50, 16, 29.77)
 384	1	chon	1902	1902	243	t	0	So called "eagle" coins. Extremely rare, most of them destroyer during japanese occupation
