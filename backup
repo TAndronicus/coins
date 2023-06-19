@@ -396,12 +396,11 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 93	1	santim	1974	1987	65	t	1	\N
 45	10	filler	1946	1996	32	f	2	\N
 50	50	centimos	1869	1980	34	f	3	\N
-51	1	peseta	1869	2001	34	f	5	\N
+51	1	peseta	1869	2001	34	f	7	\N
 53	1	penny	1716	1970	35	f	2	\N
 76	10	cents	1966	1995	51	f	2	\N
 58	1	franc	1833	2001	37	f	3	\N
-56	1	new penny	1971	2022	36	f	4	\N
-70	1	pfennig	1948	2001	47	t	4	\N
+56	1	new penny	1971	2022	36	f	6	\N
 65	1	pfennig	1873	1918	42	t	1	\N
 75	5	cents	1966	1991	51	t	1	\N
 74	1	rappen	1850	2006	50	t	6	\N
@@ -410,7 +409,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 91	1	centime	1960	1992	64	t	1	\N
 30	10	haleru	1940	1944	21	t	1	\N
 40	10	cent	1862	2017	29	f	2	\N
-55	0.5	new penny	1971	1984	36	t	2	\N
+55	0.5	new penny	1971	1984	36	t	8	\N
 3	1	dirham	1973	2022	2	f	2	\N
 12	20	haleru	1993	2003	6	f	2	\N
 67	1	rentenpfennig	1923	1929	44	t	1	\N
@@ -425,6 +424,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 43	1	filler	1926	1939	31	t	0	(3, 5, 5, 10, 11.09, 16.10, 28.50)
 77	10	hwan	1959	1961	52	t	0	(4, 4)
 78	1	won	1966	2019	53	t	0	(2, 2)
+70	1	pfennig	1948	2001	47	t	5	\N
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -457,7 +457,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 143	10	forint	1946	2022	32	f	3	\N
 136	0.5	franc	1964	2001	64	f	2	\N
 144	20	forint	1948	2022	32	f	3	\N
-92	5	centimes	1959	2001	64	f	6	\N
+92	5	centimes	1959	2001	64	f	8	\N
 145	50	forint	1992	2022	32	f	1	\N
 184	10	pfennig	1949	2001	47	f	3	\N
 146	100	forint	1992	2022	32	f	2	\N
@@ -468,8 +468,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 148	2	koruny	1993	2022	6	f	1	\N
 138	5	francs	1959	2001	64	f	2	\N
 149	5	korun	1993	2022	6	f	2	\N
-139	10	francs	1964	2001	64	f	4	\N
-132	2	francs	1959	2001	64	f	5	\N
+170	500	pesetas	1987	2001	34	f	3	\N
+139	10	francs	1964	2001	64	f	5	\N
 137	1	franc	1959	2001	64	f	5	\N
 135	20	centimes	1992	2001	64	f	4	\N
 140	50	filler	1948	1999	32	f	1	\N
@@ -491,22 +491,21 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 168	50	pesetas	1958	2000	34	f	2	\N
 165	50	kopiiok	1992	2021	66	f	2	\N
 164	25	kopiiok	1992	2021	66	f	1	\N
-169	100	pesetas	1897	2001	34	f	2	\N
 167	25	pesetas	1871	2001	34	f	7	\N
-170	500	pesetas	1987	2001	34	f	2	\N
+169	100	pesetas	1897	2001	34	f	3	\N
 172	5	lire	1861	2001	84	f	3	\N
 171	10	fils	1931	1982	5	f	1	\N
 177	200	lire	1977	2001	84	f	3	\N
 174	20	lire	1861	2001	84	f	1	\N
-175	50	lire	1861	2001	84	f	2	\N
+132	2	francs	1959	2001	64	f	4	\N
 176	100	lire	1861	2001	84	f	2	\N
 178	500	lire	1957	2001	84	f	2	\N
 179	5	pfennig	1948	1990	46	f	1	\N
 180	1	deutsche mark	1956	1990	46	f	1	\N
 126	1	groschen	1925	1938	86	t	0	(4.50, 5, 5)
-182	2	pfennig	1950	2001	47	f	3	\N
+175	50	lire	1861	2001	84	f	3	\N
 121	1	baht	1908	2021	83	f	3	\N
-183	5	pfennig	1949	2001	47	f	2	\N
+182	2	pfennig	1950	2001	47	f	4	\N
 99	10	centavos	1992	2019	68	f	3	\N
 125	10	ore	1874	1991	85	f	3	\N
 114	1	agora	1960	1980	79	t	1	Also agorah
@@ -515,14 +514,15 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 153	25	sentimo	1967	2019	41	f	2	\N
 127	1	groschen	1947	1950	87	t	0	(2, 5)
 106	0.5	cent	1818	1940	73	t	0	(2.16, 3, 3, 4, 4, 5, 5, 6)
-185	50	pfennig	1949	2001	47	f	1	\N
+183	5	pfennig	1949	2001	47	f	3	\N
+196	5	pence	1968	2022	36	f	2	\N
 187	5	deutsche mark	1951	2001	47	f	2	\N
 210	5	pesos	1997	2021	1	f	2	\N
-214	20	rappen	1850	2022	50	f	2	\N
+216	1	franc	1850	2022	50	f	0	\N
 188	25	ore	1874	1984	85	f	3	\N
 274	1	centavo	1994	2004	135	t	0	\N
 244	1	centavo	1970	1975	104	t	0	(1, 2.50)
-216	1	franc	1850	2022	50	f	1	\N
+212	5	rappen	1850	2022	50	f	0	\N
 190	1	krona	1875	2016	85	f	3	\N
 189	50	ore	1875	2009	85	f	3	\N
 191	2	kronor	1876	2020	85	f	1	\N
@@ -531,14 +531,14 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 192	5	francs	1832	2001	37	f	4	\N
 193	20	francs	1835	2001	37	f	2	\N
 194	50	francs	1935	2001	37	f	1	\N
-215	0.5	franc	1850	2022	50	f	3	\N
+214	20	rappen	1850	2022	50	f	0	\N
 195	2	pence	1971	2022	36	f	3	\N
-196	5	pence	1968	2022	36	f	1	\N
+197	10	pence	1968	2022	36	f	5	\N
 232	10	schilling	1957	2001	87	f	2	\N
 220	2	baht	1979	2020	83	f	2	\N
-198	20	pence	1982	2022	36	f	2	\N
+215	0.5	franc	1850	2022	50	f	1	\N
 233	5	qindar leku	1926	1926	93	t	0	\N
-197	10	pence	1968	2022	36	f	4	\N
+198	20	pence	1982	2022	36	f	3	\N
 199	10	kopecks	1924	1958	58	f	1	\N
 221	5	baht	1972	2021	83	f	2	\N
 200	2	kopecks	1961	1991	59	f	2	\N
@@ -557,10 +557,9 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 236	1	centime	1964	1964	96	t	0	\N
 237	1	centavo	1921	1921	97	t	0	\N
 211	2	rappen	1850	1974	50	f	4	\N
-212	5	rappen	1850	2022	50	f	1	\N
+213	10	rappen	1850	2022	50	f	0	\N
 238	10	centavos	1948	1949	98	t	0	\N
 239	10	centavos	1974	1974	99	t	0	\N
-213	10	rappen	1850	2022	50	f	3	\N
 223	10	cents	1818	2001	73	f	5	\N
 240	50	lwei	1977	1979	100	t	0	\N
 241	50	kwanzas	1992	1992	101	t	0	\N
@@ -604,6 +603,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 259	1	kopek	2009	2009	119	t	1	\N
 217	1	dollar	1863	2019	29	f	2	\N
 234	5	qindarka	1964	1988	94	t	0	(9, 10, 10)
+185	50	pfennig	1949	2001	47	f	2	\N
 277	1	stotinka	1901	1912	138	t	0	\N
 278	1	stotinka	1951	1951	139	t	0	\N
 280	1	stotinka	1999	2002	141	t	0	\N
@@ -847,12 +847,10 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 535	0.5	skar	1910	1910	397	t	0	\N
 536	0.25	rupee	1904	1912	398	t	0	\N
 537	1	jiao	1949	1974	399	t	0	\N
-539	1	grosz	1923	1944	401	t	0	\N
 543	1	schilling	1801	1801	405	t	0	\N
 544	1	schilling	1808	1812	406	t	0	\N
 548	1	groschen	1816	1817	410	t	0	\N
 547	1	grossus	1794	1794	409	t	0	\N
-549	1	solidus	1796	1797	411	t	0	\N
 550	6	groszy	1813	1813	412	t	0	\N
 553	1	filler	1892	1914	415	t	0	\N
 335	1	penni	1963	1979	194	t	1	\N
@@ -872,6 +870,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 546	1	grosz	1810	1814	408	t	1	\N
 545	5	groszy	1835	1835	407	t	0	\N
 484	50	luma	2004	2004	345	t	0	(5)
+539	1	grosz	1923	1944	401	t	1	\N
 559	10	yen	1870	2023	88	f	6	\N
 560	500	yen	1982	2021	88	f	1	\N
 561	100	yen	1957	2023	88	f	1	\N
@@ -888,7 +887,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 575	50	drachmai	1980	2000	72	f	1	\N
 576	1	shilling	1966	2018	51	f	2	\N
 577	5	dollar	1993	2015	89	f	1	\N
-186	1	deutsche mark	1950	2001	47	f	2	\N
 578	10	centu	1991	2014	26	f	1	\N
 579	1	litas	1991	2014	26	f	1	\N
 580	2	litai	1998	2014	26	f	1	\N
@@ -906,7 +904,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 591	2	reichspfennig	1923	1937	45	f	1	\N
 592	5	reichspfennig	1924	1948	45	f	2	\N
 594	50	reichspfennig	1924	1944	45	f	1	\N
-595	1	kopeck	1704	1917	56	f	1	\N
 589	10	pesos	2005	2022	1	f	2	\N
 596	1	hryvnia	1992	2022	66	f	2	\N
 597	1	dinar	1969	2020	353	f	1	\N
@@ -936,7 +933,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 614	50	centimes	1924	1943	430	t	0	\N
 615	100	francs	1971	1972	431	t	0	\N
 616	100	francs	1971	1972	432	t	0	\N
-617	1	pfennig	1923	1937	433	t	0	\N
 618	0.5	cent	1905	1905	434	t	0	Also 2 1/2 bit
 619	1	franc	1948	1965	435	t	0	\N
 620	1	franc	1969	1975	436	t	0	\N
@@ -962,6 +958,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 640	1	penny	1936	1944	456	t	0	\N
 641	1	centavo	1863	1965	457	t	0	\N
 642	5	reis	1863	1901	458	t	0	\N
+595	1	kopeck	1704	1917	56	f	2	\N
+617	1	pfennig	1923	1937	433	t	1	\N
 643	1	ruble (armavir)	1918	1918	459	t	0	\N
 644	1	kopejek	1934	1934	460	t	0	\N
 645	0.125	qirsh	1916	1916	461	t	0	\N
@@ -977,6 +975,27 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 655	2.5	fils	1973	1973	471	t	0	\N
 656	1	franc	1961	1961	472	t	0	\N
 657	0.5	quart	1842	1861	473	t	0	\N
+186	1	deutsche mark	1950	2001	47	f	3	\N
+658	2	deutsche mark	1951	2001	47	f	1	\N
+660	10	pfennig	1948	1990	46	f	1	\N
+661	5	centimes	1795	1939	63	f	3	\N
+662	10	centimes	1795	1946	63	f	3	\N
+663	50	centimes	1793	1947	63	f	2	\N
+664	1	franc	1802	1944	63	f	1	\N
+665	2	francs	1803	1959	63	f	1	\N
+666	5	francs	1795	1947	63	f	2	\N
+667	10	francs	1850	1958	63	f	3	\N
+668	20	francs	1802	1954	63	f	2	\N
+670	100	francs	1855	1959	63	f	3	\N
+669	50	francs	1855	1958	63	f	3	\N
+671	50	pence	1969	2023	36	f	1	\N
+672	1	pound	1983	2023	36	f	6	\N
+673	1	farthing	1717	1956	35	f	1	\N
+674	6	pence	1707	1970	35	f	2	\N
+675	1	shilling	1707	1970	35	f	2	\N
+676	2	shilling	1937	1970	35	f	1	\N
+549	1	solidus	1796	1797	411	t	1	\N
+659	50	pfennig	1875	1922	42	f	1	\N
 \.
 
 
@@ -1897,7 +1916,7 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 657, true);
+SELECT pg_catalog.setval('public.coin_seq', 676, true);
 
 
 --
