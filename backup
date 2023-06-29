@@ -849,7 +849,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 543	1	schilling	1801	1801	405	t	0	\N
 544	1	schilling	1808	1812	406	t	0	\N
 548	1	groschen	1816	1817	410	t	0	\N
-547	1	grossus	1794	1794	409	t	0	\N
 550	6	groszy	1813	1813	412	t	0	\N
 553	1	filler	1892	1914	415	t	0	\N
 335	1	penni	1963	1979	194	t	1	\N
@@ -871,6 +870,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 484	50	luma	2004	2004	345	t	0	(5)
 539	1	grosz	1923	1944	401	t	1	\N
 493	1	cent	1966	2016	354	t	1	\N
+547	1	grossus	1794	1794	409	t	1	\N
 559	10	yen	1870	2023	88	f	6	\N
 560	500	yen	1982	2021	88	f	1	\N
 561	100	yen	1957	2023	88	f	1	\N
