@@ -371,7 +371,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 49	10	centimos	1870	1959	34	f	1	\N
 52	2	dinari	1970	1986	4	f	1	\N
 59	1	cent	1858	2012	38	t	3	\N
-60	5	feninga	2005	2021	39	t	0	\N
 61	1	konvrtibilna marka	2000	2021	39	f	1	\N
 62	0.5	centavo	1903	1908	40	t	0	\N
 63	1	sentimo	1967	2019	41	t	0	\N
@@ -425,6 +424,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 11	10	haleru	1993	2003	6	t	1	\N
 70	1	pfennig	1948	2001	47	t	5	\N
 44	2	filler	1946	1989	32	t	1	\N
+60	5	feninga	2005	2021	39	t	0	(4, 4.50)
 95	5	kopiikas	1992	2018	66	f	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 97	1	centavo	1863	1973	67	t	0	\N
@@ -560,6 +560,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 213	10	rappen	1850	2022	50	f	0	\N
 238	10	centavos	1948	1949	98	t	0	\N
 239	10	centavos	1974	1974	99	t	0	\N
+249	5	cents	1986	2020	109	t	0	(3, 5, 5, 5, 5.75)
 223	10	cents	1818	2001	73	f	5	\N
 240	50	lwei	1977	1979	100	t	0	\N
 241	50	kwanzas	1992	1992	101	t	0	\N
@@ -572,25 +573,18 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 227	5	dinara	1970	1986	4	f	4	\N
 246	0.5	centavo	1985	1985	106	t	0	\N
 247	1	centavo	1992	2000	107	t	0	\N
-249	5	cents	1986	2020	109	t	0	\N
 228	10	groschen	1947	2001	87	f	5	\N
 229	50	groschen	1946	2001	87	f	2	\N
-251	0.5	penny	1911	1964	111	t	0	\N
 230	1	schilling	1946	2001	87	f	2	\N
 231	5	schilling	1952	2001	87	f	1	\N
 252	1	cent	1966	1991	112	t	0	\N
 253	5	qepik	1992	1993	113	t	0	\N
 254	1	qepik	2006	2011	114	t	0	\N
-255	1	cent	1966	2015	115	t	0	\N
 256	1	fils	1965	1966	116	t	0	\N
 257	1	poisha	1974	1974	117	t	0	\N
-258	1	cent	1973	2012	118	t	0	\N
-260	1	cent	1885	2018	120	t	0	\N
 261	0.5	rupee	1780	1927	121	t	0	\N
 262	1	pice	1928	1954	122	t	0	\N
-264	5	chetrums	1974	1979	124	t	0	\N
 265	5	centavos	1965	1970	126	t	0	\N
-266	2	centavos	1987	1987	127	t	0	\N
 267	1	thebe	1976	1991	128	t	0	\N
 268	10	centavos	1941	1961	129	t	0	\N
 269	1	centavo	1967	1983	130	t	0	\N
@@ -599,15 +593,20 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 272	1	cruzeiro	1990	1990	133	t	0	\N
 273	5	cruzeiros reais	1993	1994	134	t	0	\N
 275	0.1	penny	1902	1957	136	t	0	\N
-276	1	sen	1967	2020	137	t	0	\N
 259	1	kopek	2009	2009	119	t	1	\N
 217	1	dollar	1863	2019	29	f	2	\N
 234	5	qindarka	1964	1988	94	t	0	(9, 10, 10)
 185	50	pfennig	1949	2001	47	f	2	\N
+251	0.5	penny	1911	1964	111	t	0	(8, 8, 8.50, 8.75, 8.75, 9)
+255	1	cent	1966	2015	115	t	0	(2.20, 3, 5, 10)
+258	1	cent	1973	2012	118	t	0	(1, 1, 1.50, 1.50, 1.50, 1.50, 2, 4, 4, 5)
+260	1	cent	1885	2018	120	t	0	(2.25, 10)
+264	5	chetrums	1974	1979	124	t	0	(8, 9, 9, 9.50, 10)
+266	2	centavos	1987	1987	127	t	0	(5)
+276	1	sen	1967	2020	137	t	0	(7, 10)
 277	1	stotinka	1901	1912	138	t	0	\N
 278	1	stotinka	1951	1951	139	t	0	\N
 280	1	stotinka	1999	2002	141	t	0	\N
-281	1	franc	1965	2003	142	t	0	\N
 282	0.25	piastre	1879	1926	143	t	0	\N
 285	1	centavo	1915	2020	146	t	0	\N
 286	1	centavo	1988	1988	147	t	0	\N
@@ -689,6 +688,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 292	10	francs	1965	1965	153	t	0	\N
 315	1	sent	1929	1939	175	t	0	(7, 7.50, 8, 9, 14.50, 107.50)
 368	0.08333333333333333	anna	1862	1942	227	t	0	(4, 4.50, 5, 7, 7, 14.50, 20, 23)
+281	1	franc	1965	2003	142	t	0	(2, 5, 6, 8, 9)
 372	1	pice	1950	1955	231	t	0	\N
 374	1	eyrir	1926	1966	233	t	0	\N
 375	5	aurar	1981	1981	234	t	0	\N
