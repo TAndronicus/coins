@@ -585,13 +585,9 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 261	0.5	rupee	1780	1927	121	t	0	\N
 262	1	pice	1928	1954	122	t	0	\N
 265	5	centavos	1965	1970	126	t	0	\N
-267	1	thebe	1976	1991	128	t	0	\N
 268	10	centavos	1941	1961	129	t	0	\N
-269	1	centavo	1967	1983	130	t	0	\N
 270	1	centavo	1986	1988	131	t	0	\N
-271	1	centavo	1989	1990	132	t	0	\N
 272	1	cruzeiro	1990	1990	133	t	0	\N
-273	5	cruzeiros reais	1993	1994	134	t	0	\N
 275	0.1	penny	1902	1957	136	t	0	\N
 259	1	kopek	2009	2009	119	t	1	\N
 217	1	dollar	1863	2019	29	f	2	\N
@@ -604,6 +600,10 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 264	5	chetrums	1974	1979	124	t	0	(8, 9, 9, 9.50, 10)
 266	2	centavos	1987	1987	127	t	0	(5)
 276	1	sen	1967	2020	137	t	0	(7, 10)
+267	1	thebe	1976	1991	128	t	0	(2.65, 4, 4.50)
+269	1	centavo	1967	1983	130	t	0	(5, 5)
+271	1	centavo	1989	1990	132	t	0	(5, 5)
+273	5	cruzeiros reais	1993	1994	134	t	0	(5, 6)
 277	1	stotinka	1901	1912	138	t	0	\N
 278	1	stotinka	1951	1951	139	t	0	\N
 280	1	stotinka	1999	2002	141	t	0	\N
