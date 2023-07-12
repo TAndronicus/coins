@@ -641,7 +641,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 348	0.5	centavo	1932	1946	207	t	0	\N
 350	0.5	penny	1958	1958	209	t	0	\N
 351	5	pesewas	1965	1965	210	t	0	\N
-356	1	butut	1971	1998	215	t	0	\N
 355	1	penny	1966	1966	214	t	0	\N
 357	100	francs	1971	1975	216	t	0	\N
 358	100	francs	1975	1985	217	t	0	\N
@@ -688,6 +687,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 316	5	senti	1991	1995	176	t	0	(1, 1, 2, 6, 7)
 347	0.5	penny	1971	1979	206	t	0	(4, 6)
 354	1	tetri	1993	1993	213	t	0	(1.50, 5)
+356	1	butut	1971	1998	215	t	0	(3.06, 5.17, 7.40)
 374	1	eyrir	1926	1966	233	t	0	\N
 376	1	fils	1949	1985	235	t	0	\N
 377	0.5	penny	1971	1981	236	t	0	Also new penny
@@ -706,7 +706,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 402	1	franc	1948	1958	261	t	0	\N
 404	1	ariary	2004	2018	263	t	0	\N
 405	1	penny	1967	1968	264	t	0	\N
-406	1	tambala	1971	2003	265	t	0	\N
 409	5	francs maliens	1961	1961	268	t	0	\N
 410	2	mils	1972	2007	269	t	0	\N
 411	0.2	ouguiya	1973	1973	270	t	0	\N
@@ -776,6 +775,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 390	1	millieme	1952	1965	249	t	0	(3, 7, 10)
 437	5	baisa	1975	2020	298	t	0	(3, 4, 4.50, 5, 5, 5)
 380	1	tyiyn	2008	2008	239	t	0	(8.50)
+406	1	tambala	1971	2003	265	t	0	(2, 3, 4, 4, 5)
 467	10	stotinov	1992	2006	328	t	0	\N
 468	5	halierov	1942	1942	329	t	0	\N
 538	1	fenig	1917	1918	400	t	1	\N
