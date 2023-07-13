@@ -731,8 +731,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 456	1	pound	2011	2011	317	t	0	\N
 457	0.25	cent	1870	1904	318	t	0	\N
 459	10	piastres	2015	2015	320	t	0	\N
-460	0.25	penny	1923	1960	321	t	0	\N
-461	0.5	cent	1961	1983	322	t	0	\N
 462	5	centesimi	1967	1976	323	t	0	Also senti
 463	1	besa	1909	1921	324	t	0	\N
 464	5	lire	1925	1925	325	t	0	\N
@@ -774,6 +772,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 381	1	fils	1961	1988	240	t	0	(6)
 400	10	att	1980	1980	259	t	0	(6, 6, 7)
 422	1	pya	1952	1966	283	t	0	(5)
+460	0.25	penny	1923	1960	321	t	0	(7.50, 7.50, 7.50, 8.50, 40)
+461	0.5	cent	1961	1983	322	t	0	(1, 1.50, 3.09, 3.12, 3.58)
 467	10	stotinov	1992	2006	328	t	0	\N
 468	5	halierov	1942	1942	329	t	0	\N
 538	1	fenig	1917	1918	400	t	1	\N
