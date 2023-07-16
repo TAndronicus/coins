@@ -609,7 +609,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 287	1	centavo	2000	2019	148	t	0	\N
 288	2	centimos	1903	1903	149	t	0	\N
 290	100	francs CFA (essai)	1975	1975	151	t	0	\N
-293	10	sengi	1967	1967	154	t	0	\N
 294	1	franc	1964	1964	155	t	0	\N
 295	5	francs	1984	2017	156	t	0	\N
 297	0.5	decimo de real	1847	1848	157	t	0	Used before 1880
@@ -687,6 +686,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 347	0.5	penny	1971	1979	206	t	0	(4, 6)
 354	1	tetri	1993	1993	213	t	0	(1.50, 5)
 356	1	butut	1971	1998	215	t	0	(3.06, 5.17, 7.40)
+293	10	sengi	1967	1967	154	t	0	(4, 5, 8)
 374	1	eyrir	1926	1966	233	t	0	\N
 376	1	fils	1949	1985	235	t	0	\N
 377	0.5	penny	1971	1981	236	t	0	Also new penny
