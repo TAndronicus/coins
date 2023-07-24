@@ -348,8 +348,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 20	2	halere	1923	1925	11	t	0	\N
 22	5	para	1920	1920	13	t	0	\N
 23	50	para	1945	1953	14	t	0	\N
-25	1	dinar	1992	1992	16	t	0	\N
-26	1	dinar	1993	1993	17	t	0	\N
 28	1	para	1994	1994	19	t	0	\N
 31	1	ban	1867	1900	22	t	0	Also called banu (1867)
 32	50	bani	1947	1947	23	t	0	\N
@@ -380,6 +378,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 76	10	cents	1966	1995	51	f	2	\N
 58	1	franc	1833	2001	37	f	3	\N
 56	1	new penny	1971	2022	36	f	6	\N
+25	1	dinar	1992	1992	16	t	0	(6)
+26	1	dinar	1993	1993	17	t	0	(6, 6.50)
 40	10	cent	1862	2017	29	f	2	\N
 3	1	dirham	1973	2022	2	f	2	\N
 12	20	haleru	1993	2003	6	f	2	\N
@@ -410,7 +410,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 100	10	para	1940	1942	69	t	0	\N
 102	10	kurus	2005	2022	70	f	1	\N
 103	1	lepton	1832	1879	71	t	0	\N
-104	5	lepta	1954	1971	72	t	0	\N
 105	1	drachma	1954	2000	72	f	1	\N
 109	0.5	cent	1793	1857	75	t	0	\N
 110	1	cent	1787	2023	75	f	1	\N
@@ -461,6 +460,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 168	50	pesetas	1958	2000	34	f	2	\N
 165	50	kopiiok	1992	2021	66	f	2	\N
 164	25	kopiiok	1992	2021	66	f	1	\N
+104	5	lepta	1954	1971	72	t	0	(3.55, 8, 8, 9, 10, 10, 10.20, 17.51, 20.66, 21.16, 26.01, 28, 88.77)
 167	25	pesetas	1871	2001	34	f	7	\N
 169	100	pesetas	1897	2001	34	f	3	\N
 172	5	lire	1861	2001	84	f	3	\N
@@ -554,9 +554,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 261	0.5	rupee	1780	1927	121	t	0	\N
 262	1	pice	1928	1954	122	t	0	\N
 265	5	centavos	1965	1970	126	t	0	\N
-270	1	centavo	1986	1988	131	t	0	\N
 272	1	cruzeiro	1990	1990	133	t	0	\N
-275	0.1	penny	1902	1957	136	t	0	\N
+275	0.1	penny	1902	1957	136	t	0	(15, 15, 15)
 217	1	dollar	1863	2019	29	f	2	\N
 234	5	qindarka	1964	1988	94	t	0	(9, 10, 10)
 185	50	pfennig	1949	2001	47	f	2	\N
@@ -567,6 +566,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 264	5	chetrums	1974	1979	124	t	0	(8, 9, 9, 9.50, 10)
 266	2	centavos	1987	1987	127	t	0	(5)
 276	1	sen	1967	2020	137	t	0	(7, 10)
+270	1	centavo	1986	1988	131	t	0	(11)
 268	10	centavos	1941	1961	129	t	0	(1, 1, 1, 5)
 271	1	centavo	1989	1990	132	t	0	(5, 5)
 273	5	cruzeiros reais	1993	1994	134	t	0	(5, 6)
