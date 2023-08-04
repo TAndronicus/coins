@@ -674,7 +674,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 393	0.5	cent	1937	1941	252	t	0	\N
 401	50	centimes	1943	1943	260	t	0	\N
 402	1	franc	1948	1958	261	t	0	\N
-404	1	ariary	2004	2018	263	t	0	\N
 405	1	penny	1967	1968	264	t	0	\N
 409	5	francs maliens	1961	1961	268	t	0	\N
 410	2	mils	1972	2007	269	t	0	\N
@@ -723,6 +722,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 441	1	toea	1975	2004	302	t	0	(5, 6.50, 10)
 451	1	cent	1942	2021	312	t	0	(1, 2, 10)
 425	1	cent	1952	2016	286	t	0	(1, 1, 2, 2, 3)
+404	1	ariary	2004	2018	263	t	0	(8, 8)
 438	1	centimo	1985	1985	299	t	0	(5)
 424	1	cent	1942	1947	285	t	0	(10)
 431	5	centavos	1994	2002	292	t	0	(7)
