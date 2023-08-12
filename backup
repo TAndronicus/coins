@@ -661,7 +661,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 279	1	stotinka	1962	1990	140	t	1	\N
 367	1	rupiah	1970	1970	226	t	1	\N
 325	1	centavo	1940	1995	185	t	1	\N
-374	1	eyrir	1926	1966	233	t	0	\N
 376	1	fils	1949	1985	235	t	0	\N
 377	0.5	penny	1971	1981	236	t	0	Also new penny
 378	1	farthing	1880	1952	237	t	0	\N
@@ -728,6 +727,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 431	5	centavos	1994	2002	292	t	0	(7)
 414	1	ban	1993	2017	273	t	0	(2.63, 2.63, 6)
 418	10	centavos	1936	1961	278	t	1	\N
+374	1	eyrir	1926	1966	233	t	0	(4)
 455	1	piastre / qirsh	2006	2006	316	t	0	(6, 13)
 420	1	centavo	2006	2006	281	t	0	(3.30, 5)
 416	1	mongo	1925	1981	276	t	0	(2.86, 5.50)
@@ -800,6 +800,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 557	20	mark	1943	1943	404	f	1	\N
 509	5	centimos	1896	1986	370	t	2	\N
 525	1	franc CFA	1961	2011	386	t	1	\N
+507	1	hao	1976	1976	368	t	0	(1, 2)
 545	5	groszy	1835	1835	407	t	0	\N
 484	50	luma	2004	2004	345	t	0	(5)
 482	1	sene	1967	1996	343	t	0	(10, 10, 10)
@@ -811,7 +812,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 485	1	shilling	1994	1994	346	t	0	(4, 7.50)
 506	1	shilling	1987	1987	367	t	0	(5, 5, 6)
 522	1	ngwee	1968	1983	383	t	0	(5.70, 6.50)
-507	1	hao	1976	1976	368	t	0	(2, 15)
 477	1	halalah	1963	2013	338	t	0	(10)
 491	1	tenne	2009	2009	352	t	0	(5.50, 6.50)
 508	200	đồng	2003	2003	369	t	0	(3, 3, 7, 8)
