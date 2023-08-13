@@ -183,6 +183,37 @@ $$;
 ALTER FUNCTION public.insert_currency_if_not_exists(country bigint, currency character varying, beginning_year integer, ending_year integer) OWNER TO jb;
 
 --
+-- Name: coin_diameter_seq; Type: SEQUENCE; Schema: public; Owner: jb
+--
+
+CREATE SEQUENCE public.coin_diameter_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.coin_diameter_seq OWNER TO jb;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: coin_diameters; Type: TABLE; Schema: public; Owner: jb
+--
+
+CREATE TABLE public.coin_diameters (
+    id bigint DEFAULT nextval('public.coin_diameter_seq'::regclass) NOT NULL,
+    coin_id bigint NOT NULL,
+    diameter double precision NOT NULL
+);
+
+
+ALTER TABLE public.coin_diameters OWNER TO jb;
+
+--
 -- Name: coin_seq; Type: SEQUENCE; Schema: public; Owner: jb
 --
 
@@ -195,10 +226,6 @@ CREATE SEQUENCE public.coin_seq
 
 
 ALTER TABLE public.coin_seq OWNER TO jb;
-
-SET default_tablespace = '';
-
-SET default_table_access_method = heap;
 
 --
 -- Name: coin_tables; Type: TABLE; Schema: public; Owner: jb
@@ -324,6 +351,132 @@ CREATE TABLE public.third_zloty (
 ALTER TABLE public.third_zloty OWNER TO jb;
 
 --
+-- Data for Name: coin_diameters; Type: TABLE DATA; Schema: public; Owner: jb
+--
+
+COPY public.coin_diameters (id, coin_id, diameter) FROM stdin;
+1	608	15
+2	609	20
+3	233	18
+4	233	18.6
+5	233	19.5
+6	234	18
+7	234	18
+8	235	23.2
+9	236	16
+10	237	19
+11	238	17.5
+12	239	15.3
+13	240	16
+14	241	23.3
+15	242	15.04
+16	243	16
+17	244	15.74
+18	245	18
+19	246	19.6
+20	247	16.2
+21	248	16
+22	126	17
+23	127	17
+24	253	17
+25	253	17.1
+26	254	16.25
+27	255	19.05
+28	255	19
+29	255	17
+30	256	15
+31	257	16
+32	258	19
+33	259	15
+34	610	19
+35	610	18
+36	444	21
+37	57	16.5
+38	260	19.5
+39	260	25.5
+40	261	21
+41	262	21.28
+42	264	22
+43	264	17.15
+44	265	16
+45	266	14
+46	60	18
+47	267	18.5
+48	268	17.41
+49	269	17
+50	269	14
+51	270	15
+52	271	16.5
+53	272	20.5
+54	273	21
+55	274	17
+56	274	20
+57	276	17.7
+58	276	17.8
+59	277	15
+60	278	15
+61	279	15
+62	280	16
+63	281	23
+64	281	19
+65	308	23
+66	309	22
+67	612	23
+68	613	31
+69	306	25.5
+70	614	17.5
+71	614	20
+72	59	19.05
+73	305	19
+74	615	25.5
+75	303	25.5
+76	302	23
+77	302	14.94
+78	616	25.5
+79	301	25.5
+80	298	22
+81	298	24
+82	299	25
+83	300	25
+84	531	18
+85	529	18
+87	527	17
+88	527	18
+89	601	17
+90	602	16
+91	39	15
+92	532	18.5
+93	533	17
+95	536	19
+96	297	23.5
+97	294	23
+98	295	31
+99	295	15
+100	292	29.8
+101	293	17
+102	290	25.5
+103	656	22
+104	289	17.5
+105	289	21.9
+106	288	15
+107	38	17
+108	37	18.8
+109	287	15
+110	285	16.76
+111	286	17
+112	282	21
+113	282	21.8
+114	283	18.5
+115	284	20
+116	30	17
+117	11	15.5
+118	20	17
+119	603	18
+120	17	16
+\.
+
+
+--
 -- Data for Name: coin_tables; Type: TABLE DATA; Schema: public; Owner: jb
 --
 
@@ -331,6 +484,7 @@ COPY public.coin_tables (id, name, description) FROM stdin;
 1	coins	Main collection, for tracking coins of the lowest value
 2	third_zloty	Collection of coins of third zloty (PRL, 1949 - 1994)
 3	rubles	Collection of 1 ruble coins from soviet republic (1961 - 1991)
+4	coin_diameters	Diameters of the lowest value coins for collection planning purposes
 \.
 
 
@@ -634,7 +788,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 289	1	cent	1972	2003	150	t	0	(10)
 337	1	cent	1969	2006	196	t	0	(4, 4, 5, 8)
 340	1	cent	1967	1992	199	t	0	(4.50, 5, 5, 6.50)
-296	1	centavo	1918	1978	157	t	0	(4, 9, 10)
 300	1	centavo	1975	1975	160	t	0	(4, 6.50)
 285	1	centavo	1915	2020	146	t	0	(10, 11, 12)
 304	1	cent	1972	2019	164	t	0	(6, 7)
@@ -660,6 +813,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 293	10	sengi	1967	1967	154	t	0	(4, 5, 8)
 279	1	stotinka	1962	1990	140	t	1	\N
 367	1	rupiah	1970	1970	226	t	1	\N
+296	1	centavo	1918	1978	157	f	0	(4, 9, 10)
 325	1	centavo	1940	1995	185	t	1	\N
 376	1	fils	1949	1985	235	t	0	\N
 377	0.5	penny	1971	1981	236	t	0	Also new penny
@@ -778,12 +932,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 521	1	penny	1966	1966	382	t	0	\N
 524	1	rial	1993	1993	385	t	0	\N
 527	1	cash	1908	1909	388	t	0	\N
-528	1	fen	1932	1932	389	t	0	\N
 529	1	cash	1912	1912	390	t	0	\N
-530	5	li	1916	1916	391	t	0	\N
 532	5	cents / fen	1909	1909	394	t	0	\N
-534	1	tangka	1763	1953	396	t	0	\N
-535	0.5	skar	1910	1910	397	t	0	\N
 536	0.25	rupee	1904	1912	398	t	0	\N
 543	1	schilling	1801	1801	405	t	0	\N
 544	1	schilling	1808	1812	406	t	0	\N
@@ -1675,14 +1825,10 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 386	CFA Franc	224	1958	\N
 387	Austro-Hungarian krone	225	1892	1912
 388	Yuan	226	1903	1912
-389	Soviet Hubei-Honan-Anhui	226	1931	1936
 390	Cash	226	1912	1912
-391	Yuan	226	1912	1948
 393	Second Rénmínbì	226	1955	\N
 394	Dollar	227	1907	1914
 395	Pataca	228	1894	\N
-396	Tangka	229	1640	1959
-397	Srang	229	1792	1959
 398	Rupee	229	1902	1942
 399	New dollar	230	1949	\N
 400	Marka	232	1917	1924
@@ -1936,6 +2082,13 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 
 
 --
+-- Name: coin_diameter_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
+--
+
+SELECT pg_catalog.setval('public.coin_diameter_seq', 120, true);
+
+
+--
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
@@ -1954,6 +2107,14 @@ SELECT pg_catalog.setval('public.country_seq', 277, true);
 --
 
 SELECT pg_catalog.setval('public.currency_seq', 475, true);
+
+
+--
+-- Name: coin_diameters coin_diameters_pkey; Type: CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.coin_diameters
+    ADD CONSTRAINT coin_diameters_pkey PRIMARY KEY (id);
 
 
 --
@@ -2002,6 +2163,14 @@ ALTER TABLE ONLY public.rubles
 
 ALTER TABLE ONLY public.third_zloty
     ADD CONSTRAINT third_zloty_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: coin_diameters coin_diameters_coin_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.coin_diameters
+    ADD CONSTRAINT coin_diameters_coin_id_fkey FOREIGN KEY (coin_id) REFERENCES public.coins(id);
 
 
 --
