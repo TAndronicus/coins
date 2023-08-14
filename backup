@@ -565,6 +565,37 @@ COPY public.coin_diameters (id, coin_id, diameter) FROM stdin;
 210	340	16
 211	251	25.5
 212	252	17.53
+213	631	17
+214	553	17
+215	43	17
+216	44	18
+217	360	25
+218	359	15
+219	359	16
+220	374	15
+221	374	15.1
+222	375	15
+223	372	21
+224	373	17
+225	368	17.5
+226	369	18
+227	371	18
+228	366	18
+229	367	22
+230	702	17
+231	703	17.93
+232	365	17
+233	10	19.5
+234	10	19
+235	363	20.3
+236	364	17.14
+237	111	21
+238	600	30
+239	113	21
+240	114	20.2
+241	115	15
+242	116	17
+243	122	15
 \.
 
 
@@ -640,7 +671,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 48	1	centimo	1870	1913	34	t	0	(3.50, 6.61, 26, 30, 40, 50)
 10	1	fils	1930	1959	5	t	0	(1, 5)
 54	0.5	farthing	1839	1853	35	t	0	\N
-42	20	filler	1922	1922	30	t	0	Also 10 filler according to wikipedia
 37	2	kune	1941	1941	27	t	0	\N
 43	1	filler	1926	1939	31	t	0	(3, 5, 5, 10, 11.09, 16.10, 28.50)
 77	10	hwan	1959	1961	52	t	0	(4, 4)
@@ -1107,7 +1137,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 334	1	penni	1863	1924	193	t	0	(6, 8.38, 9, 9.38, 10, 11, 11.50, 12.50, 12.50, 15.50, 15.50, 15.88, 16, 16.88, 20, 22, 22.10, 22.50, 24, 24, 33)
 601	1	fen	1940	1940	420	t	0	\N
 602	1	fen	1941	1943	419	t	0	\N
-604	10	filler	1919	1922	30	t	0	Also 20 filler according to numista
 605	1	lepton	1900	1901	421	t	0	\N
 606	1	lepton	1821	1862	422	t	0	\N
 607	1	para	1868	1868	423	t	0	\N
@@ -1262,6 +1291,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 699	20	milliemes	1960	2017	353	f	1	\N
 700	25	ore	1926	1926	476	t	0	\N
 701	1	franc	1948	1955	187	t	0	\N
+702	0.5	cent	1855	1945	478	t	0	\N
+703	1	sen	1962	1962	479	t	0	\N
 \.
 
 
@@ -1543,6 +1574,8 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 276	Katanga	Africa	77
 277	Equatorial African states	Africa	\N
 278	Greenland	Europe	42
+279	Netherlands East Indies	Asia	36
+280	Riau	Asia	119
 \.
 
 
@@ -1577,7 +1610,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 27	(old) kuna	13	1941	1945
 28	kuna	13	1994	2022
 29	dollar	14	1863	\N
-30	korona	15	1919	1926
 31	pengo	15	1927	1946
 32	forint	15	1946	\N
 33	escudo	16	1911	2001
@@ -2002,6 +2034,8 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 475	CFA Franc	277	1961	1973
 476	Krone	278	1873	\N
 477	Franc	97	1895	1944
+478	Gulden (decimalized)	279	1854	1948
+479	Rupiah	280	1963	1964
 \.
 
 
@@ -2182,28 +2216,28 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_diameter_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_diameter_seq', 212, true);
+SELECT pg_catalog.setval('public.coin_diameter_seq', 243, true);
 
 
 --
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 701, true);
+SELECT pg_catalog.setval('public.coin_seq', 703, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 278, true);
+SELECT pg_catalog.setval('public.country_seq', 280, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 477, true);
+SELECT pg_catalog.setval('public.currency_seq', 479, true);
 
 
 --
