@@ -788,6 +788,24 @@ COPY public.coin_diameters (id, coin_id, diameter) FROM stdin;
 433	74	16
 434	449	21
 435	450	17
+436	500	14.5
+437	499	23.24
+438	646	20.2
+439	120	19
+440	496	20
+441	497	17.8
+442	498	17
+443	495	18
+444	494	17.5
+445	493	17.8
+446	492	18
+447	492	21
+448	100	17
+449	101	17
+450	101	16.5
+451	490	16
+452	491	16
+453	488	17.5
 \.
 
 
@@ -2411,7 +2429,7 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_diameter_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_diameter_seq', 435, true);
+SELECT pg_catalog.setval('public.coin_diameter_seq', 453, true);
 
 
 --
