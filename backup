@@ -596,6 +596,36 @@ COPY public.coin_diameters (id, coin_id, diameter) FROM stdin;
 241	115	15
 242	116	17
 243	122	15
+244	376	18
+245	128	15.75
+246	378	20.2
+247	379	21
+248	387	17.2
+249	75	25.5
+250	386	17.5
+251	382	27
+252	383	17.6
+253	385	21.9
+254	385	19.1
+255	381	17
+256	380	14
+257	399	23
+258	400	21
+259	397	17
+260	398	15.65
+261	395	21
+262	396	21
+263	396	18
+264	394	16.5
+265	393	18
+266	390	18
+267	390	16
+268	391	16
+269	704	23
+270	34	16
+271	34	16.6
+272	35	18.75
+273	388	21.1
 \.
 
 
@@ -1293,6 +1323,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 701	1	franc	1948	1955	187	t	0	\N
 702	0.5	cent	1855	1945	478	t	0	\N
 703	1	sen	1962	1962	479	t	0	\N
+704	1	krone	1900	1915	480	t	0	\N
 \.
 
 
@@ -1576,6 +1607,7 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 278	Greenland	Europe	42
 279	Netherlands East Indies	Asia	36
 280	Riau	Asia	119
+281	Liechtenstein	Europe	\N
 \.
 
 
@@ -2036,6 +2068,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 477	Franc	97	1895	1944
 478	Gulden (decimalized)	279	1854	1948
 479	Rupiah	280	1963	1964
+480	Krone	281	1898	1921
 \.
 
 
@@ -2216,28 +2249,28 @@ COPY public.third_zloty (id, value, name, material, diameter, description, begin
 -- Name: coin_diameter_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_diameter_seq', 243, true);
+SELECT pg_catalog.setval('public.coin_diameter_seq', 273, true);
 
 
 --
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 703, true);
+SELECT pg_catalog.setval('public.coin_seq', 704, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 280, true);
+SELECT pg_catalog.setval('public.country_seq', 281, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 479, true);
+SELECT pg_catalog.setval('public.currency_seq', 480, true);
 
 
 --
