@@ -880,7 +880,6 @@ COPY public.coin_diameters (id, coin_id, diameter) FROM stdin;
 525	275	20
 526	275	20.5
 527	606	16.5
-528	389	23
 \.
 
 
@@ -1229,7 +1228,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 383	10	chon	1906	1910	242	t	0	\N
 385	0.5	chon	1906	1910	244	t	0	\N
 386	1	cent	1979	1992	245	t	0	\N
-389	1	krone	1898	1915	248	t	0	\N
 391	1	dirham	1975	1979	250	t	0	\N
 393	0.5	cent	1937	1941	252	t	0	\N
 401	50	centimes	1943	1943	260	t	0	\N
@@ -1315,7 +1313,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 479	50	centimos	1977	1977	340	t	0	\N
 480	10	centimos	2017	2017	341	t	0	\N
 481	5	centesimi	1864	1938	342	t	0	\N
-483	1	penny	1984	2006	344	t	0	\N
 487	1	peseta	1992	1992	348	t	0	\N
 488	1	cent	1976	1994	349	t	0	\N
 489	0.25	crown	1981	1981	350	t	0	\N
@@ -1360,6 +1357,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 507	1	hao	1976	1976	368	t	0	(1, 2)
 545	5	groszy	1835	1835	407	t	0	\N
 484	50	luma	2004	2004	345	t	0	(5)
+483	1	penny	1984	2006	344	t	0	(6.10)
 482	1	sene	1967	1996	343	t	0	(10, 10, 10)
 494	1	seniti	1967	2005	355	t	0	(7)
 466	1	cent	1977	2010	327	t	0	(4, 6)
