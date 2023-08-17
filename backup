@@ -524,7 +524,6 @@ COPY public.coin_diameters (id, coin_id, diameter) FROM stdin;
 169	328	18
 170	333	23
 171	331	20
-172	329	20
 173	327	18
 174	701	23
 175	628	23
@@ -1156,7 +1155,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 320	5	francos CFA	1985	1985	180	t	0	\N
 326	0.5	millieme	1917	1938	186	t	0	\N
 328	50	centimes	1948	1965	188	t	0	\N
-329	2	sapeque	1887	1904	189	t	0	\N
 331	50	centimes	1942	1943	191	t	0	\N
 333	1	franc	1948	1948	192	t	0	\N
 336	0.5	penny	1934	1954	195	t	0	\N
@@ -1676,7 +1674,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 95	El Salvador	North America	\N
 96	Egypt	Africa	\N
 97	French West Africa	Africa	\N
-99	French Indochina	Asia	\N
 100	French Equatorial Africa	Africa	\N
 101	Finland	Europe	\N
 103	Falkland Islands	South America	\N
@@ -1717,8 +1714,8 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 139	Laos	Asia	\N
 140	Madagascar	Africa	\N
 141	Malawi	Africa	\N
-142	Malaysia	Africa	\N
 26	Kenya	Africa	\N
+142	Malaysia	Asia	\N
 143	Maldives	Asia	\N
 144	Mali	Africa	\N
 145	Malta	Europe	\N
@@ -1826,7 +1823,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 243	Afghanistan	Asia	\N
 244	Belgian Congo	Africa	19
 246	French Cameroon	Africa	86
-247	Danish West Indies	Asia	\N
 248	French Somaliland	Africa	88
 249	French Afars and Issas	Africa	88
 250	East Africa	Africa	\N
@@ -1844,6 +1840,7 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 262	Malaya	Asia	142
 263	Muscat and Oman	Asia	165
 264	New Guinea	Australia and Oceania	168
+247	Danish West Indies	South America	\N
 265	Azores	Europe	16
 266	Russian Caucasia	Asia	29
 267	Tannu Tuva	Asia	29
@@ -2042,7 +2039,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 186	Pound	96	1916	\N
 187	CFA Franc	97	1944	1958
 188	CFP Franc	98	1945	\N
-189	Piastre	99	1880	1952
 191	Franc	100	1917	1945
 192	CFA Franc	100	1945	1960
 193	Markka	101	1860	1963
