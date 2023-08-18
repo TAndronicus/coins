@@ -1485,6 +1485,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 674	6	pence	1707	1970	35	f	2	\N
 675	1	shilling	1707	1970	35	f	2	\N
 676	2	shilling	1937	1970	35	f	1	\N
+65	1	pfennig	1873	1918	42	t	2	\N
 659	50	pfennig	1875	1922	42	f	1	\N
 375	5	aurar	1981	1981	234	t	0	(3, 3, 3.50, 5.50, 6)
 472	1	cent	2022	2022	333	t	0	(12, 12)
@@ -1500,7 +1501,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 89	1	kopeck	1997	2017	62	t	1	\N
 93	1	santim	1974	1987	65	t	1	\N
 78	1	won	1966	2019	53	t	1	\N
-65	1	pfennig	1873	1918	42	t	1	\N
 678	1	jiao	1980	2021	393	f	1	\N
 679	1	sheqel	1985	2022	81	f	1	\N
 680	2	ore	1874	1971	85	f	1	\N
