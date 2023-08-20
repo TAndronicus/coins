@@ -1217,13 +1217,13 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 279	1	stotinka	1962	1990	140	t	1	\N
 367	1	rupiah	1970	1970	226	t	1	\N
 300	1	centavo	1975	1975	160	t	1	\N
+386	1	cent	1979	1992	245	t	0	(5.53)
 376	1	fils	1949	1985	235	t	0	\N
 377	0.5	penny	1971	1981	236	t	0	Also new penny
 378	1	farthing	1880	1952	237	t	0	\N
 382	5	fun	1898	1902	241	t	0	\N
 383	10	chon	1906	1910	242	t	0	\N
 385	0.5	chon	1906	1910	244	t	0	\N
-386	1	cent	1979	1992	245	t	0	\N
 391	1	dirham	1975	1979	250	t	0	\N
 393	0.5	cent	1937	1941	252	t	0	\N
 401	50	centimes	1943	1943	260	t	0	\N
@@ -1302,6 +1302,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 439	1	centimo	1991	2011	300	t	2	\N
 467	10	stotinov	1992	2006	328	t	0	\N
 468	5	halierov	1942	1942	329	t	0	\N
+494	1	seniti	1967	2005	355	t	0	(4.51, 7)
 474	50	para	1942	1942	335	t	0	\N
 476	0.25	qirsh	1925	1946	337	t	0	\N
 478	10	centavos	1929	1971	339	t	0	\N
@@ -1350,7 +1351,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 483	1	penny	1984	2006	344	t	0	(6.10)
 470	1	cent	1967	2002	331	t	1	\N
 482	1	sene	1967	1996	343	t	0	(10, 10, 10)
-494	1	seniti	1967	2005	355	t	0	(7)
 466	1	cent	1977	2010	327	t	0	(4, 6)
 510	1	centimo	2007	2009	371	t	0	(7)
 516	1	cent	1980	1999	377	t	1	\N
@@ -1561,7 +1561,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 469	10	halierov	1993	2003	330	t	1	\N
 542	5	pfennig	1942	1942	404	t	1	\N
 540	1	grosz	1949	1953	402	t	1	\N
-541	1	grosz	1990	2022	403	t	1	\N
 551	1	grosz	1816	1841	413	t	3	\N
 552	3	grosze polskie	1831	1831	414	t	1	\N
 546	1	grosz	1810	1814	408	t	1	\N
@@ -1575,6 +1574,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 617	1	pfennig	1923	1937	433	t	1	\N
 639	1	paisa	1961	1979	455	t	1	\N
 603	20	haleru	1947	1950	12	t	1	\N
+541	1	grosz	1990	2022	403	t	1	\N
 \.
 
 
