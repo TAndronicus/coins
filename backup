@@ -842,7 +842,6 @@ COPY public.coin_diameters (id, coin_id, diameter) FROM stdin;
 488	649	20
 489	650	23
 490	651	19
-491	647	25
 492	507	19
 493	508	20
 494	525	15
@@ -1457,7 +1456,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 644	1	kopejek	1934	1934	460	t	0	\N
 645	0.125	qirsh	1916	1916	461	t	0	\N
 646	1	sant	1908	1908	462	t	0	\N
-647	0.0016666666666666668	piastre	1905	1905	463	t	0	\N
 648	20	xu	1945	1945	464	t	0	\N
 649	1	xu	1958	1958	465	t	0	\N
 650	10	su	1953	1953	466	t	0	\N
@@ -1846,7 +1844,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 267	Tannu Tuva	Asia	29
 268	Hejaz	Asia	192
 269	Zanzibar	Africa	209
-270	Tonkin	Asia	214
 271	North Vietnam	Asia	214
 272	South Vietnam	Asia	214
 273	North Yemen	Asia	223
@@ -2300,7 +2297,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 460	Aksa	267	1933	1944
 461	Hashemite Kingdom - Riyal	268	1916	1925
 462	Rupee	269	1908	1935
-463	French Indochinese piastre	270	1884	1945
 464	First northern dong	271	1946	1951
 465	Second northern dong	271	1959	1978
 466	Southern dong	272	1953	1975
