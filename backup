@@ -898,7 +898,10 @@ COPY public.coin_tables (id, name, description) FROM stdin;
 --
 
 COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, count, description) FROM stdin;
+705	1	peso	1975	2015	160	f	1	\N
+706	2	shillings	1987	1987	367	f	1	\N
 7	10	para	1965	1981	4	f	1	\N
+707	20	luma	1994	1994	108	f	1	\N
 9	5	fils	1959	1982	5	f	1	\N
 13	1	ban	1952	1954	7	t	0	\N
 14	15	bani	1960	1975	7	f	1	\N
@@ -1217,6 +1220,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 367	1	rupiah	1970	1970	226	t	1	\N
 300	1	centavo	1975	1975	160	t	1	\N
 386	1	cent	1979	1992	245	t	0	(5.53)
+435	1	chon	2008	2008	296	t	0	(3.30, 5, 8)
 376	1	fils	1949	1985	235	t	0	\N
 377	0.5	penny	1971	1981	236	t	0	Also new penny
 378	1	farthing	1880	1952	237	t	0	\N
@@ -1261,7 +1265,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 463	1	besa	1909	1921	324	t	0	\N
 464	5	lire	1925	1925	325	t	0	\N
 465	1	centesimo	1950	1950	326	t	0	\N
-435	1	chon	2008	2008	296	t	0	(8)
 427	0.5	penny	1940	1965	288	t	0	(3.56, 4, 5.09, 5.59, 6.50, 6.59)
 387	2	tyin	1993	1993	246	t	0	(2.50, 2.50)
 458	1	cent	1975	1994	319	t	0	(5, 7)
@@ -1483,7 +1486,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 674	6	pence	1707	1970	35	f	2	\N
 675	1	shilling	1707	1970	35	f	2	\N
 676	2	shilling	1937	1970	35	f	1	\N
-65	1	pfennig	1873	1918	42	t	2	\N
 659	50	pfennig	1875	1922	42	f	1	\N
 375	5	aurar	1981	1981	234	t	0	(3, 3, 3.50, 5.50, 6)
 472	1	cent	2022	2022	333	t	0	(12, 12)
@@ -1494,6 +1496,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 654	1	fils	1964	1964	470	t	0	(5.50, 10)
 399	10	cents	1952	1952	258	t	0	(5, 6, 9)
 677	1	kurus	1935	1977	69	f	0	\N
+65	1	pfennig	1873	1918	42	t	2	\N
 663	50	centimes	1793	1947	63	f	3	\N
 86	1	kopeck	1961	1991	59	t	1	\N
 89	1	kopeck	1997	2017	62	t	1	\N
@@ -2501,7 +2504,7 @@ SELECT pg_catalog.setval('public.coin_diameter_seq', 528, true);
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 704, true);
+SELECT pg_catalog.setval('public.coin_seq', 707, true);
 
 
 --
