@@ -182,6 +182,24 @@ $$;
 
 ALTER FUNCTION public.insert_currency_if_not_exists(country bigint, currency character varying, beginning_year integer, ending_year integer) OWNER TO jb;
 
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: coin_box_positions; Type: TABLE; Schema: public; Owner: jb
+--
+
+CREATE TABLE public.coin_box_positions (
+    coin_id bigint NOT NULL,
+    tray integer NOT NULL,
+    "row" integer NOT NULL,
+    col integer NOT NULL
+);
+
+
+ALTER TABLE public.coin_box_positions OWNER TO jb;
+
 --
 -- Name: coin_diameter_seq; Type: SEQUENCE; Schema: public; Owner: jb
 --
@@ -195,10 +213,6 @@ CREATE SEQUENCE public.coin_diameter_seq
 
 
 ALTER TABLE public.coin_diameter_seq OWNER TO jb;
-
-SET default_tablespace = '';
-
-SET default_table_access_method = heap;
 
 --
 -- Name: coin_diameters; Type: TABLE; Schema: public; Owner: jb
@@ -349,6 +363,289 @@ CREATE TABLE public.third_zloty (
 
 
 ALTER TABLE public.third_zloty OWNER TO jb;
+
+--
+-- Data for Name: coin_box_positions; Type: TABLE DATA; Schema: public; Owner: jb
+--
+
+COPY public.coin_box_positions (coin_id, tray, "row", col) FROM stdin;
+547	1	1	2
+549	1	1	3
+548	1	1	4
+551	1	1	6
+546	1	1	5
+552	1	1	7
+545	1	1	8
+543	1	2	1
+544	1	2	2
+617	1	2	3
+538	1	2	4
+539	1	2	6
+540	1	2	7
+541	1	2	8
+542	1	2	5
+374	1	3	1
+375	1	3	2
+118	1	3	3
+700	1	3	4
+436	1	3	5
+124	1	3	6
+334	1	3	7
+335	1	3	8
+598	1	4	1
+631	1	4	2
+526	1	4	3
+553	1	4	4
+126	1	4	5
+127	1	4	6
+43	1	4	7
+44	1	4	8
+74	1	5	1
+704	1	5	2
+415	1	5	3
+90	1	5	4
+91	1	5	5
+106	1	5	6
+57	1	5	7
+388	1	5	8
+605	1	6	1
+103	1	6	2
+104	1	6	3
+282	1	6	4
+284	1	6	6
+283	1	6	5
+233	1	6	7
+234	1	6	8
+30	2	1	1
+20	2	1	2
+603	2	1	3
+17	2	1	4
+11	2	1	5
+468	2	1	6
+469	2	1	7
+94	2	1	8
+66	2	2	1
+65	2	2	2
+67	2	2	3
+68	2	2	4
+69	2	2	5
+70	2	2	6
+630	2	2	7
+259	2	2	8
+34	2	3	1
+35	2	3	2
+397	2	3	3
+398	2	3	4
+314	2	3	5
+315	2	3	6
+316	2	3	7
+277	2	3	8
+278	2	4	1
+279	2	4	2
+280	2	4	3
+32	2	4	4
+13	2	4	5
+33	2	4	6
+414	2	4	7
+486	2	4	8
+22	2	5	1
+23	2	5	2
+8	2	5	3
+24	2	5	4
+25	2	5	5
+26	2	5	6
+27	2	5	7
+28	2	5	8
+467	2	6	1
+37	2	6	2
+38	2	6	3
+60	2	6	4
+474	2	6	5
+475	2	6	6
+417	2	6	7
+16	2	6	8
+122	3	1	1
+481	3	1	2
+513	3	1	3
+410	3	1	4
+48	3	1	5
+642	3	1	7
+54	3	1	8
+55	3	2	1
+363	3	2	2
+364	3	2	3
+657	3	2	4
+349	3	2	5
+361	3	2	6
+362	3	2	7
+377	3	2	8
+346	3	3	1
+347	3	3	2
+108	3	3	6
+304	3	3	7
+489	3	3	8
+59	3	4	1
+260	3	4	2
+255	3	4	3
+258	3	4	4
+378	3	4	5
+379	3	4	6
+109	3	4	7
+288	3	5	1
+286	3	5	2
+287	3	5	3
+285	3	5	4
+2	3	5	5
+324	3	5	6
+325	3	5	7
+348	3	5	8
+359	3	6	1
+97	3	6	2
+98	3	6	3
+429	3	6	4
+430	3	6	5
+431	3	6	6
+442	3	6	7
+628	3	6	8
+80	4	1	1
+81	4	1	2
+338	4	1	3
+339	4	1	4
+340	4	1	5
+493	4	1	6
+265	4	1	8
+266	4	2	1
+641	4	2	2
+438	4	2	3
+439	4	2	4
+299	4	2	5
+300	4	2	6
+509	4	2	7
+510	4	2	8
+46	3	1	6
+511	4	3	1
+512	4	3	2
+440	4	3	3
+243	4	3	4
+244	4	3	5
+245	4	3	6
+246	4	3	7
+247	4	3	8
+71	4	4	1
+73	4	4	2
+249	4	4	4
+424	4	4	5
+425	4	4	6
+451	4	4	7
+452	4	4	8
+268	4	5	1
+269	4	5	2
+270	4	5	3
+271	4	5	4
+272	4	5	5
+273	4	5	6
+274	4	5	7
+502	4	6	1
+503	4	6	2
+504	4	6	3
+625	4	6	5
+626	4	6	6
+618	4	6	8
+84	5	1	1
+85	5	1	2
+86	5	1	3
+87	5	1	4
+88	5	1	5
+89	5	1	6
+643	5	1	7
+644	5	1	8
+368	5	2	1
+371	5	2	3
+369	5	2	2
+372	5	2	4
+373	5	2	5
+457	5	2	6
+458	5	2	7
+408	5	2	8
+257	5	3	1
+421	5	3	2
+422	5	3	3
+399	5	3	4
+400	5	3	5
+308	5	3	6
+309	5	3	7
+120	5	3	8
+633	5	4	1
+634	5	4	2
+635	5	4	3
+632	5	4	4
+407	5	4	5
+470	5	4	6
+62	5	4	7
+63	5	4	8
+702	5	5	1
+366	5	5	2
+367	5	5	3
+703	5	5	4
+496	5	5	5
+497	5	5	6
+498	5	5	7
+276	5	5	8
+648	5	6	1
+649	5	6	2
+650	5	6	3
+651	5	6	4
+507	5	6	5
+508	5	6	6
+416	6	1	1
+128	6	1	2
+601	6	1	3
+602	6	1	4
+527	6	1	5
+529	6	1	6
+531	6	1	7
+39	6	1	8
+532	6	2	1
+533	6	2	2
+537	6	2	3
+536	6	2	4
+423	6	2	5
+261	6	2	6
+262	6	2	7
+264	6	2	8
+382	6	3	1
+384	6	3	2
+385	6	3	3
+383	6	3	4
+77	6	3	5
+78	6	3	6
+434	6	3	7
+435	6	3	8
+387	6	4	1
+490	6	4	2
+491	6	4	3
+501	6	4	4
+380	6	4	5
+500	6	4	6
+443	6	4	7
+639	6	4	8
+608	6	5	1
+609	6	5	2
+395	6	5	3
+396	6	5	4
+449	6	5	5
+450	6	5	6
+10	6	5	7
+365	6	5	8
+100	6	6	1
+101	6	6	2
+354	6	6	3
+248	6	6	4
+484	6	6	5
+253	6	6	6
+254	6	6	7
+\.
+
 
 --
 -- Data for Name: coin_diameters; Type: TABLE DATA; Schema: public; Owner: jb
@@ -890,6 +1187,7 @@ COPY public.coin_tables (id, name, description) FROM stdin;
 2	third_zloty	Collection of coins of third zloty (PRL, 1949 - 1994)
 3	rubles	Collection of 1 ruble coins from soviet republic (1961 - 1991)
 4	coin_diameters	Diameters of the lowest value coins for collection planning purposes
+5	coin_box_positions	Position of the main collection coins in a box
 \.
 
 
@@ -2522,6 +2820,14 @@ SELECT pg_catalog.setval('public.currency_seq', 480, true);
 
 
 --
+-- Name: coin_box_positions coin_box_positions_pkey; Type: CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.coin_box_positions
+    ADD CONSTRAINT coin_box_positions_pkey PRIMARY KEY (coin_id);
+
+
+--
 -- Name: coin_diameters coin_diameters_pkey; Type: CONSTRAINT; Schema: public; Owner: jb
 --
 
@@ -2575,6 +2881,22 @@ ALTER TABLE ONLY public.rubles
 
 ALTER TABLE ONLY public.third_zloty
     ADD CONSTRAINT third_zloty_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: coin_box_positions unique_position; Type: CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.coin_box_positions
+    ADD CONSTRAINT unique_position UNIQUE (tray, "row", col);
+
+
+--
+-- Name: coin_box_positions coin_box_positions_coin_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jb
+--
+
+ALTER TABLE ONLY public.coin_box_positions
+    ADD CONSTRAINT coin_box_positions_coin_id_fkey FOREIGN KEY (coin_id) REFERENCES public.coins(id);
 
 
 --
