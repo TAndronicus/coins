@@ -1868,6 +1868,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 588	2	dollars	1996	2023	38	f	1	\N
 590	10	denari	2008	2017	8	f	1	\N
 558	5	yen	1870	2023	88	f	4	\N
+638	2	baisa	1970	1970	454	t	0	(1, 9, 12)
 591	2	reichspfennig	1923	1937	45	f	1	\N
 592	5	reichspfennig	1924	1948	45	f	2	\N
 594	50	reichspfennig	1924	1944	45	f	1	\N
@@ -1921,7 +1922,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 566	50	cent	1890	2017	29	f	2	\N
 623	1	cent	1922	1962	439	t	0	(7, 7, 9, 10, 10, 10)
 609	1	afghani	2004	2005	425	t	0	(5, 6, 6)
-638	2	baisa	1970	1970	454	t	0	(9, 12)
 632	1	cent	1956	1962	448	t	0	(2.20, 10)
 643	1	ruble (armavir)	1918	1918	459	t	0	\N
 644	1	kopejek	1934	1934	460	t	0	\N
