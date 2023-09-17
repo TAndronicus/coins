@@ -1388,13 +1388,15 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 36	1	denar	1993	2014	8	f	1	\N
 39	1	mil	1862	1866	29	t	0	Also 1 cash
 41	1	dinar	1965	1986	4	f	3	\N
+66	1	kopeck	1916	1916	43	t	1	\N
+709	5	kurus	1924	1977	69	f	1	\N
 47	2.5	escudos	1932	1983	33	f	2	\N
 49	10	centimos	1870	1959	34	f	1	\N
 52	2	dinari	1970	1986	4	f	1	\N
+710	10	kurus	1924	1977	69	f	1	\N
 61	1	konvrtibilna marka	2000	2021	39	f	1	\N
 62	0.5	centavo	1903	1908	40	t	0	\N
 64	5	sentimo	1967	2019	41	f	1	\N
-66	1	kopeck	1916	1916	43	t	0	\N
 71	0.5	centavo	1884	1909	48	t	0	\N
 72	1	sucre	1884	1990	48	f	1	\N
 79	100	won	1970	2019	53	f	1	\N
@@ -1433,12 +1435,12 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 63	1	sentimo	1967	2019	41	t	0	(4, 5, 5, 5, 5)
 2	1	centavo	1937	1987	1	t	0	(5)
 95	5	kopiikas	1992	2018	66	f	1	\N
-100	10	para	1940	1942	69	t	0	\N
 102	10	kurus	2005	2022	70	f	1	\N
 103	1	lepton	1832	1879	71	t	0	\N
 105	1	drachma	1954	2000	72	f	1	\N
 109	0.5	cent	1793	1857	75	t	0	\N
 110	1	cent	1787	2023	75	f	1	\N
+100	10	para	1940	1942	69	t	1	\N
 124	1	ore	1874	1971	85	t	1	\N
 96	10	kopiikas	1992	2022	66	f	1	\N
 116	1	agora	1985	1991	81	t	1	\N
@@ -1510,6 +1512,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 99	10	centavos	1992	2019	68	f	3	\N
 125	10	ore	1874	1991	85	f	3	\N
 108	1	cent	1970	2009	74	t	1	\N
+711	25	kurus	1925	1978	69	f	1	\N
 129	1	yen	1870	2022	88	f	10	\N
 153	25	sentimo	1967	2019	41	f	2	\N
 127	1	groschen	1947	1950	87	t	0	(2, 5)
@@ -1518,6 +1521,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 97	1	centavo	1863	1973	67	t	0	(3, 5, 5.50, 7)
 101	1	kurus	2005	2022	70	t	0	(1.50, 8.50)
 196	5	pence	1968	2022	36	f	2	\N
+261	0.5	rupee	1780	1927	121	t	1	\N
 187	5	deutsche mark	1951	2001	47	f	2	\N
 210	5	pesos	1997	2021	1	f	2	\N
 216	1	franc	1850	2022	50	f	0	\N
@@ -1553,6 +1557,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 207	50	rubles	1992	1993	61	f	1	\N
 208	1	ruble	1997	2022	62	f	1	\N
 209	2	rubles	1997	2022	62	f	1	\N
+262	1	pice	1928	1954	122	t	1	\N
 222	10	baht	1971	2021	83	f	3	\N
 237	1	centavo	1921	1921	97	t	0	\N
 211	2	rappen	1850	1974	50	f	4	\N
@@ -1579,8 +1584,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 258	1	cent	1973	2012	118	t	1	\N
 253	5	qepik	1992	1993	113	t	0	\N
 256	1	fils	1965	1966	116	t	0	\N
-261	0.5	rupee	1780	1927	121	t	0	\N
-262	1	pice	1928	1954	122	t	0	\N
 259	1	kopek	2009	2009	119	t	1	\N
 265	5	centavos	1965	1970	126	t	0	\N
 272	1	cruzeiro	1990	1990	133	t	0	\N
@@ -1624,10 +1627,10 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 279	1	stotinka	1962	1990	140	t	1	\N
 367	1	rupiah	1970	1970	226	t	1	\N
 300	1	centavo	1975	1975	160	t	1	\N
+333	1	franc	1948	1948	192	t	1	\N
 326	0.5	millieme	1917	1938	186	t	0	\N
 328	50	centimes	1948	1965	188	t	0	\N
 331	50	centimes	1942	1943	191	t	0	\N
-333	1	franc	1948	1948	192	t	0	\N
 336	0.5	penny	1934	1954	195	t	0	\N
 338	0.5	penny	1974	1983	197	t	0	\N
 339	4	pence	1891	1945	198	t	0	\N
@@ -1698,6 +1701,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 436	1	ore	1876	1972	297	t	1	\N
 393	0.5	cent	1937	1941	252	t	0	\N
 418	10	centavos	1936	1961	278	t	1	\N
+425	1	cent	1952	2016	286	t	1	\N
 401	50	centimes	1943	1943	260	t	0	\N
 402	1	franc	1948	1958	261	t	0	\N
 405	1	penny	1967	1968	264	t	0	\N
@@ -1743,7 +1747,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 428	1	cent	1966	1988	289	t	0	(1, 1.50)
 441	1	toea	1975	2004	302	t	0	(5, 6.50, 10)
 451	1	cent	1942	2021	312	t	0	(1, 2, 10)
-425	1	cent	1952	2016	286	t	0	(1, 1, 2, 2, 3)
 404	1	ariary	2004	2018	263	t	0	(8, 8)
 438	1	centimo	1985	1985	299	t	0	(5)
 424	1	cent	1942	1947	285	t	0	(10)
@@ -1790,6 +1793,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 496	10	avos	1945	1951	357	t	0	\N
 497	10	centavos	1958	1958	358	t	0	\N
 506	1	shilling	1987	1987	367	t	1	\N
+529	1	cash	1912	1912	390	t	1	\N
 500	1	diram	2011	2019	361	t	0	\N
 502	1	centesimo	1869	1953	363	t	0	\N
 503	1	centesimo	1977	1977	364	t	0	\N
@@ -1802,11 +1806,10 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 517	1	cent	2014	2014	378	t	0	\N
 518	3	pence	1968	1968	379	t	0	\N
 519	0.5	cent	1970	1977	380	t	0	\N
-520	0.5	penny	1934	1954	381	t	0	\N
 521	1	penny	1966	1966	382	t	0	\N
 524	1	rial	1993	1993	385	t	0	\N
+520	0.5	penny	1934	1954	381	t	1	\N
 527	1	cash	1908	1909	388	t	0	\N
-529	1	cash	1912	1912	390	t	0	\N
 532	5	cents / fen	1909	1909	394	t	0	\N
 536	0.25	rupee	1904	1912	398	t	0	\N
 543	1	schilling	1801	1801	405	t	0	\N
@@ -1960,12 +1963,12 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 115	1	new agora	1980	1985	80	t	0	(1.25, 5)
 654	1	fils	1964	1964	470	t	0	(5.50, 10)
 399	10	cents	1952	1952	258	t	0	(5, 6, 9)
-677	1	kurus	1935	1977	69	f	0	\N
 65	1	pfennig	1873	1918	42	t	2	\N
 86	1	kopeck	1961	1991	59	t	1	\N
 89	1	kopeck	1997	2017	62	t	1	\N
 93	1	santim	1974	1987	65	t	1	\N
 78	1	won	1966	2019	53	t	1	\N
+677	1	kurus	1935	1977	69	f	2	\N
 663	50	centimes	1793	1947	63	f	3	\N
 690	20	haleru	1940	1944	21	f	0	\N
 686	1	markka	1864	1962	193	f	0	\N
@@ -2969,7 +2972,7 @@ SELECT pg_catalog.setval('public.coin_diameter_seq', 528, true);
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 708, true);
+SELECT pg_catalog.setval('public.coin_seq', 711, true);
 
 
 --
