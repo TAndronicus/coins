@@ -1559,6 +1559,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 209	2	rubles	1997	2022	62	f	1	\N
 262	1	pice	1928	1954	122	t	1	\N
 222	10	baht	1971	2021	83	f	3	\N
+275	0.1	penny	1902	1957	136	t	0	(5.20, 8.50, 15)
 237	1	centavo	1921	1921	97	t	0	\N
 211	2	rappen	1850	1974	50	f	4	\N
 213	10	rappen	1850	2022	50	f	0	\N
@@ -1587,7 +1588,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 259	1	kopek	2009	2009	119	t	1	\N
 265	5	centavos	1965	1970	126	t	0	\N
 272	1	cruzeiro	1990	1990	133	t	0	\N
-275	0.1	penny	1902	1957	136	t	0	(15, 15, 15)
 217	1	dollar	1863	2019	29	f	2	\N
 234	5	qindarka	1964	1988	94	t	0	(9, 10, 10)
 185	50	pfennig	1949	2001	47	f	2	\N
