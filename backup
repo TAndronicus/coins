@@ -1367,6 +1367,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 7	10	para	1965	1981	4	f	1	\N
 707	20	luma	1994	1994	108	f	1	\N
 9	5	fils	1959	1982	5	f	1	\N
+87	10	kopecks	1991	1991	60	t	1	\N
 13	1	ban	1952	1954	7	t	0	\N
 14	15	bani	1960	1975	7	f	1	\N
 15	2	denari	1993	2022	8	f	1	\N
@@ -1374,8 +1375,8 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 18	10	haleru	1953	1992	9	f	1	\N
 10	1	fils	1930	1959	5	t	1	\N
 20	2	halere	1923	1925	11	t	0	\N
+23	50	para	1945	1953	14	t	1	\N
 22	5	para	1920	1920	13	t	0	\N
-23	50	para	1945	1953	14	t	0	\N
 28	1	para	1994	1994	19	t	0	\N
 31	1	ban	1867	1900	22	t	0	Also called banu (1867)
 32	50	bani	1947	1947	23	t	0	\N
@@ -1404,7 +1405,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 84	10	kopecks (RSFSR)	1921	1923	57	t	0	\N
 85	0.5	kopeck	1925	1928	58	t	0	\N
 35	1	centas	1991	1991	26	t	1	\N
-87	10	kopecks	1991	1991	60	t	0	\N
 38	1	lipa	1994	2022	28	t	1	\N
 69	1	pfennig	1948	1990	46	t	1	\N
 248	10	luma	1994	1994	108	t	1	\N
@@ -1611,12 +1611,12 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 286	1	centavo	1988	1988	147	t	0	\N
 288	2	centimos	1903	1903	149	t	0	\N
 290	100	francs CFA (essai)	1975	1975	151	t	0	\N
+305	5	centavos	1930	1930	165	t	1	\N
 294	1	franc	1964	1964	155	t	0	\N
 295	5	francs	1984	2017	156	t	0	\N
 297	0.5	decimo de real	1847	1848	157	t	0	Used before 1880
 298	0.5	centavo	1835	1894	158	t	0	\N
 299	0.5	centesimo	1962	1963	159	t	0	\N
-305	5	centavos	1930	1930	165	t	0	\N
 306	10	francs	1975	1986	166	t	0	\N
 309	5	sen	1979	1979	169	t	0	\N
 311	1	matona	1931	1931	171	t	0	\N
@@ -1960,7 +1960,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 472	1	cent	2022	2022	333	t	0	(12, 12)
 419	50	centavos	1980	1994	280	t	0	(5.50)
 490	1	tenne	1993	1993	351	t	0	(5.50, 6.50)
-115	1	new agora	1980	1985	80	t	0	(1.25, 5)
 654	1	fils	1964	1964	470	t	0	(5.50, 10)
 399	10	cents	1952	1952	258	t	0	(5, 6, 9)
 677	1	kurus	1935	1977	69	f	2	\N
@@ -1973,6 +1972,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 471	0.5	cent	1964	1980	332	t	1	\N
 375	5	aurar	1981	1981	234	t	1	\N
 663	50	centimes	1793	1947	63	f	3	\N
+115	1	new agora	1980	1985	80	t	1	\N
 690	20	haleru	1940	1944	21	f	0	\N
 686	1	markka	1864	1962	193	f	0	\N
 689	1	millieme	1917	21972	186	f	0	\N
