@@ -1910,7 +1910,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 626	50	centimes	1897	1922	442	t	0	\N
 627	1	franc	1948	1973	443	t	0	\N
 628	1	franc	1948	1948	444	t	0	\N
-630	10	franken	1954	1954	446	t	0	\N
 631	0.5	krajczar	1882	1882	447	t	0	\N
 395	0.5	ghirsh	1934	1936	254	t	0	Also 1/2 piastre
 396	0.5	ghirsh	1941	1941	255	t	0	Also 1/2 piastre
@@ -1923,6 +1922,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 642	5	reis	1863	1901	458	t	0	\N
 595	1	kopeck	1704	1917	56	f	2	\N
 566	50	cent	1890	2017	29	f	2	\N
+630	10	franken	1954	1954	446	t	0	(12, 13, 15)
 623	1	cent	1922	1962	439	t	0	(7, 7, 9, 10, 10, 10)
 609	1	afghani	2004	2005	425	t	0	(5, 6, 6)
 632	1	cent	1956	1962	448	t	0	(2.20, 10)
