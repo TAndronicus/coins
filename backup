@@ -614,9 +614,7 @@ COPY public.coin_box_positions (coin_id, tray, "row", col) FROM stdin;
 262	6	2	7
 264	6	2	8
 382	6	3	1
-384	6	3	2
 385	6	3	3
-383	6	3	4
 77	6	3	5
 78	6	3	6
 434	6	3	7
@@ -673,7 +671,6 @@ COPY public.coin_box_positions (coin_id, tray, "row", col) FROM stdin;
 445	7	4	6
 281	7	4	7
 310	7	4	8
-619	7	5	1
 620	7	5	2
 111	7	3	1
 294	7	5	3
@@ -941,7 +938,6 @@ COPY public.coin_diameters (id, coin_id, diameter) FROM stdin;
 123	700	25
 124	310	23
 125	620	23
-126	619	23
 127	2	19
 128	2	19.1
 129	621	20.3
@@ -1066,7 +1062,6 @@ COPY public.coin_diameters (id, coin_id, diameter) FROM stdin;
 249	75	25.5
 250	386	17.5
 251	382	27
-252	383	17.6
 253	385	21.9
 254	385	19.1
 255	381	17
@@ -1385,6 +1380,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 36	1	denar	1993	2014	8	f	1	\N
 39	1	mil	1862	1866	29	t	0	Also 1 cash
 41	1	dinar	1965	1986	4	f	3	\N
+722	2	baiza	1946	1946	491	t	0	\N
 709	5	kurus	1924	1977	69	f	1	\N
 47	2.5	escudos	1932	1983	33	f	2	\N
 49	10	centimos	1870	1959	34	f	1	\N
@@ -1394,6 +1390,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 61	1	konvrtibilna marka	2000	2021	39	f	1	\N
 62	0.5	centavo	1903	1908	40	t	0	\N
 64	5	sentimo	1967	2019	41	f	1	\N
+723	3	baisa	1959	1959	492	t	0	\N
 713	5	centimes	1891	1938	481	f	1	\N
 71	0.5	centavo	1884	1909	48	t	0	\N
 72	1	sucre	1884	1990	48	f	1	\N
@@ -1420,10 +1417,12 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 56	1	new penny	1971	2022	36	f	6	\N
 25	1	dinar	1992	1992	16	t	0	(6)
 26	1	dinar	1993	1993	17	t	0	(6, 6.50)
+724	1	sapeque	1887	1902	493	t	0	\N
 60	5	feninga	2005	2021	39	t	1	\N
 2	1	centavo	1937	1987	1	t	1	\N
 63	1	sentimo	1967	2019	41	t	1	\N
 81	1	cent	1981	2013	55	t	1	\N
+725	4	pence	1891	1916	494	t	0	\N
 40	10	cent	1862	2017	29	f	2	\N
 83	1	polushka	1701	1916	56	f	0	Also ¼ kopecs(4.01, 10, 10, 12, 18, 20, 20.10, 61)
 3	1	dirham	1973	2022	2	f	2	\N
@@ -1648,7 +1647,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 365	1	dinar	1931	1931	224	t	0	\N
 369	0.08333333333333333	tanga	1901	1903	228	t	0	\N
 367	1	rupiah	1970	1970	226	t	1	\N
-328	50	centimes	1948	1965	188	t	1	\N
 283	1	mil	1963	1972	144	t	0	(3.13, 5, 5)
 284	0.5	cent	1983	1983	145	t	0	(2, 4.5)
 301	100	francs	1975	1991	161	t	0	\N
@@ -1659,6 +1657,7 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 281	1	franc	1965	2003	142	t	0	(2, 5, 6, 8, 9)
 366	1	sen	1952	1952	225	t	0	(2, 2.50, 2.55, 3, 5.50, 5.60, 7.50, 12, 17.50, 18.50, 19)
 306	100	francs	1975	1986	166	t	0	\N
+328	50	centimes	1965	1965	188	t	1	\N
 327	50	centimes	1944	1944	477	t	0	\N
 289	1	cent	1972	2003	150	t	1	\N
 308	10	sen	1953	1959	168	t	0	Also 10 centimes (7, 7, 12.70)
@@ -1681,7 +1680,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 378	1	farthing	1880	1952	237	t	0	\N
 465	1	centesimo	1950	1950	326	t	1	\N
 382	5	fun	1898	1902	241	t	0	\N
-383	10	chon	1906	1910	242	t	0	\N
 385	0.5	chon	1906	1910	244	t	0	\N
 462	5	centesimi	1967	1976	323	t	1	\N
 433	3	pence	1969	1969	294	t	1	\N
@@ -1724,7 +1722,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 387	2	tyin	1993	1993	246	t	0	(2.50, 2.50)
 439	1	centimo	1991	2011	300	t	1	\N
 397	1	santims	1922	1939	256	t	0	(4.03, 10, 10, 10, 10.50, 11.50, 16, 29.77)
-384	1	chon	1902	1902	243	t	0	So called "eagle" coins. Extremely rare, most of them destroyer during japanese occupation
 407	1	sen	1967	2008	266	t	1	\N
 444	1	franc	1960	1964	305	t	1	\N
 428	1	cent	1966	1988	289	t	0	(1, 1.50)
@@ -1899,7 +1896,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 609	1	afghani	2004	2005	425	t	0	(5, 6, 6)
 632	1	cent	1956	1962	448	t	0	(2.20, 10)
 614	50	centimes	1924	1943	430	t	1	\N
-619	1	franc	1948	1965	435	t	1	\N
 623	1	cent	1922	1962	439	t	1	\N
 638	2	baisa	1970	1970	454	t	1	\N
 643	1	ruble (armavir)	1918	1918	459	t	0	\N
@@ -1998,7 +1994,6 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 362	0.5	penny	1971	1985	221	t	1	\N
 368	0.08333333333333333	anna	1862	1942	227	t	1	\N
 317	1	cent	1997	1997	177	t	1	\N
-312	1	santeem	1944	2005	172	t	1	\N
 337	1	cent	1969	2006	196	t	1	\N
 347	0.5	penny	1971	1979	206	t	1	\N
 377	0.5	penny	1971	1981	236	t	1	\N
@@ -2047,6 +2042,14 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 458	1	cent	1975	1994	319	t	1	\N
 451	1	cent	1942	2021	312	t	1	\N
 313	1	cent	1974	1995	173	t	1	\N
+715	1	paisa	1892	1924	483	t	0	\N
+716	50	centimes	1954	1955	484	t	0	\N
+717	5	makuta	1977	1977	485	t	0	\N
+718	1	franc	1959	1965	487	t	0	\N
+719	1	franc	1948	1949	486	t	0	\N
+312	1	santeem	1944	1973	172	t	1	\N
+720	1	santeem	1977	2005	489	t	0	\N
+721	50	centimes	1949	1949	490	t	0	\N
 \.
 
 
@@ -2278,7 +2281,6 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 239	Russian partition of Poland	Europe	231
 56	Australia	Australia and Oceania	\N
 75	Cook islands	Australia and Oceania	\N
-98	French Polynesia	Australia and Oceania	\N
 102	Fiji	Australia and Oceania	\N
 130	Kiribati	Australia and Oceania	\N
 158	New Caledonia	Australia and Oceania	30
@@ -2313,6 +2315,7 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 263	Muscat and Oman	Asia	165
 264	New Guinea	Australia and Oceania	168
 247	Danish West Indies	South America	\N
+98	French Polynesia	Australia and Oceania	30
 265	Azores	Europe	16
 266	Russian Caucasia	Asia	29
 267	Tannu Tuva	Asia	29
@@ -2330,6 +2333,13 @@ COPY public.countries (id, name, continent, parent) FROM stdin;
 280	Riau	Asia	119
 281	Liechtenstein	Europe	\N
 282	Canton of Geneva	Europe	25
+283	Belgian Congo and Ruanda-Urundi	Africa	244
+284	Zaire	Africa	77
+286	French settlements of Oceania	Australia and Oceania	30
+287	Dhofar Governorate	Asia	165
+288	New Hebrides	Australia and Oceania	217
+289	French Indochina	Asia	\N
+291	British Guiana and West Indies	North America	\N
 \.
 
 
@@ -2497,7 +2507,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 169	Second riel	87	1979	\N
 170	Franc	88	1977	\N
 171	Birr (decimalized)	89	1931	1936
-172	Birr	89	1944	\N
 173	Lilangeni	90	1974	\N
 174	Mark	91	1918	1927
 175	Old kroon	91	1928	1940
@@ -2561,9 +2570,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 239	Som	127	1993	\N
 240	Dinar	128	1960	\N
 241	Yang	129	1897	1902
-242	Won	129	1902	1910
-243	Won (Russian occupation)	129	1901	1904
-244	Won (Japanese protectorate)	129	1905	1910
 245	Dollar	130	1979	\N
 246	Tenge	131	1993	\N
 247	Franc	132	1854	2001
@@ -2573,6 +2579,8 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 252	Dollar	135	1943	\N
 253	Loti	136	1980	\N
 254	Syrian pound	137	1920	1939
+172	Birr (Ethiopian dollar)	89	1945	1976
+244	Won	129	1901	1910
 255	Lebanese pound	137	1939	\N
 256	Old lats	138	1922	1940
 257	New lats	138	1993	2013
@@ -2691,7 +2699,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 372	Bolívar Soberano	215	2018	2021
 373	Bolívar Digital	215	2021	\N
 374	Lira	216	1929	2001
-375	Franc	217	1921	1982
 376	Vatu	217	1982	\N
 377	First Dollar	219	1980	2006
 378	Fifth Dollar (RTGS Dollar)	219	2016	\N
@@ -2700,6 +2707,7 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 381	Pound	221	1932	1955
 382	Pound	222	1964	1968
 383	Kwacha	222	1968	2012
+375	Franc	288	1921	1982
 384	Kwacha	222	2013	\N
 385	Rial	223	1990	\N
 386	CFA Franc	224	1958	\N
@@ -2745,7 +2753,6 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 432	CFA Franc	81	1961	1973
 433	Gulden	234	1923	1939
 434	Daler	247	1849	1905
-435	Djiboutian franc	248	1948	1967
 436	Djiboutian franc	249	1967	1977
 437	Rupee	250	1906	1920
 438	Florin	250	1920	1921
@@ -2791,6 +2798,17 @@ COPY public.currencies (id, name, country_id, beginning, ending) FROM stdin;
 480	Krone	281	1898	1921
 481	Franc	204	1891	1957
 482	Sol	282	1814	1838
+483	Afghan rupee	243	1891	1925
+484	Franc	283	1887	1960
+485	Zaire	284	1969	1993
+486	Franc	248	1883	1949
+487	French Somaliland franc	248	1949	1967
+489	Birr	89	1976	\N
+490	CFP Franc	286	1945	\N
+491	Saidi rial	263	1946	1970
+492	Dhofari rial	287	1940	1970
+493	Piastre	289	1880	1952
+494	Pound sterling	291	1840	1954
 \.
 
 
@@ -2978,21 +2996,21 @@ SELECT pg_catalog.setval('public.coin_diameter_seq', 528, true);
 -- Name: coin_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.coin_seq', 714, true);
+SELECT pg_catalog.setval('public.coin_seq', 725, true);
 
 
 --
 -- Name: country_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.country_seq', 282, true);
+SELECT pg_catalog.setval('public.country_seq', 291, true);
 
 
 --
 -- Name: currency_seq; Type: SEQUENCE SET; Schema: public; Owner: jb
 --
 
-SELECT pg_catalog.setval('public.currency_seq', 482, true);
+SELECT pg_catalog.setval('public.currency_seq', 494, true);
 
 
 --
