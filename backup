@@ -2045,11 +2045,11 @@ COPY public.coins (id, value, name, beginning, ending, currency_id, lowest, coun
 715	1	paisa	1892	1924	483	t	0	\N
 716	50	centimes	1954	1955	484	t	0	\N
 717	5	makuta	1977	1977	485	t	0	\N
-718	1	franc	1959	1965	487	t	0	\N
 719	1	franc	1948	1949	486	t	0	\N
 312	1	santeem	1944	1973	172	t	1	\N
 720	1	santeem	1977	2005	489	t	0	\N
 721	50	centimes	1949	1949	490	t	0	\N
+718	1	franc	1959	1965	487	t	1	\N
 \.
 
 
